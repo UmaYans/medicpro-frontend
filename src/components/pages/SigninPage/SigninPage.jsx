@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { auth } from "../../../redux-toolkit/features/users";
+import { auth } from "../../../redux-toolkit/features/usersSlice";
 
 const SigninPage = () => {
   const dispatch = useDispatch();

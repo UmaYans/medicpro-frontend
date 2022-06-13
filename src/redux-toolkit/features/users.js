@@ -45,6 +45,7 @@ export const auth = createAsyncThunk(
 
       const data = await res.json();
       if (data.error) {
+
         return thunkAPI.rejectWithValue({
           error: data.error,
         });
@@ -54,6 +55,7 @@ export const auth = createAsyncThunk(
         return thunkAPI.fulfillWithValue(data.token);
       }
     } catch (error) {
+      
       return thunkAPI.rejectWithValue({ error });
     }
   }
@@ -76,10 +78,14 @@ export const usersSlice = createSlice({
         state.signUp = false;
         state.error = action.payload.error;
       });
-    builder.addCase(auth.fulfilled, (state, action) => {
+    builder
+    .addCase(auth.fulfilled, (state, action) => {
       console.log(action);
       state.token = action.payload;
-    });
+    })
+    .addCase(auth.rejected, (state, action) => {
+      state.error = action.payload.error;
+    })
   },
 });
 

@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  display: flex;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  color: #6b6b6b;
+  display: block;
+  margin-right: 1rem;
+  line-height: 22px;
+}
+
+a {
+  color: grey;
+  text-decoration: none;
+}

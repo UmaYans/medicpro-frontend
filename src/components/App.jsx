@@ -12,8 +12,7 @@ import SigninPage from "./pages/SigninPage/SigninPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 
 function App() {
-  
-    const token = useSelector((state) => state.token)
+  const token = useSelector((state) => state.user.token);
 
   return (
     <>

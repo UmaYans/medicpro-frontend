@@ -4,12 +4,7 @@ import { Link } from "react-router-dom";
 import InputMask from "react-input-mask";
 import { registerUser } from "../../../redux-toolkit/features/usersSlice";
 
-
-
-
 const SignupPage = () => {
-
-
   const dispatch = useDispatch();
 
   const handleInput = ({ target: { value } }) => setTelephone(value);
@@ -41,8 +36,6 @@ const SignupPage = () => {
     "Поле ввода не может быть пустым"
   );
 
-
-
   const handleChangeName = (e) => {
     setName(e.target.value);
     if (e.target.value.length < 3) {
@@ -56,8 +49,6 @@ const SignupPage = () => {
       setNameError("");
     }
   };
-
-
 
   const handleChangeLastName = (e) => {
     setLastName(e.target.value);
@@ -99,13 +90,9 @@ const SignupPage = () => {
     }
   };
 
-
-
   const handleChangeTelephone = (e) => {
     setTelephone(e.target.value);
   };
-
-  
 
   const handleReg = () => {
     dispatch(registerUser({ name, lastName, login, password, telephone }));
@@ -154,8 +141,8 @@ const SignupPage = () => {
   return (
     <>
       <div className="content">
-        <div>{error}</div>
         <h1>Регистрация</h1>
+        <div>{error}</div>
         <form onSubmit={handleSubmit}>
           <i>Имя</i>
           <div>

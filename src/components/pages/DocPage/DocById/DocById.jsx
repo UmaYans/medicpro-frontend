@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function DocById() {
-  return (
-    <div>DocById</div>
-  )
+  return <div>DocById</div>;
 }
 
-export default DocById
+export default DocById;

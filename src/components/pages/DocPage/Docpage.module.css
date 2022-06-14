@@ -1,5 +1,6 @@
 .content{
   display: flex;
+  justify-content: space-between;
 }
 .content_carts{
 flex-wrap: nowrap;

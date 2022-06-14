@@ -1,0 +1,6 @@
+.content{
+  display: flex;
+}
+.content_carts{
+flex-wrap: nowrap;
+}

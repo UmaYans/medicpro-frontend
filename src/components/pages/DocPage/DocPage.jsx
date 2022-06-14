@@ -11,6 +11,7 @@ const DocPage = (id) => {
   const [filtered, setFiltered] = useState(doctors);
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
+  
 
   const categories = useSelector((state) => state.categories.categories);
   const loading = useSelector((state) => state.doctor.loading);

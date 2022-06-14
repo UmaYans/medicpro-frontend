@@ -12,6 +12,7 @@ import ProfilPage from "./pages/ProfilPage/PersonalPage";
 import ServicePage from "./pages/ServicePage/ServicePage";
 import SigninPage from "./pages/SigninPage/SigninPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
+import ClinicCard from "./pages/Clinics/Contain/Card/Index";
 
 function App() {
   const token = useSelector((state) => state.user.token);
@@ -35,8 +36,9 @@ function App() {
           <Route path="docs/:docId" element={<DocInfo />} />
           <Route path="servic" element={<ServicePage />} />
           <Route path="clinics/*" element={<ClinicPage />}>
-            <Route  index element={<CardsWithMap />} />
-            <Route  path="map" element={<CardsWithMap />} />
+            <Route index element={<CardsWithMap />} />
+            <Route path='list/:clinId' element={<ClinicCard />}/>
+            <Route path="map" element={<CardsWithMap />} />
             <Route path="list" element={<List />} />
           </Route>
           <Route path="profile" element={<ProfilPage />} />

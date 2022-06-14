@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./list.module.css";
 
 const Card = ({ clin }) => {
@@ -17,6 +18,7 @@ const Card = ({ clin }) => {
         </div>
         <div className={styles.place}>{clin.place}</div>
       </div>
+      <button><Link to={`${clin._id}`}>Подробнее</Link></button>
     </div>
   );
 };

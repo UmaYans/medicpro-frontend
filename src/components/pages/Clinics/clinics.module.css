@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  padding:  5px;
+  padding: 0;
 }
 
 main {
@@ -16,6 +16,14 @@ main {
   display: flex;
   padding: 0;
   list-style: none;
+}
+
+.nav_tabs a {
+  margin-right: 20px;
+}
+
+.nav_tabs a:last-child {
+  margin-right: 0;
 }
 
 .list_item {

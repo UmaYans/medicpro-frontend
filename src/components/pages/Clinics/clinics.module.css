@@ -1,21 +1,39 @@
 * {
   box-sizing: border-box;
+  padding: 0;
 }
 
-ul {
+main {
+  width: 90%;
+  margin: auto;
+}
+
+.first {
+  margin-bottom: 50px;
+}
+
+.list {
   display: flex;
   padding: 0;
   list-style: none;
 }
 
-li {
+.nav_tabs a {
+  margin-right: 20px;
+}
+
+.nav_tabs a:last-child {
+  margin-right: 0;
+}
+
+.list_item {
   color: #6b6b6b;
   display: block;
   margin-right: 1rem;
   line-height: 22px;
 }
 
-a {
+.link {
   color: grey;
   text-decoration: none;
 }

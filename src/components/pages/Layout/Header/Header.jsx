@@ -59,6 +59,10 @@ const Header = () => {
         <Link to="/profile" className={styles.profil}>
           <b>Мой профиль </b>
         </Link>
+        <Link to="/docs"> Врачи </Link>
+        <Link to="/clinics"> Клиники </Link>
+        <Link to="/servic"> Услуги </Link>
+        <Link to="/profile"> Мой профиль </Link>
       </header>
     </>
   );

@@ -12,7 +12,6 @@ export const getDoctors = createAsyncThunk(
     try {
       const res = await fetch("/docs");
       const data = await res.json();
-      // console.log(data);
       return thunkAPI.fulfillWithValue(data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -20,18 +19,18 @@ export const getDoctors = createAsyncThunk(
   }
 );
 
-export const getDoctorsById = createAsyncThunk(
-  "get/doctorById",
-  async (_id, thunkAPI) => {
-    try {
-      const res = await fetch(`/docs/${_id}`);
-      const data = await res.json();
-      return thunkAPI.fulfillWithValue(data);
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
-    }
-  }
-);
+// export const getDoctorsById = createAsyncThunk(
+//   "get/doctorById",
+//   async (_id, thunkAPI) => {
+//     try {
+//       const res = await fetch(`/docs/${_id}`);
+//       const data = await res.json();
+//       return thunkAPI.fulfillWithValue(data);
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error);
+//     }
+//   }
+// );
 
 export const doctorsSlcie = createSlice({
   name: "doctors",
@@ -42,8 +41,6 @@ export const doctorsSlcie = createSlice({
       .addCase(getDoctors.fulfilled, (state, action) => {
         state.loading = false;
         state.doctors = action.payload
-        // console.log(state.doctors);
-
       })
       .addCase(getDoctors.pending, (state, action) => {
         state.loading = true;
@@ -51,16 +48,16 @@ export const doctorsSlcie = createSlice({
       .addCase(getDoctors.rejected, (state, action) => {
         state.error = action.payload.error;
       });
-    builder
-      .addCase(getDoctorsById.fulfilled, (state, action) => {
-        state.loading = false;
-      })
-      .addCase(getDoctorsById.pending, (state, action) => {
-        state.loading = true;
-      })
-      .addCase(getDoctorsById.rejected, (state, action) => {
-        state.error = action.payload.error;
-      });
+    // builder
+    //   .addCase(getDoctorsById.fulfilled, (state, action) => {
+    //     state.loading = false;
+    //   })
+    //   .addCase(getDoctorsById.pending, (state, action) => {
+    //     state.loading = true;
+    //   })
+    //   .addCase(getDoctorsById.rejected, (state, action) => {
+    //     state.error = action.payload.error;
+    //   });
   },
 });
 

@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 
 import ClinicPage from "./pages/ClinicPage/ClinicPage";
+// import DocInfo from "./pages/DocPage/DocInfo/DocInfo";
 import DocPage from "./pages/DocPage/DocPage";
 import HomePage from "./pages/HomePage/HomePage";
 import Layout from "./pages/Layout/Layout";
@@ -29,7 +30,9 @@ function App() {
           element={!token ? <Navigate to="/sign-in" /> : <Layout />}
         >
           <Route index element={<HomePage />} />
-          <Route path="docs" element={<DocPage />} />
+          <Route path="docs" element={<DocPage />} >
+            {/* <Route path = ':docId' element={<DocInfo/>}></Route> */}
+          </Route>
           <Route path="servic" element={<ServicePage />} />
           <Route path="clinic" element={<ClinicPage />} />
           <Route path="profile" element={<ProfilPage />} />

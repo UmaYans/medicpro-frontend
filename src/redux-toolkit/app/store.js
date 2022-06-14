@@ -4,5 +4,6 @@ import usersSlice from "../features/users";
 export const store = configureStore({
   reducer: {
     user: usersSlice,
+    
   },
 });

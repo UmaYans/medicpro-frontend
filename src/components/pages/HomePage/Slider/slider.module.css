@@ -1,0 +1,15 @@
+
+.rod{
+/* width:30%; */
+justify-content: space-between;
+
+}
+
+
+.rods{
+    width: 350px;
+    
+    flex-wrap: wrap;
+ 
+  
+}

@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import $ from "jquery";
-import { registerUser } from "../../../redux-toolkit/features/users";
+import InputMask from "react-input-mask";
+import { registerUser } from "../../../redux-toolkit/features/usersSlice";
+
 const SignupPage = () => {
   const dispatch = useDispatch();
+
+  const handleInput = ({ target: { value } }) => setTelephone(value);
 
   const signUp = useSelector((state) => state.user.signUp);
   const error = useSelector((state) => state.user.error);
@@ -109,6 +112,16 @@ const SignupPage = () => {
     setTelephone("");
   };
 
+  function PhoneInput(props) {
+    return (
+      <InputMask
+        mask=" +7 (999) 999-99-99"
+        value={props.value}
+        onChange={props.onChange}
+      ></InputMask>
+    );
+  }
+
   const handleBlur = (e) => {
     switch (e.target.name) {
       case "email":
@@ -128,8 +141,8 @@ const SignupPage = () => {
   return (
     <>
       <div className="content">
-        <div>{error}</div>
         <h1>Регистрация</h1>
+        <div>{error}</div>
         <form onSubmit={handleSubmit}>
           <i>Имя</i>
           <div>
@@ -181,12 +194,7 @@ const SignupPage = () => {
           </div>
           <i>Номер телефона</i>
           <div>
-            <input
-              type="tel"
-              placeholder=" 7 (999) 999-99-99"
-              value={telephone}
-              onChange={handleChangeTelephone}
-            />
+            <PhoneInput value={telephone} onChange={handleInput}></PhoneInput>
           </div>
           <br />
           <div>

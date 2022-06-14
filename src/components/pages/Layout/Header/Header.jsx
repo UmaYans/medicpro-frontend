@@ -11,7 +11,7 @@ const Header = () => {
           <img src="https://polyclinika.ru/img/logotype2.svg" alt="MainLogo" />
         </Link>
         <Link to="/docs"> Врачи </Link>
-        <Link to="/clinic"> Клиники </Link>
+        <Link to="/clinics"> Клиники </Link>
         <Link to="/servic"> Услуги </Link>
         <Link to="/profile"> Мой профиль </Link>
       </header>

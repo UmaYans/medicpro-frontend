@@ -1,0 +1,37 @@
+.clinics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.inner {
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+  width: 45%;
+  margin: 1%;
+}
+
+.clinic {
+  flex-grow: 0;
+  flex-basis: 33.3333%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+.image {
+  display: block;
+  width: 180px;
+  height: 150px;
+  margin-right: 24px;
+  text-align: center;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.number {
+  text-decoration: none;
+}

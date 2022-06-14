@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./Content.module.css";
-// import { getDoctorsById } from "../../../../redux-toolkit/features/doctorSlice";
 // import { useDispatch } from "react-redux";
+// import { getDoctorsById } from "../../../../redux-toolkit/features/doctorSlice";
 
 function Content({ doctor }) {
   // const dispatch = useDispatch();
 
   // useEffect(() => {
-  //   dispatch(getDoctorsById());
+  //   dispatch(getDoctorsById(doctor._id));
   // }, [dispatch]);
 
-  return (
+  return (  
     <div className={style.cart}>
-      {/* <Link to="/"> */}
+      <Link to={`${doctor._id}`}>
         <div>
           {" "}
           <img src={doctor.photo} alt="" />
@@ -23,7 +23,7 @@ function Content({ doctor }) {
         <div>{doctor.lastName}</div>
         <div>Рейтинг:{doctor.rating}</div>
         <div>Специальность : {doctor.spec.name}</div>
-      {/* </Link> */}
+      </Link>
     </div>
   );
 }

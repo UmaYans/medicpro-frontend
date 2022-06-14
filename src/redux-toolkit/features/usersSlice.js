@@ -4,7 +4,7 @@ const initialState = {
   signUp: false,
   signIn: false,
   error: null,
-  users: [],
+  users: {},
   token: localStorage.getItem("token"),
   loading: false,
 };
@@ -59,6 +59,28 @@ export const auth = createAsyncThunk(
   }
 );
 
+export const getUser = createAsyncThunk("get/user", async (_, thunkAPI) => {
+  const state = thunkAPI.getState();
+
+  try {
+    const res = await fetch("/user", {
+      headers: {
+        Authorization: `Bearer ${state.user.token}`,
+      },
+    });
+    const user = await res.json();
+    if (user.error) {
+      return thunkAPI.rejectWithValue({ error: user.error });
+    } else {
+      return thunkAPI.fulfillWithValue(user);
+    }
+  } catch (error) {
+    return thunkAPI.rejectWithValue({
+      error,
+    });
+  }
+});
+
 export const usersSlice = createSlice({
   name: "users",
   initialState,
@@ -83,6 +105,18 @@ export const usersSlice = createSlice({
       })
       .addCase(auth.rejected, (state, action) => {
         state.error = action.payload.error;
+      });
+    builder
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.loading = false;
+        console.log(action);
+        state.users = action.payload;
+      })
+      .addCase(getUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getUser.rejected, (state, action) => {
+        state.loading = false;
       });
   },
 });

@@ -12,7 +12,6 @@ export const getDoctors = createAsyncThunk(
     try {
       const res = await fetch("/docs");
       const data = await res.json();
-      // console.log(data);
       return thunkAPI.fulfillWithValue(data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -42,8 +41,6 @@ export const doctorsSlcie = createSlice({
       .addCase(getDoctors.fulfilled, (state, action) => {
         state.loading = false;
         state.doctors = action.payload
-        // console.log(state.doctors);
-
       })
       .addCase(getDoctors.pending, (state, action) => {
         state.loading = true;

@@ -17,11 +17,7 @@ const List = () => {
 
   if (loading) {
     return (
-      <div className={styles.loader}>
-        <div className={styles.kis}>
-          <img src="./2F3A9651.jpg" alt="" />
-        </div>
-      </div>
+      <div className={styles.loader}></div>
     );
   }
 

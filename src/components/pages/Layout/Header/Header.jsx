@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.headBlock}>
+        {/* <div className={styles.headBlock}>
           <Link to="/">
             {" "}
             <img
@@ -49,16 +49,27 @@ const Header = () => {
             Услуги{" "}
           </Link>
         </div>
-        <div></div>
+        <div></div> */}
 
         {/* <span style = {{marginRight:'10%'}}>
               8 800-535-55-55
               Перезвоните нам
             </span> */}
 
-        <Link to="/profile" className={styles.profil}>
+        {/* <Link to="/profile" className={styles.profil}>
           <b>Мой профиль </b>
+        </Link> */}
+        <Link to="/">
+          <img
+            style={{ width: "15%", marginLeft: "80%" }}
+            src={logo}
+            alt="MainLogo"
+          />
         </Link>
+        <Link to="/docs"> Врачи </Link>
+        <Link to="/clinics"> Клиники </Link>
+        <Link to="/servic"> Услуги </Link>
+        <Link to="/profile"> Мой профиль </Link>
       </header>
     </>
   );

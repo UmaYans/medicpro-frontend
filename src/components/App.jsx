@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
-
-import ClinicPage from "./pages/ClinicPage/ClinicPage";
+import ClinicPage from "./pages/Clinics/Index";
+import CardsWithMap from "./pages/Clinics/Contain/WithMap/Index";
+import List from "./pages/Clinics/Contain/List/Index";
 import DocInfo from "./pages/DocPage/DocInfo/DocInfo";
 import DocPage from "./pages/DocPage/DocPage";
 import HomePage from "./pages/HomePage/HomePage";
@@ -33,7 +34,11 @@ function App() {
           <Route path="docs" element={<DocPage />} />
           <Route path="docs/:docId" element={<DocInfo />} />
           <Route path="servic" element={<ServicePage />} />
-          <Route path="clinic" element={<ClinicPage />} />
+          <Route path="clinics/*" element={<ClinicPage />}>
+            <Route  index element={<CardsWithMap />} />
+            <Route  path="map" element={<CardsWithMap />} />
+            <Route path="list" element={<List />} />
+          </Route>
           <Route path="profile" element={<ProfilPage />} />
           <Route path="*" element={<HomePage />} />
         </Route>

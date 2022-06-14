@@ -13,7 +13,7 @@ const Header = () => {
         <Link to="/docs"> Врачи </Link>
         <Link to="/clinic"> Клиники </Link>
         <Link to="/servic"> Услуги </Link>
-        <Link to="/profile"> Личный кабинет </Link>
+        <Link to="/profile"> Мой профиль </Link>
       </header>
     </>
   );

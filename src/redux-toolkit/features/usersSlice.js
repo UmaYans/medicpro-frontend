@@ -4,7 +4,7 @@ const initialState = {
   signUp: false,
   signIn: false,
   error: null,
-  users: [],
+  users: {},
   token: localStorage.getItem("token"),
   loading: false,
 };
@@ -45,7 +45,6 @@ export const auth = createAsyncThunk(
 
       const data = await res.json();
       if (data.error) {
-
         return thunkAPI.rejectWithValue({
           error: data.error,
         });
@@ -55,11 +54,32 @@ export const auth = createAsyncThunk(
         return thunkAPI.fulfillWithValue(data.token);
       }
     } catch (error) {
-      
       return thunkAPI.rejectWithValue({ error });
     }
   }
 );
+
+export const getUser = createAsyncThunk("get/user", async (_, thunkAPI) => {
+  const state = thunkAPI.getState();
+
+  try {
+    const res = await fetch("/user", {
+      headers: {
+        Authorization: `Bearer ${state.user.token}`,
+      },
+    });
+    const user = await res.json();
+    if (user.error) {
+      return thunkAPI.rejectWithValue({ error: user.error });
+    } else {
+      return thunkAPI.fulfillWithValue(user);
+    }
+  } catch (error) {
+    return thunkAPI.rejectWithValue({
+      error,
+    });
+  }
+});
 
 export const usersSlice = createSlice({
   name: "users",
@@ -79,13 +99,25 @@ export const usersSlice = createSlice({
         state.error = action.payload.error;
       });
     builder
-    .addCase(auth.fulfilled, (state, action) => {
-      console.log(action);
-      state.token = action.payload;
-    })
-    .addCase(auth.rejected, (state, action) => {
-      state.error = action.payload.error;
-    })
+      .addCase(auth.fulfilled, (state, action) => {
+        console.log(action);
+        state.token = action.payload;
+      })
+      .addCase(auth.rejected, (state, action) => {
+        state.error = action.payload.error;
+      });
+    builder
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.loading = false;
+        console.log(action);
+        state.users = action.payload;
+      })
+      .addCase(getUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getUser.rejected, (state, action) => {
+        state.loading = false;
+      });
   },
 });
 

@@ -5,12 +5,13 @@ import { getDoctors } from "../../../redux-toolkit/features/doctorSlice";
 import Content from "./Content/Content";
 import Sidebar from "./Sidebar/Sidebar";
 import style from "./Docpage.module.css";
-const DocPage = (id) => {
+const DocPage = () => {
   const doctors = useSelector((state) => state.doctor.doctors);
+
+  const dispatch = useDispatch();
 
   const [filtered, setFiltered] = useState(doctors);
   const [value, setValue] = useState("");
-  const dispatch = useDispatch();
 
   const categories = useSelector((state) => state.categories.categories);
   const loading = useSelector((state) => state.doctor.loading);
@@ -32,32 +33,38 @@ const DocPage = (id) => {
   };
 
   return (
-    <div className={style.content}>
-      <div>
-        <input
-          type="text"
-          placeholder="Начните поиск врача"
-          onChange={(event) => setValue(event.target.value)}
-        />
-        <div onClick={(e) => setFiltered(doctors)}>Все категории</div>
-        {categories.map((category) => {
-          return (
-            <Sidebar
-              category={category}
-              key={category._id}
-              handleCategory={handleCategory}
-            ></Sidebar>
-          );
-        })}
+    <>
+      <input
+        className={style.input}
+        type="text"
+        placeholder="Начните поиск врача"
+        onChange={(event) => setValue(event.target.value)}
+      />
+      <div className={style.content}>
+        <div className={style.content_carts}>
+          <h1>Врачи</h1>
+          {value
+            ? docs.map((doctor, index) => {
+                return <Content doctor={doctor} key={index}></Content>;
+              })
+            : filtered.map((doctor, index) => {
+                return <Content doctor={doctor} key={index}></Content>;
+              })}
+        </div>
+        <div>
+          <div onClick={(e) => setFiltered(doctors)}>Все категории</div>
+          {categories.map((category) => {
+            return (
+              <Sidebar
+                category={category}
+                key={category._id}
+                handleCategory={handleCategory}
+              ></Sidebar>
+            );
+          })}
+        </div>
       </div>
-
-      <div className={style.content_carts}>
-        <h1>Врачи</h1>
-        {filtered.map((doctor, index) => {
-          return <Content doctor={doctor} key={index}></Content>;
-        })}
-      </div>
-    </div>
+    </>
   );
 };
 

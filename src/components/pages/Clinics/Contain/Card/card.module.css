@@ -28,3 +28,8 @@
 .place {
   margin: 25px 0;
 }
+
+.docs {
+  display: flex;
+  justify-content: space-between;
+}

@@ -44,11 +44,11 @@ const DocPage = () => {
       <div className={style.content}>
         <div className={style.content_carts}>
           <h1>Врачи</h1>
-          {/* {!value
+          {value
             ? docs.map((doctor, index) => {
                 return <Content doctor={doctor} key={index}></Content>;
-              }) */}
-          {filtered.map((doctor, index) => {
+              })
+          : filtered.map((doctor, index) => {
             return <Content doctor={doctor} key={index}></Content>;
           })}
         </div>

@@ -14,13 +14,15 @@ function DocInfo() {
 
   const docs = useSelector((state) => state.doctor.doc);
 
+  console.log(docs);
+
   return (
     <>
       <div>
         {docs.name}
         <div>Информация о враче</div>
         <div>
-          <img src={docs.photo} alt="" />
+          <img src={docs?.photo} alt="sd" />
         </div>
         <div>
           <p>
@@ -30,7 +32,7 @@ function DocInfo() {
         <div>
           <p>Возраст: {docs.age} лет</p>
         </div>
-        {/* <div>
+        <div>
           <p>Стаж работы:{docs.skill} лет</p>
         </div>
         <div>
@@ -39,13 +41,14 @@ function DocInfo() {
         <div>
           <p>Почта для связи: {docs.eMail}</p>
         </div>
-        <div>Специальность: {docs.spec.name}</div>
+        <div><p>Специальность: {docs.spec?.name}</p></div>
+        <div><p>Специальность: {docs.spec?.text}</p></div>
         <div>
           <p>Описание: {docs.desc}</p>
         </div>
         <div>
           <p>
-            Место работы:<Link to="clinics/*">{docs.place.name}</Link>
+            Место работы:<Link to="clinics/*">{docs.place?.name}</Link>
           </p>
         </div>
         <div>
@@ -54,7 +57,7 @@ function DocInfo() {
         <hr />
         <div>
           <h1>Отзывы о враче</h1>
-        </div> */}
+        </div>
       </div>
     </>
   );

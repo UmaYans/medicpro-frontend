@@ -5,13 +5,12 @@ import doctorsSlcie from "../features/doctorSlice";
 import usersSlice from "../features/usersSlice";
 import commentsSlcie from "../features/usersSlice";
 
-
 export const store = configureStore({
   reducer: {
     user: usersSlice,
-    clinic: clinicSlice,
     doctor: doctorsSlcie,
     categories: categoriesSlice,
+    clinic: clinicSlice,
     comments: commentsSlcie,
   },
 });

@@ -48,9 +48,9 @@ const DocPage = () => {
             ? docs.map((doctor, index) => {
                 return <Content doctor={doctor} key={index}></Content>;
               })
-          : filtered.map((doctor, index) => {
-            return <Content doctor={doctor} key={index}></Content>;
-          })}
+            : filtered.map((doctor, index) => {
+                return <Content doctor={doctor} key={index}></Content>;
+              })}
         </div>
         <div>
           <div onClick={(e) => setFiltered(doctors)}>Все категории</div>

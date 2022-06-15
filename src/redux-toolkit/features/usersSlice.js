@@ -100,7 +100,7 @@ export const usersSlice = createSlice({
       });
     builder
       .addCase(auth.fulfilled, (state, action) => {
-        console.log(action);
+        // console.log(action);
         state.token = action.payload;
       })
       .addCase(auth.rejected, (state, action) => {
@@ -109,7 +109,6 @@ export const usersSlice = createSlice({
     builder
       .addCase(getUser.fulfilled, (state, action) => {
         state.loading = false;
-        console.log(action);
         state.users = action.payload;
       })
       .addCase(getUser.pending, (state) => {

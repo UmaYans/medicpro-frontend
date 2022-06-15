@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 import styles from "./clinics.module.css";
 
@@ -32,8 +32,18 @@ const ClinicPage = () => {
       </section>
       <section className={styles.second}>
         <div className={styles.nav_tabs}>
-          <Link to="map">Карта</Link>
-          <Link to="list">Список</Link>
+          <NavLink
+            className={ ({ isActive }) => (isActive ? styles.active : "") }
+            to="map"
+          >
+            Карта
+          </NavLink>
+          <NavLink
+            className={ ({ isActive }) => (isActive ? styles.active : "") }
+            to="list"
+          >
+            Список
+          </NavLink>
         </div>
 
         <Outlet />

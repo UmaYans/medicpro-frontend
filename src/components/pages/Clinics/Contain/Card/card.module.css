@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.name {
+  margin: 25px 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.info {
+  margin-bottom: 25px;
+}
+
+.schled {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.desc {
+  
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.place {
+  margin: 25px 0;
+}
+
+.docs {
+  display: flex;
+  justify-content: space-between;
+}

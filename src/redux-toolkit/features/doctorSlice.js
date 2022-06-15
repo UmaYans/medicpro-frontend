@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   doctors: [],
+  clinicDocs: [],
   doc: {},
   error: null,
   loading: false,
@@ -26,6 +27,19 @@ export const getDoctorsById = createAsyncThunk(
     try {
       console.log("GettingdoctorById");
       const res = await fetch(`/docs/${docId}`);
+      const data = await res.json();
+      return thunkAPI.fulfillWithValue(data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const getDoctorsByPlace = createAsyncThunk(
+  "get/doctorByPlace",
+  async (clinId, thunkAPI) => {
+    try {
+      const res = await fetch(`/docPlace/${clinId}`);
       const data = await res.json();
       return thunkAPI.fulfillWithValue(data);
     } catch (error) {
@@ -63,6 +77,18 @@ export const doctorsSlcie = createSlice({
         state.error = action.payload.error;
         state.loading = false;
       });
+    builder
+    .addCase(getDoctorsByPlace.fulfilled, (state, action) => {
+      state.clinicDocs = action.payload;
+      state.loading = false;
+    })
+    .addCase(getDoctorsByPlace.pending, (state, action) => {
+      state.loading = true;
+    })
+    .addCase(getDoctorsByPlace.rejected, (state, action) => {
+      state.error = action.payload.error;
+      state.loading = false;
+    })
   },
 });
 

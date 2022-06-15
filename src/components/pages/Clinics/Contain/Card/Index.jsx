@@ -17,17 +17,17 @@ const ClinicCard = () => {
   return (
     <div>
       <div className={styles.center}>
-        <div className={styles.image}>
-          <img src={hospital.photo} alt="clinic" />
-        </div>
         <div className={styles.name}>{hospital.name}</div>
-        <div className={styles.desc}>{hospital.desc}</div>
-        <div className={styles.center_info}>
+        <div className={styles.info}>
           <div className={styles.schled}>пн-cб 08:00 - 21:00</div>
           <div className={styles.schled}>вс 09:00 - 18:00</div>
         </div>
+        <div className={styles.image}>
+          <img src={hospital.photo} alt="clinic" />
+        </div>
+        <div className={styles.desc}>{hospital.desc}</div>
+        <div className={styles.place}>{hospital.place}</div>
       </div>
-      <div className={hospital.place}>{hospital.place}</div>
     </div>
   );
 };

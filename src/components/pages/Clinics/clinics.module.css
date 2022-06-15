@@ -9,16 +9,26 @@ main {
 }
 
 .first {
-  margin-bottom: 50px;
+  margin-bottom: 26px;
+}
+
+h1 {
+  margin: 25px 0;
+}
+
+span {
+  color: rgb(3, 233, 3);
 }
 
 .list {
   display: flex;
-  padding: 0;
+  margin-bottom: 20px;
   list-style: none;
 }
 
 .nav_tabs a {
+  color: black;
+  text-decoration: none;
   margin-right: 20px;
 }
 
@@ -36,4 +46,10 @@ main {
 .link {
   color: grey;
   text-decoration: none;
+}
+ 
+.active {
+  border-top: 2px solid #ff7f32;
+  border-bottom: 2px solid #ff7f32;
+  border-radius: 4px;
 }

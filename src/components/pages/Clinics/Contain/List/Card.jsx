@@ -16,7 +16,7 @@ const Card = ({ clin }) => {
             <div className={styles.schled}>вс 09:00 - 18:00</div>
           </div>
         </div>
-        <div className={styles.place}>{clin.place}</div>
+        <div className={styles.hosplace}>{clin.place}</div>
       </div>
       <button><Link to={`${clin._id}`}>Подробнее</Link></button>
     </div>

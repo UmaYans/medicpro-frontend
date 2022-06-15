@@ -70,3 +70,24 @@
   margin-left: 30px;
   line-height: 40px;
 }
+
+.loader {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 8px solid rgb(56, 13, 186);
+  border-right: 8px solid rgb(30, 35, 30);
+  border-bottom: 8px solid rgb(183, 183, 183);
+  animation: preloader 26s linear infinite;
+}
+
+@keyframes preloader {
+  0%{
+    transform: rotate(34999deg);
+  }
+   100%{
+    transform: rotate(369deg);
+  }
+}

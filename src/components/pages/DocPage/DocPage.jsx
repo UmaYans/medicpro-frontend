@@ -35,7 +35,7 @@ const DocPage = () => {
   return (
     <>
       <input
-      value={value}
+        value={value}
         className={style.input}
         type="text"
         placeholder="Начните поиск врача"
@@ -48,9 +48,9 @@ const DocPage = () => {
             ? docs.map((doctor, index) => {
                 return <Content doctor={doctor} key={index}></Content>;
               }) */}
-            {filtered.map((doctor, index) => {
-                return <Content doctor={doctor} key={index}></Content>;
-              })}
+          {filtered.map((doctor, index) => {
+            return <Content doctor={doctor} key={index}></Content>;
+          })}
         </div>
         <div>
           <div onClick={(e) => setFiltered(doctors)}>Все категории</div>

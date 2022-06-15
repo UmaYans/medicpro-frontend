@@ -9,7 +9,7 @@ import commentsSlcie from "../features/usersSlice";
 export const store = configureStore({
   reducer: {
     user: usersSlice,
-    clinic: clinicSlice
+    clinic: clinicSlice,
     doctor: doctorsSlcie,
     categories: categoriesSlice,
     comments: commentsSlcie,

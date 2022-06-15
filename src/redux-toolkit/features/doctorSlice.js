@@ -25,6 +25,7 @@ export const getDoctorsById = createAsyncThunk(
   "get/doctorById",
   async (docId, thunkAPI) => {
     try {
+      console.log("GettingdoctorById");
       const res = await fetch(`/docs/${docId}`);
       const data = await res.json();
       return thunkAPI.fulfillWithValue(data);

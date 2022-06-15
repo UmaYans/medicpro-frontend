@@ -1,0 +1,158 @@
+
+*{
+  box-sizing: border-box;
+}
+.rodBlock{
+  width: 80%;
+  margin: auto;
+  border: 1px solid black;
+  margin-top: 50px;
+  box-shadow: 3px 1px 11px 10px rgb(222, 219, 219);
+  margin-bottom: 80px;
+  border-radius: 20px;
+}
+.rodBlock:hover{
+  box-shadow: 3px 1px 20px 7px rgb(0, 0, 0);
+
+}
+.infoDoc{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.imgDoc img {
+  width: 100%;
+  height: 100%;
+  
+}
+.info{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  color:  red;
+}
+
+.imgDoc{
+  width: 40%;
+  height: 40%;
+}
+.textDoc h1 {
+  text-align: center;
+}
+.textDoc{
+  border-left: 1px solid black;
+  margin-left: 40px;
+  text-align: start;
+  width: 70%;
+
+}
+.btn{
+  background-color: rgba(226, 101, 12, 0.829);
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  float: right;
+  margin-right: 10%;
+}
+
+.wrap{
+  box-shadow: 3px 1px 11px 10px rgb(222, 219, 219);
+  border-radius: 20px;
+  background: rgb(237, 231, 231);
+  border: 1px solid black;
+width: 80%;
+margin: auto;
+}
+
+.secondCart{
+/* border: 1px solid black; */
+  border-radius: 20px;
+  width: 100%;
+  background: white;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 0.452);
+}
+.wrap:hover{
+  box-shadow: 3px 1px 20px 7px rgb(0, 0, 0);
+
+}
+.photoClinic{
+  width: 40%;
+}
+.photoClinic img {
+  width: 100%;
+  height: 100%;
+}
+
+.inforClinic{
+  padding: 15px;
+  width: 60%;
+}
+
+.cart_second h1{
+width: 1000px;
+text-align: center;
+}
+.text{
+  text-align: center;
+}
+
+
+/* .clinics {
+  width: 1000px;
+  margin: auto;
+  border-radius: 20px;
+}
+.clinics:hover{
+  box-shadow: 3px 1px 20px 7px rgb(0, 0, 0);
+}
+
+.second {
+  display: flex;
+  justify-content: space-between;
+}
+.clinicPhoto{
+  width: 100%;
+  height: 100%;
+} */
+
+/* .clinics{
+  box-shadow: 3px 1px 11px 10px rgb(222, 219, 219);
+border: 1px solid black;
+  margin-top: 100px;
+  width: 1000px;
+  margin: auto;
+  border-radius: 20px;
+}
+.clinics:hover{
+  box-shadow: 3px 1px 20px 7px rgb(0, 0, 0);
+
+}
+
+.clinicPhoto img {
+  width: 100%;
+  height: 100%;
+
+}
+.second {
+  max-height: 340px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clinicPhoto{
+  width: 40%;
+  min-height: 100%;
+  height: 340px;
+}
+.infoClinic{
+  width: 70%;
+  margin-left: 70px;
+} */

@@ -16,7 +16,9 @@ const List = () => {
   }, [dispatch]);
 
   if (loading) {
-    return <div>загружается...</div>;
+    return (
+      <div className={styles.loader}></div>
+    );
   }
 
   if (error) {

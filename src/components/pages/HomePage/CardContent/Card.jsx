@@ -21,6 +21,8 @@ function Card(props) {
       slidesToScroll: 3,
       initialSlide: 0,
   };
+
+   
   useEffect(() => {
     dispatch(getDoctors());
   }, []);
@@ -47,9 +49,12 @@ function Card(props) {
       <div>
         <div className={styles.rods}>
           <Slider {...settings}>
+          
             {doctors.map((doctor) => {
               return (
+                
                 <div style={{ justifyContent: "space-between" }}>
+                
                   <div>
                     <SliderDoc key={doctor._id} doctor={doctor} />
                   </div>

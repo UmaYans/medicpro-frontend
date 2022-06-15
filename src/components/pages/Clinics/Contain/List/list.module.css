@@ -7,6 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-bottom: 17px;
 }
 
 .inner {
@@ -72,9 +73,11 @@
 }
 
 .loader {
+  position: relative;
   margin-top: 20px;
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 300px;
+  left: 40%;
   border-radius: 50%;
   border: 6px solid rgba(255, 255, 255, 0.2);
   border-top: 8px solid rgb(56, 13, 186);

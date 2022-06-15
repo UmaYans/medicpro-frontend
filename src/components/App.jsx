@@ -37,10 +37,10 @@ function App() {
           <Route path="servic" element={<ServicePage />} />
           <Route path="clinics/*" element={<ClinicPage />}>
             <Route index element={<CardsWithMap />} />
-            <Route path='list/:clinId' element={<ClinicCard />}/>
             <Route path="map" element={<CardsWithMap />} />
             <Route path="list" element={<List />} />
           </Route>
+          <Route path='clinics/list/:clinId' element={<ClinicCard />}/>
           <Route path="profile" element={<ProfilPage />} />
           <Route path="*" element={<HomePage />} />
         </Route>

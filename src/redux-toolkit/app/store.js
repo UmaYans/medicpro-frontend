@@ -3,7 +3,7 @@ import clinicSlice from "../features/clinic";
 import categoriesSlice from "../features/categories";
 import doctorsSlcie from "../features/doctorSlice";
 import usersSlice from "../features/usersSlice";
-import  entrySlice  from "../features/entry";
+import  entrySlice  from "../features/entrySlice";
 import commentsSlcie from "../features/comments";
 import servicesSlice from "../features/service";
 

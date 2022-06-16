@@ -12,18 +12,14 @@ const SigninPage = () => {
   const [password, setPassword] = useState("");
 
   //Валидация форм
-  const [nameDirty, setNameDirty] = useState(false);
-  const [lastNameDirty, setLastNameDirty] = useState(false);
   const [loginDirty, setLoginDirty] = useState(false);
   const [passwordDirty, setPasswordDirty] = useState(false);
-  const [telephoneDirty, setTelephoneDirty] = useState(false);
   const [emailError, setEmailError] = useState(
     "Поле ввода не может быть пустым"
   );
   const [passwordError, setPasswordError] = useState(
     "Пароль  не может быть пустым"
   );
-  const [nameError, setNameError] = useState("Поле ввода не может быть пустым");
 
   const handleChangeLogin = (e) => {
     setLogin(e.target.value);
@@ -71,6 +67,8 @@ const SigninPage = () => {
       case "password":
         setPasswordDirty(true);
         break;
+      default:
+        return false;
     }
   };
 
@@ -83,27 +81,26 @@ const SigninPage = () => {
             <h1>Авторизация</h1>
           </div>
           <div>{error}</div>
-
           Логин
           <div>
-          {loginDirty && emailError && <div>{emailError}</div>}
+            {loginDirty && emailError && <div>{emailError}</div>}
             <input
-            name="login"
-            onBlur={(e) => handleBlur(e)}
+              name="login"
+              onBlur={(e) => handleBlur(e)}
               type="text"
-              onChange={(e)=>handleChangeLogin(e)}
+              onChange={(e) => handleChangeLogin(e)}
               placeholder="Enter login..."
               value={login}
             />
           </div>
           Пароль
           <div>
-          {passwordDirty && passwordError && <div>{passwordError}</div>}
+            {passwordDirty && passwordError && <div>{passwordError}</div>}
             <input
-            onBlur={(e) => handleBlur(e)}
-            name="password"
+              onBlur={(e) => handleBlur(e)}
+              name="password"
               type="password"
-              onChange={(e)=>handleChangePassword(e)}
+              onChange={(e) => handleChangePassword(e)}
               placeholder="Enter password"
               value={password}
             />

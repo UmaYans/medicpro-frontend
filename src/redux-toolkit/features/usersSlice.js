@@ -20,7 +20,6 @@ export const registerUser = createAsyncThunk(
         },
         body: JSON.stringify({ name, lastName, login, password, telephone }),
       });
-      console.log(name, lastName, login, password, telephone);
       const data = await res.json();
       return thunkAPI.fulfillWithValue(data);
     } catch (error) {

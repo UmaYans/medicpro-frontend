@@ -3,6 +3,7 @@
   box-sizing: border-box;
 }
 .rodBlock{
+  overflow: hidden;
   width: 80%;
   margin: auto;
   border: 1px solid black;
@@ -102,8 +103,41 @@ text-align: center;
 .text{
   text-align: center;
 }
+.modal {
+  height: 300px;
+  position: relative;
+  top: -215px;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+}
+.btn_first{
+  margin-left: 70%;
+  margin-bottom: 50px;
+  background-color: blue;
+  font-size: 22px;
+  padding: 5px;
+  border-radius: 20px;
+  color: white;
+}
 
-
+.select{
+  font-size: 22px;
+  width: 150px;
+  align-items: center;
+  margin-left: 50%;
+  margin-top: 100px;
+}
+.btn_second{
+  font-size: 22px;
+  background-color: blue;
+  color: white;
+  border-radius: 20px;
+  padding: 10px;
+  /* width: 100px; */
+  /* margin-top: 70px; */
+  margin-left: 50%;
+}
 /* .clinics {
   width: 1000px;
   margin: auto;

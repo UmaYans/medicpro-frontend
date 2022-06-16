@@ -13,6 +13,9 @@ import ServicePage from "./pages/ServicePage/ServicePage";
 import SigninPage from "./pages/SigninPage/SigninPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import ClinicCard from "./pages/Clinics/Contain/Card/Index";
+import MainProfil from "./pages/ProfilPage/MainProfil/MainProfil";
+import CommentProfil from "./pages/ProfilPage/CommentProfil/CommentProfil";
+import EntryProfil from "./pages/ProfilPage/EntryProfil/EntryProfil";
 
 function App() {
   const token = useSelector((state) => state.user.token);
@@ -41,7 +44,12 @@ function App() {
             <Route path="list" element={<List />} />
           </Route>
           <Route path='clinics/list/:clinId' element={<ClinicCard />}/>
-          <Route path="profile" element={<ProfilPage />} />
+          <Route path="profile/*" element={<ProfilPage />} >
+            <Route index element={<MainProfil/>} />
+            <Route path="inform" element={<MainProfil/>} />
+            <Route path="comments" element={<CommentProfil/>} />
+            <Route path="entry" element={<EntryProfil/>} />
+          </Route>
           <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>

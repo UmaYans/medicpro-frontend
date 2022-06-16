@@ -24,7 +24,6 @@ const SignupPage = () => {
   const [lastNameDirty, setLastNameDirty] = useState(false);
   const [loginDirty, setLoginDirty] = useState(false);
   const [passwordDirty, setPasswordDirty] = useState(false);
-  const [telephoneDirty, setTelephoneDirty] = useState(false);
   const [emailError, setEmailError] = useState(
     "Поле ввода не может быть пустым"
   );
@@ -90,10 +89,6 @@ const SignupPage = () => {
     }
   };
 
-  const handleChangeTelephone = (e) => {
-    setTelephone(e.target.value);
-  };
-
   const handleReg = () => {
     dispatch(registerUser({ name, lastName, login, password, telephone }));
     setName("");
@@ -135,6 +130,9 @@ const SignupPage = () => {
         break;
       case "lastName":
         setLastNameDirty(true);
+        break;
+      default:
+        return false;
     }
   };
   const disabled = name && lastName && login && password && telephone;

@@ -25,7 +25,6 @@ export const getDoctorsById = createAsyncThunk(
   "get/doctorById",
   async (docId, thunkAPI) => {
     try {
-      console.log("GettingdoctorById");
       const res = await fetch(`/docs/${docId}`);
       const data = await res.json();
       return thunkAPI.fulfillWithValue(data);
@@ -78,17 +77,17 @@ export const doctorsSlcie = createSlice({
         state.loading = false;
       });
     builder
-    .addCase(getDoctorsByPlace.fulfilled, (state, action) => {
-      state.clinicDocs = action.payload;
-      state.loading = false;
-    })
-    .addCase(getDoctorsByPlace.pending, (state, action) => {
-      state.loading = true;
-    })
-    .addCase(getDoctorsByPlace.rejected, (state, action) => {
-      state.error = action.payload.error;
-      state.loading = false;
-    })
+      .addCase(getDoctorsByPlace.fulfilled, (state, action) => {
+        state.clinicDocs = action.payload;
+        state.loading = false;
+      })
+      .addCase(getDoctorsByPlace.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(getDoctorsByPlace.rejected, (state, action) => {
+        state.error = action.payload.error;
+        state.loading = false;
+      });
   },
 });
 

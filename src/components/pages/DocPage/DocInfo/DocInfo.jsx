@@ -8,6 +8,8 @@ import {
   getEntryDocId,
   postEntry,
 } from "../../../../redux-toolkit/features/entrySlice";
+import CommentsByUser from "../CommentsByUser/CommentsByUser";
+import { getCommentByDoctorId } from "../../../../redux-toolkit/features/comments";
 
 function DocInfo() {
   const [opened, setOpened] = useState(false);
@@ -19,11 +21,13 @@ function DocInfo() {
   useEffect(() => {
     dispatch(getDoctorsById(docId));
     dispatch(getEntryDocId(docId));
+    dispatch(getCommentByDoctorId(docId));
   }, [dispatch, docId]);
 
   const docs = useSelector((state) => state.doctor.doc);
   const entry = useSelector((state) => state.entry.entry);
   const service = useSelector((state) => state.service.service);
+  const comments = useSelector((state) => state.comments.comments);
 
   console.log(entry);
 
@@ -113,7 +117,7 @@ function DocInfo() {
                           value={time}
                           disabled={
                             entry.find((item) => item.time === time) ||
-                            time === "Обед" 
+                            time === "Обед"
                           }
                         >
                           {time}
@@ -161,10 +165,7 @@ function DocInfo() {
           </div>
         </div>
       </div>
-
-      <div>
-        <div>{service.text}</div>
-      </div>
+      <CommentsByUser comments={comments} />
     </>
   );
 }

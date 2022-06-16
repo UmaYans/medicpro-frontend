@@ -1,6 +1,6 @@
 .header{
     /* background-color:red; */
-    width: 100%;
+    width: 99%;
     display: flex;
     justify-content: space-between;
     padding: 1% 0;
@@ -10,10 +10,7 @@
 .headBlock{
 display: flex;
 }
-/* img{
-    width: 15%;
-    margin-left: 80%;
-} */
+
 .service{
     margin-right:35%;
     margin-top: 1%;

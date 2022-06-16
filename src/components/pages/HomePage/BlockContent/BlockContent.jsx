@@ -1,23 +1,24 @@
 import React from 'react';
 import doc from './doc2.jpg'
+import styles from './blockContent.module.css'
 
 function BlockContent(props) {
     return (
-        <div>
+        <div className={styles.contentBlock}>
 
-            <div>
-                <h1>К врачу не выходя из дома</h1>
-                <div>Просто запишитесь на сайтеб будьте здоровы</div>
+            <div className={styles.leftContent}>
+                <h1 className={styles.lefttextSize}>К врачу <br />не выходя из дома</h1>
+                <div className={styles.leftCentrBlock}>Просто запишитесь на сайте будьте здоровы</div>
 
-                <span>
+                <div className={styles.leftDownBlock}>
                     <h5>Больше функций и услуг</h5>
                     <p>Будет доступно в ближайшее время.
                     Наберитесь терпения 
                     </p>
-                </span>
+                </div>
             </div>
-            <div>
-                <img src={doc} />
+            <div >
+                <img src={doc} className={styles.images} />
             </div>
 
 

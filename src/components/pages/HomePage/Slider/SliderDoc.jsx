@@ -15,7 +15,7 @@ function SliderDoc({ doctor }) {
           <div>
             {doctor.name} {doctor.lastName}
           </div>
-          <div>{doctor.desc}</div>
+          <div>{doctor.rating}⭐</div>
         </div>
       </div>
     </>

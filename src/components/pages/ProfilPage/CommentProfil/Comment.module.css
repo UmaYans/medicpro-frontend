@@ -1,0 +1,31 @@
+.comment_wrapper {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+.comment {
+    display: inline-block;
+    background-color: gray;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+.comment::before {
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    right: 20px;
+    border: 12px solid gray;
+    border-right: transparent;
+    border-bottom: transparent;
+    transform: rotate(45deg);
+}
+button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: red;
+}

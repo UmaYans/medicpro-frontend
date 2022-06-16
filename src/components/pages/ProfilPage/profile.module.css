@@ -1,0 +1,20 @@
+.main {
+    background-color: whitesmoke;
+}
+.flex{
+    display: flex;
+}
+.wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.sidebar{
+    width: 30%;
+    text-decoration: none;
+}
+.content{
+    width: 70%;
+}
+LINK{
+text-decoration: none;
+}

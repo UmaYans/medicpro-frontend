@@ -12,7 +12,7 @@ export const getCommentsByUser = createAsyncThunk(
     const state = thunkAPI.getState();
 
     try {
-      const res = await fetch("http://localhost:4100/userCom", {
+      const res = await fetch("/userCom", {
         headers: {
           Authorization: `Bearer ${state.user.token}`,
         },
@@ -36,13 +36,49 @@ export const deleteComment = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const state = thunkAPI.getState();
-      await fetch(`http://localhost:4100/comment/${id}`, {
+      await fetch(`/comment/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${state.user.token}`,
         },
       });
       return id;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const getCommentByDoctorId = createAsyncThunk(
+  "get/commentById",
+  async (docId, thunkAPI) => {
+    try {
+      console.log("GettingdoctorById");
+      const res = await fetch(`/docCom/${docId}`);
+      const data = await res.json();
+      return thunkAPI.fulfillWithValue(data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const addComment = createAsyncThunk(
+  "add/comment",
+  async ({ text, docId }, thunkAPI) => {
+    const state = thunkAPI.getState();
+    try {
+      const res = await fetch(`/comment/${docId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${state.user.token}`,
+        },
+        body: JSON.stringify({ text }),
+      });
+
+      const data = await res.json();
+      return thunkAPI.fulfillWithValue(data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
@@ -77,6 +113,17 @@ export const commentsSlcie = createSlice({
         state.loading = false;
         state.error = action.payload.error;
       });
+    builder
+      .addCase(getCommentByDoctorId.fulfilled, (state, action) => {
+        state.comments = action.payload;
+      })
+      .addCase(getCommentByDoctorId.rejected, (state, action) => {
+        state.error = action.payload.error;
+      });
+      builder
+      .addCase(addComment.fulfilled, (state, action) => {
+        state.comments.push(action.payload)
+      })
   },
 });
 

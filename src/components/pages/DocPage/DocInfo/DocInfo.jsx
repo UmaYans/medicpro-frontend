@@ -9,6 +9,7 @@ import {
   postEntry,
 } from "../../../../redux-toolkit/features/entrySlice";
 import CommentsByUser from "../CommentsByUser/CommentsByUser";
+import { getCommentByDoctorId } from "../../../../redux-toolkit/features/comments";
 
 function DocInfo() {
   const [opened, setOpened] = useState(false);
@@ -20,6 +21,7 @@ function DocInfo() {
   useEffect(() => {
     dispatch(getDoctorsById(docId));
     dispatch(getEntryDocId(docId));
+    dispatch(getCommentByDoctorId(docId));
   }, [dispatch, docId]);
 
   const docs = useSelector((state) => state.doctor.doc);

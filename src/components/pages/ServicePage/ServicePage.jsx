@@ -23,18 +23,18 @@ const ServicePage = () => {
         </p>
       </div>
       <div >
-        {service.map((item) => {
+        {service.map((services) => {
           return (
-            <div className={styles.ProRodBlock} key={item._id}>
+            <div className={styles.ProRodBlock} key={services._id}>
             <div className={styles.rodBlock}>
-            <div><img src={item.doc.photo} /></div>
-              <div><h2>{item.name}</h2></div>
-              <div><h4>{item.text}</h4></div>
-              <div className={item.oldPrice ? styles.price : ""}>
-                {item.price}
+            <div><img src={services.doc.photo} /></div>
+              <div><h2>{services.name}</h2></div>
+              <div><h4>{services.text}</h4></div>
+              <div className={services.oldPrice ? styles.price : ""}>
+                {services.price}
               </div>
               <div>
-                <s>{item.oldPrice}</s>
+                <s>{services.oldPrice}</s>
               </div>
             </div>
             </div>

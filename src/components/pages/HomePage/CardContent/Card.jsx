@@ -15,11 +15,11 @@ function Card(props) {
 
   const settings = {
       dots: true,
-      infinite: false,
+      infinite: true,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 3,
-      initialSlide: 0,
+      initialSlide: 3,
   };
 
    
@@ -53,10 +53,10 @@ function Card(props) {
             {doctors.map((doctor) => {
               return (
                 
-                <div style={{ justifyContent: "space-between" }}>
+                <div key={doctor._id}  style={{ justifyContent: "space-between" }}>
                 
                   <div>
-                    <SliderDoc key={doctor._id} doctor={doctor} />
+                    <SliderDoc  doctor={doctor} />
                   </div>
                 </div>
               );

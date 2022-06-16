@@ -99,7 +99,6 @@ export const usersSlice = createSlice({
       });
     builder
       .addCase(auth.fulfilled, (state, action) => {
-        // console.log(action);
         state.token = action.payload;
       })
       .addCase(auth.rejected, (state, action) => {

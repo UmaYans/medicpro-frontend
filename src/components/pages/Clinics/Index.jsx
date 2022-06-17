@@ -34,7 +34,7 @@ const ClinicPage = () => {
         <div className={styles.nav_tabs}>
           <NavLink
             className={ ({ isActive }) => (isActive ? styles.active : "") }
-            to="map"
+            to="/clinics/"
           >
             Карта
           </NavLink>

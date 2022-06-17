@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Map, YMaps, Placemark } from "react-yandex-maps";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { fetchClinics } from "../../../../../redux-toolkit/features/clinic";
+
+import AllPlacemark from "./AllPlacemark";
+import ByIdPlacemark from "./ByIdPlacemark";
 
 import styles from "./withMap.module.css";
 
 const CardsWithMap = () => {
+  const { id } = useParams();
   const dispatch = useDispatch();
-
+  
   const clinics = useSelector((state) => state.clinic.clinics);
 
-  const [filtered, setFiltered] = useState([]);
+  const [filtered, setFiltered] = useState(clinics);
 
   useEffect(() => {
     dispatch(fetchClinics());
@@ -23,38 +27,41 @@ const CardsWithMap = () => {
   return (
     <div className={styles.cards_with_map}>
       <div className={styles.cards}>
-        {clinics.map((clin) => {
-          return (
-            <div key={clin._id} className={styles.card}>
-              <div
-                onClick={() => handleGetPlace(clin._id)}
-                className={styles.name}
-              >
-                {clin.name}
+        {!id ? (
+          clinics.map((clin) => {
+            return (
+              <div key={clin._id} className={styles.card}>
+                <div
+                  onClick={() => handleGetPlace(clin._id)}
+                  className={styles.name}
+                >
+                  <Link to={`../${clin._id}`}>{clin.name}</Link>
+                </div>
+                <div className={styles.place}>{clin.place}</div>
+                <div className={styles.scled}>
+                  <div>пн-cб 08:00 - 21:00</div>
+                  <div>вс 09:00 - 18:00</div>
+                </div>
               </div>
-              <div className={styles.place}>{clin.place}</div>
-              <div className={styles.scled}>
-                <div>пн-cб 08:00 - 21:00</div>
-                <div>вс 09:00 - 18:00</div>
-              </div>
+            )
+          })
+        ) : (filtered.map(item => {
+          return(
+            <div key={item._id}>
+              <div>{item.name}</div>
+              <div><img src={item.photo} /></div>
+              <div><Link to='/clinics/'>Назад</Link></div>
             </div>
-          );
-        })}
+          )
+        }))}
       </div>
-      <YMaps>
-          <div className={styles.map}>
-            <Map
-              width={"100%"}
-              height={"450px"}
-              defaultState={{
-                center: [43.324732, 45.692374],
-                zoom: 17,
-              }}
-            >
-              <Placemark geometry={[43.324732, 45.692374]} />
-            </Map>
-          </div>
-        </YMaps>
+      <div>
+        {id ? (
+          <ByIdPlacemark filtered={filtered} id={id} />
+        ) : (
+          <AllPlacemark clinics={clinics} />
+        )}
+      </div>
     </div>
   );
 };

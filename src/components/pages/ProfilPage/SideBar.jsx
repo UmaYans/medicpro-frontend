@@ -10,11 +10,11 @@ const SideBar = () => {
       </div>
       <hr></hr>
       <div>
-        <Link to="comments"> Мой отзывы</Link>{" "}
+        <Link to="comments"> Мои отзывы</Link>{" "}
       </div>
       <hr></hr>
       <div>
-        <Link to="entry"> Мой записи</Link>{" "}
+        <Link to="entry"> Мои записи</Link>{" "}
       </div>
       <hr></hr>
     </div>

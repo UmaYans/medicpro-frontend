@@ -13,7 +13,7 @@ function CommentsByUser({ comments }) {
   const [text, setText] = useState("");
 
   const addCommentByUser = (e) => {
-    setText("")
+    setText("");
     dispatch(addComment({ text, docId }));
   };
 

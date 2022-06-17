@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getDoctorsById } from "../../../../redux-toolkit/features/doctorSlice";
 import { fetchClinicById } from "../../../../redux-toolkit/features/clinic";
+import {getDoctors} from '../../../../redux-toolkit/features/doctorSlice'
 import style from "./DocInfo.module.css";
 import {
   getEntryDocId,
@@ -19,6 +20,7 @@ function DocInfo() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(getDoctors())
     dispatch(getDoctorsById(docId));
     dispatch(getEntryDocId(docId));
     dispatch(getCommentByDoctorId(docId));
@@ -106,7 +108,7 @@ function DocInfo() {
                   </button>
                 </div>
                 <div className={style.select}>
-                  <select onChange={handleSetValue}>
+                  <select onChange={handleSetValue} className={style.select_css}>
                     <option selected disabled={true} value="Время:">
                       Время:
                     </option>

@@ -149,7 +149,10 @@ function DocInfo() {
             )}
           </div>
         </div>
+        
       </div>
+
+
 
       <div className={style.wrap}>
         <h2 className={style.text}>Место работы</h2>

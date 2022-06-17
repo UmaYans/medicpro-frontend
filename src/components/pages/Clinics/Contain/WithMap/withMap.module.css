@@ -2,9 +2,13 @@ ymaps[class$="map"]:first-child:not(:last-child) {
   display: none;
 }
 
-.cards_with_map {
-  margin-top: 20px;
+[class*="copyrights-pane"] {
+  display: none !important;
+}
 
+.cards_with_map {
+  display: flex;
+  margin-top: 20px;
 }
 
 .cards {
@@ -13,6 +17,11 @@ ymaps[class$="map"]:first-child:not(:last-child) {
 } 
 
 .card{
-  
   margin-top: 20px;
+}
+
+/* react yandex map */
+.rym {
+  width: 1000px;
+  height: 735px;
 }

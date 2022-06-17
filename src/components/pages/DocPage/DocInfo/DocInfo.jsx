@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getDoctorsById } from "../../../../redux-toolkit/features/doctorSlice";
 import { fetchClinicById } from "../../../../redux-toolkit/features/clinic";
-import {getDoctors} from '../../../../redux-toolkit/features/doctorSlice'
+import { getDoctors } from "../../../../redux-toolkit/features/doctorSlice";
 import style from "./DocInfo.module.css";
 import {
   getEntryDocId,
@@ -20,7 +20,7 @@ function DocInfo() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getDoctors())
+    dispatch(getDoctors());
     dispatch(getDoctorsById(docId));
     dispatch(getEntryDocId(docId));
     dispatch(getCommentByDoctorId(docId));
@@ -108,7 +108,10 @@ function DocInfo() {
                   </button>
                 </div>
                 <div className={style.select}>
-                  <select onChange={handleSetValue} className={style.select_css}>
+                  <select
+                    onChange={handleSetValue}
+                    className={style.select_css}
+                  >
                     <option selected disabled={true} value="Время:">
                       Время:
                     </option>
@@ -146,7 +149,10 @@ function DocInfo() {
             )}
           </div>
         </div>
+        
       </div>
+
+
 
       <div className={style.wrap}>
         <h2 className={style.text}>Место работы</h2>

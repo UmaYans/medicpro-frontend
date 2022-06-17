@@ -4,6 +4,7 @@ const initialState = {
   loading: false,
   error: null,
   entry: {},
+  entries: []
 };
 
 export const postEntry = createAsyncThunk(
@@ -39,7 +40,47 @@ export const getEntryDocId = createAsyncThunk(
         headers: { Authorization: `Bearer ${state.user.token}` },
       });
       const data = await res.json();
+      console.log(data);
       return thunkAPI.fulfillWithValue(data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const getEntryByUser = createAsyncThunk(
+  "get/entryUser",
+  async (_, thunkAPI) => {
+    try {
+
+      const state = thunkAPI.getState();
+      const res = await fetch("/entry/user", {
+        headers: {
+          Authorization: `Bearer ${state.user.token}`,
+        },
+      });
+      const data = await res.json();
+      return thunkAPI.fulfillWithValue(data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        error,
+      });
+    }
+  }
+);
+
+export const deleteEntry = createAsyncThunk(
+  "delete/entry",
+  async (id, thunkAPI) => {
+    try {
+      const state = thunkAPI.getState();
+      await fetch(`/entry/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${state.user.token}`,
+        },
+      });
+      return id;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
@@ -77,6 +118,30 @@ export const entrySlice = createSlice({
       .addCase(getEntryDocId.pending, (state, action) => {
         state.loading = true;
         state.error = false;
+      });
+      builder
+      .addCase(getEntryByUser.fulfilled, (state, action) => {
+        state.entries = action.payload;
+        state.loading = false;
+        state.error = true
+      })
+      .addCase(getEntryByUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = true;
+      })
+      .addCase(getEntryByUser.pending, (state, action) => {
+        state.loading = true;
+        state.error = false;
+      });
+      builder
+      .addCase(deleteEntry.fulfilled, (state, action) => {
+        state.loading = false;
+        state.entries = state.entries.filter(
+          (entri) => entri._id !== action.payload
+        )
+      })
+      .addCase(deleteEntry.rejected, (state, action) => {
+        state.error = action.payload.error;
       });
   },
 });

@@ -1,7 +1,26 @@
 .content{
+  margin: 20px;
   display: flex;
   justify-content: space-between;
 }
+/* .content_carts{
+  margin-bottom: 30px;
+display: flex;
+flex-wrap: wrap;
+} */
 .content_carts{
-flex-wrap: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+}
+.input{
+  text-align: center;
+  height: 30px;
+  width: 30%;
+  margin: auto;
+  border-radius: 15px;
+}
+.divInput{
+  width: 80%;
+  margin: auto;
+  align-items: center;
 }

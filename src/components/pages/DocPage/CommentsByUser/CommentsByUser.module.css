@@ -1,5 +1,56 @@
+*{
+  box-sizing: border-box;
+
+}
 .comments{
+  text-align: center;
   width: 80%;
   margin:auto;
   align-items: center;
+}
+.input{
+  text-align: center;
+  border-radius: 10px;
+  height: 30px;
+  width: 50%;
+}
+.bio{
+  color: red;
+  font-size: 25px;
+}
+.button{
+  font-size: 20px;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+margin-left: 20px;
+  height: 30px;
+  width: 10%;
+}
+.button:hover{
+  background-color: white;
+  color: black;
+}
+.comm {
+  font-size: 22px;
+  /* border-radius: 20px; */
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-top: 1px solid black;
+  margin-top:20px;
+}
+.nameComm{
+  width: 80%;
+}
+.nameComm:first-child{
+  text-align: center;
+}
+.btn{
+
+}
+.fal{
+  opacity: 0;
 }

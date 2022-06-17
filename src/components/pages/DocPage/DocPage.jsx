@@ -34,13 +34,15 @@ const DocPage = () => {
 
   return (
     <>
-      <input
-        value={value}
-        className={style.input}
-        type="text"
-        placeholder="Начните поиск врача"
-        onChange={(event) => setValue(event.target.value)}
-      />
+      <div className={style.divInput}>
+        <input
+          value={value}
+          className={style.input}
+          type="text"
+          placeholder="Начните поиск врача....."
+          onChange={(event) => setValue(event.target.value)}
+        />
+      </div>
       <div className={style.content}>
         <div className={style.content_carts}>
           <h1>Врачи</h1>

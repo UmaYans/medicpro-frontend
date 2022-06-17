@@ -6,7 +6,7 @@ function Sidebar({ category, handleCategory }) {
   return (
     <div className={style.cat}>
       <NavLink
-        to={`/docs/${category._id}`}
+        to={`/docs/spec/${category._id}`}
         className={({ isActive }) => (isActive ? style.active : style.none)}
       >
         <div onClick={() => handleCategory(category._id)}>{category.name}</div>

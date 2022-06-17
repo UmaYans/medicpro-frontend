@@ -30,6 +30,7 @@ function DocInfo() {
   const entry = useSelector((state) => state.entry.entry);
   const service = useSelector((state) => state.service.service);
   const comments = useSelector((state) => state.comments.comments);
+  const token = useSelector((state) => state.user.token);
 
   const handleCartOpen = () => setOpened(true);
   const handleCartClose = () => setOpened(false);
@@ -99,7 +100,11 @@ function DocInfo() {
             <div>
               <p>Почта для связи: {docs.eMail}</p>
             </div>
-            {opened ? (
+            {!token ? <div>
+                <button className={style.btn_auth} onClick={handleCartOpen}>
+                  Авторизация не пройдена
+                </button>
+              </div> : (opened ? (
               <div className={style.modal}>
                 <div>
                   <button onClick={handleCartClose} className={style.btn_first}>
@@ -145,7 +150,7 @@ function DocInfo() {
                   Записаться к врачу
                 </button>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </div>
@@ -169,7 +174,7 @@ function DocInfo() {
           </div>
         </div>
       </div>
-      <CommentsByUser comments={comments} />
+      <CommentsByUser comments={comments} token={token}/>
     </>
   );
 }

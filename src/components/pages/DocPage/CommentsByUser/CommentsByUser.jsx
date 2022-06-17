@@ -8,7 +8,7 @@ import {
 import { getUser } from "../../../../redux-toolkit/features/usersSlice";
 import style from "./CommentsByUser.module.css";
 
-function CommentsByUser({ comments }) {
+function CommentsByUser({ comments , token }) {
   const dispatch = useDispatch();
   let { docId } = useParams();
   const users = useSelector((state) => state.user.users);
@@ -38,7 +38,7 @@ function CommentsByUser({ comments }) {
     <>
       <div className={style.comments}>
         <h1> Отзывы </h1>
-        <form action="" onSubmit={(e) => e.preventDefault()}>
+        {token ? (        <form action="" onSubmit={(e) => e.preventDefault()}>
           <input
             className={style.input}
             type="text"
@@ -53,7 +53,7 @@ function CommentsByUser({ comments }) {
             onClick={addCommentByUser}
             disabled={!text}
           />
-        </form>
+        </form>) : ( <div>Пройдите авторизацию для добавления комментарий</div>)}
         {comments.map((item) => {
           return (
             <div key={item._id} className={style.comm}>

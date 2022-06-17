@@ -37,8 +37,8 @@ function App() {
         >
           <Route index element={<HomePage />} />
           <Route path="docs" element={<DocPage />} />
-          <Route path="docs" element={<DocPage />} />
-          <Route path="docs/:id" element={<DocPage />} />
+          <Route path="docs/all" element={<DocPage />} />
+          <Route path="docs/spec/:id" element={<DocPage />} />
           <Route path="docs/:docId" element={<DocInfo />} />
           <Route path="servic" element={<ServicePage />} />
           <Route path="clinics/*" element={<ClinicPage />}>

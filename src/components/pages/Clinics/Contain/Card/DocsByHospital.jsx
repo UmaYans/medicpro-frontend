@@ -11,6 +11,7 @@ const DocsByHospital = ({ docs }) => {
         {docs.name} {docs.lastName}
       </div>
       <div className={styles.desc}>{docs.desc}</div>
+      
     </div>
   );
 };

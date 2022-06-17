@@ -49,16 +49,15 @@ const Header = () => {
             Услуги{" "}
           </Link>
         </div>
-        <div></div> */}
+        <div>
+          <Link to="/profile"> Мой профиль </Link>
+        </div> */}
 
         {/* <span style = {{marginRight:'10%'}}>
               8 800-535-55-55
               Перезвоните нам
             </span> */}
 
-        {/* <Link to="/profile" className={styles.profil}>
-          <b>Мой профиль </b>
-        </Link> */}
         <Link to="/">
           <img
             style={{ width: "15%", marginLeft: "80%" }}

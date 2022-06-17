@@ -1,0 +1,18 @@
+ymaps[class$="map"]:first-child:not(:last-child) {
+  display: none;
+}
+
+.cards_with_map {
+  margin-top: 20px;
+
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+} 
+
+.card{
+  
+  margin-top: 20px;
+}

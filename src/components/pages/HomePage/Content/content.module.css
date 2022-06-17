@@ -1,0 +1,56 @@
+.rodBlock{
+    margin-top: 2%;
+    width: 20%;
+    height: 100%;
+    margin-left: 10%;
+    /* background-color: red; */
+    flex-wrap: wrap;
+    background-color: #f2f6fb;
+    transition: 1s;
+    
+}
+.rodBlock:hover {
+    transform: scale(1.2);
+}
+
+.card{
+    width: 350px;
+    
+}
+.title{
+    text-align: center;
+}
+.images{
+    float:left;
+    overflow:hidden;
+    position:relative;
+    width:338px;
+    margin-bottom: 15px;
+    float:left;
+    height:400px;
+}
+
+/* .images img{
+    width: 10%; 
+    height: 10%;
+     object-fit: cover;
+} */
+
+.texts{
+    text-align: center;
+}
+.buttons{
+    margin-top:5%;
+    border: 1px solid #fdeef6;
+    color: #ff3c8a;
+    background-color: #fdeef6;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 70%;
+    
+}
+a{
+    text-decoration: none;
+    color:#ff0066;
+}

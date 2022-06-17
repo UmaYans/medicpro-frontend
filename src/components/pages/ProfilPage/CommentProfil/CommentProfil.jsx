@@ -24,7 +24,7 @@ const CommentProfil = () => {
               return (
                 <div key={item._id}>
                   <div className={styles.comment}>{item.text}
-                  <button onClick={() => deleteTodo(item._id)}>x</button>
+                  <button className={styles.buttonDel} onClick={() => deleteTodo(item._id)}>x</button>
                   </div>
                 </div>
               );

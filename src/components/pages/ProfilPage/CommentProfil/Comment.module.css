@@ -21,7 +21,7 @@
     border-bottom: transparent;
     transform: rotate(45deg);
 }
-.button {
+.buttonDel {
     background-color: transparent;
     border: none;
     position: absolute;

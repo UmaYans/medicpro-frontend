@@ -11,7 +11,7 @@ export const fetchClinics = createAsyncThunk(
   "clinic/get",
   async (_, thunkAPI) => {
     try {
-      const clinics = await fetch("http://localhost:4100/polyclinics");
+      const clinics = await fetch("/polyclinics");
       return await clinics.json();
     } catch (err) {
       return thunkAPI.rejectWithValue(err);
@@ -24,7 +24,7 @@ export const fetchClinicById = createAsyncThunk(
   async (clinId, thunkAPI) => {
     try {
       const clinics = await fetch(
-        `http://localhost:4100/polyclinics/${clinId}`
+        `/polyclinics/${clinId}`
       );
       return await clinics.json();
     } catch (err) {

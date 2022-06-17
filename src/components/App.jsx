@@ -16,8 +16,7 @@ import ClinicCard from "./pages/Clinics/Contain/Card/Index";
 import MainProfil from "./pages/ProfilPage/MainProfil/MainProfil";
 import CommentProfil from "./pages/ProfilPage/CommentProfil/CommentProfil";
 import EntryProfil from "./pages/ProfilPage/EntryProfil/EntryProfil";
-import AllPlacemark from "./pages/Clinics/Contain/WithMap/AllPlacemark";
-import ByIdPlacemark from "./pages/Clinics/Contain/WithMap/ByIdPlacemark";
+
 
 function App() {
   const token = useSelector((state) => state.user.token);
@@ -33,11 +32,13 @@ function App() {
         />
         <Route
           path="/"
-          // element={<Layout />}
-          element={!token ? <Navigate to="/sign-in" /> : <Layout />}
+          element={<Layout />}
+          // element={!token ? <Navigate to="/sign-in" /> : <Layout />}
         >
           <Route index element={<HomePage />} />
           <Route path="docs" element={<DocPage />} />
+          <Route path="docs" element={<DocPage />} />
+          <Route path="docs/:id" element={<DocPage />} />
           <Route path="docs/:docId" element={<DocInfo />} />
           <Route path="servic" element={<ServicePage />} />
           <Route path="clinics/*" element={<ClinicPage />}>

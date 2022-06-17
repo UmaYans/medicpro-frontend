@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import clinicSlice from "../features/clinic";
-import categoriesSlice from "../features/categories";
+import clinicSlice from "../features/clinicSlice";
+import categoriesSlice from "../features/categoriesSlice";
 import doctorsSlcie from "../features/doctorSlice";
 import usersSlice from "../features/usersSlice";
 import  entrySlice  from "../features/entrySlice";
-import commentsSlcie from "../features/comments";
-import servicesSlice from "../features/service";
+import commentsSlcie from "../features/commentsSlice";
+import servicesSlice from "../features/serviceSlice";
 
 
 export const store = configureStore({

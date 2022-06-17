@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getDoctorsById } from "../../../../redux-toolkit/features/doctorSlice";
-import { fetchClinicById } from "../../../../redux-toolkit/features/clinic";
+import { fetchClinicById } from "../../../../redux-toolkit/features/clinicSlice";
 import { getDoctors } from "../../../../redux-toolkit/features/doctorSlice";
 import style from "./DocInfo.module.css";
 import {
@@ -10,7 +10,7 @@ import {
   postEntry,
 } from "../../../../redux-toolkit/features/entrySlice";
 import CommentsByUser from "../CommentsByUser/CommentsByUser";
-import { getCommentByDoctorId } from "../../../../redux-toolkit/features/comments";
+import { getCommentByDoctorId } from "../../../../redux-toolkit/features/commentsSlice";
 
 function DocInfo() {
   const [opened, setOpened] = useState(false);

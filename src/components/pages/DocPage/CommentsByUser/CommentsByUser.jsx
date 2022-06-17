@@ -1,16 +1,25 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addComment } from "../../../../redux-toolkit/features/comments";
+import {
+  addComment,
+  deleteComment,
+} from "../../../../redux-toolkit/features/comments";
+import { getUser } from "../../../../redux-toolkit/features/usersSlice";
 import style from "./CommentsByUser.module.css";
 
 function CommentsByUser({ comments }) {
   const dispatch = useDispatch();
   let { docId } = useParams();
+  const users = useSelector((state) => state.user.users);
 
-  console.log(comments);
-
+  // const user = `${users.name} ${users.lastName}`;
+  // const userCom = `${comments.userName?.name} ${comments.userName?.lastName}`;
   const [text, setText] = useState("");
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
 
   const addCommentByUser = (e) => {
     setText("");
@@ -21,17 +30,24 @@ function CommentsByUser({ comments }) {
     setText(e.target.value);
   };
 
+  const handleDeleteComment = (id) => {
+    dispatch(deleteComment(id));
+  };
+
   return (
     <>
       <div className={style.comments}>
+        <h1> Отзывы </h1>
         <form action="" onSubmit={(e) => e.preventDefault()}>
           <input
+            className={style.input}
             type="text"
-            placeholder="Введите текст"
+            placeholder="Введите текст......."
             value={text}
             onChange={handleAddComment}
           />
           <input
+            className={style.button}
             type="submit"
             value={"Добавить"}
             onClick={addCommentByUser}
@@ -40,9 +56,22 @@ function CommentsByUser({ comments }) {
         </form>
         {comments.map((item) => {
           return (
-            <div>
-              <div>{item.userName}</div>
-              <div>{item.text}</div>
+            <div key={item._id} className={style.comm}>
+              <div className={style.nameComm}>
+                <div className={style.bio}>
+                  <div>{`${item.userName?.name} ${item.userName?.lastName}`}</div>
+                </div>
+                <div>{item.text}</div>
+              </div>
+              <button
+                onClick={() => handleDeleteComment(item._id)}
+                className={`${style.btn} ${
+                  users._id !== item.userName?._id ? `${style.fal}` : ""
+                } `}
+                disabled={users._id !== item.userName?._id}
+              >
+                ❌
+              </button>
             </div>
           );
         })}
@@ -50,5 +79,6 @@ function CommentsByUser({ comments }) {
     </>
   );
 }
+// console.log(comments.userName?._id);
 
 export default CommentsByUser;

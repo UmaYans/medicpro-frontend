@@ -20,7 +20,7 @@ function DocInfo() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getDoctors());
+    dispatch(getDoctors(docId));
     dispatch(getDoctorsById(docId));
     dispatch(getEntryDocId(docId));
     dispatch(getCommentByDoctorId(docId));
@@ -31,13 +31,12 @@ function DocInfo() {
   const service = useSelector((state) => state.service.service);
   const comments = useSelector((state) => state.comments.comments);
 
-  console.log(entry);
-
   const handleCartOpen = () => setOpened(true);
   const handleCartClose = () => setOpened(false);
 
   const handleEntry = () => {
     dispatch(postEntry({ docId, value }));
+    setOpened(false);
   };
 
   const [time, setTime] = useState([
@@ -149,10 +148,7 @@ function DocInfo() {
             )}
           </div>
         </div>
-        
       </div>
-
-
 
       <div className={style.wrap}>
         <h2 className={style.text}>Место работы</h2>

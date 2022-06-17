@@ -1,3 +1,19 @@
-.cart{
-  width: 300px;
+/* .carts{
+  box-shadow:  0 3px 5px 14px gray;
+  margin: 30px;
+  border: 1px solid black;
+  height: 100%;
+  margin-bottom: 20px;
+}
+.carts img {
+  height: 100%;
+  width: 100%;
+}
+.cartMain{
+  display: flex;
+  flex-wrap: wrap;
+} */
+.cartDoctor{
+  display: flex;
+  flex-wrap: wrap;
 }

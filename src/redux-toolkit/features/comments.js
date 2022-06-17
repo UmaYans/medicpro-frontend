@@ -53,7 +53,6 @@ export const getCommentByDoctorId = createAsyncThunk(
   "get/commentById",
   async (docId, thunkAPI) => {
     try {
-      console.log("GettingdoctorById");
       const res = await fetch(`/docCom/${docId}`);
       const data = await res.json();
       return thunkAPI.fulfillWithValue(data);
@@ -122,6 +121,7 @@ export const commentsSlcie = createSlice({
       });
       builder
       .addCase(addComment.fulfilled, (state, action) => {
+        console.log(action);
         state.comments.push(action.payload)
       })
   },

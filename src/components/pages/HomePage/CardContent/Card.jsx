@@ -14,21 +14,21 @@ function Card(props) {
   const dispatch = useDispatch();
 
   const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      initialSlide: 3,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 3,
+    
   };
 
-   
   useEffect(() => {
     dispatch(getDoctors());
   }, []);
 
   return (
-    <div>
+    <div className={styles.rodsBlock}>
       {/* Локальная карточка сс описанием */}
       <div>
         <h1>Специалисты высочайшего уровня</h1>
@@ -47,16 +47,17 @@ function Card(props) {
 
       {/* Карточка доктора */}
       <div>
+        
         <div className={styles.rods}>
           <Slider {...settings}>
-          
             {doctors.map((doctor) => {
               return (
-                
-                <div key={doctor._id}  style={{ justifyContent: "space-between" }}>
-                
+                <div
+                  key={doctor._id}
+                  style={{ justifyContent: "space-between" }}
+                >
                   <div>
-                    <SliderDoc  doctor={doctor} />
+                    <SliderDoc doctor={doctor} />
                   </div>
                 </div>
               );

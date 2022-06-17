@@ -1,5 +1,8 @@
+.rodsBlock{
+    display: flex;
+}
 .rods{
-    width: 90%;
+    width: 10%;
   
    margin-left: 8%;
 }

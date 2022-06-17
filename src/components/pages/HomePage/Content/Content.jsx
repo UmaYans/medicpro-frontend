@@ -29,7 +29,7 @@ function Content() {
                 <div className={styles.title}><h3>{clin.name}</h3></div>
                 
                 <div className={styles.texts}>{clin.place}</div>
-                <div><button className={styles.buttons}> <Link to={`clinics/list/${clin._id}`} ><a>Подробнее</a></Link> </button></div>
+                <div><button className={styles.buttonss}> <Link to={`clinics/list/${clin._id}`} ><a style={{textDecoration: 'none', color:'#ff0066'}}>Подробнее</a></Link> </button></div>
               </div>
             </div>
           );

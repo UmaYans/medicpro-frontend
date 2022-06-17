@@ -17,7 +17,7 @@ function BlockContent(props) {
                     </p>
                 </div>
             </div>
-            <div >
+            <div className={styles.rightContent} >
                 <img src={doc} className={styles.images} />
             </div>
 

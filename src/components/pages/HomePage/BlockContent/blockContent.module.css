@@ -1,6 +1,7 @@
 .contentBlock{
     display: flex;
     background-color: #f2f6fb;
+    height: 90vh;
 }
 .leftContent{
     vertical-align: middle;
@@ -12,6 +13,10 @@
     font-size: 60px;
     margin: 10% 0;
     
+}
+.rightContent{
+    width: 50%;
+    text-align: center;
 }
 .leftCentrBlock{
     background-color: #ffd6e7;
@@ -25,8 +30,10 @@
     font-size: 1.2rem;
 }
 .images{
+    object-fit: cover;
     height: 100%;
      width: 100%;
+     
 }
 
 

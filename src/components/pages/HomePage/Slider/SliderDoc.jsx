@@ -8,7 +8,7 @@ function SliderDoc({ doctor }) {
     <>
       <div className={styles.rod}>
         <div className={styles.rods}>
-          <div>
+          <div className={styles.doctorImg}>
             <img style={{ width: "100%" }} src={doctor.photo} alt="" />
           </div>
 

@@ -16,6 +16,19 @@ export const getService = createAsyncThunk("get/serv", async (_, thunkAPI) => {
   }
 });
 
+export const getServiceByDocId = createAsyncThunk(
+    "get/servByDocId",
+    async (docId, thunkAPI) => {
+      try {
+        const clinics = await fetch(`/service/doc/${docId}`);
+        const data = await clinics.json();
+        return thunkAPI.fulfillWithValue(data);
+      } catch (err) {
+        return thunkAPI.rejectWithValue(err);
+      }
+    }
+  );
+
 export const servicesSlice = createSlice({
   name: "service",
   initialState,
@@ -32,6 +45,19 @@ export const servicesSlice = createSlice({
         state.error = action.payload.error;
       })
       .addCase(getService.pending, (state, action) => {
+        state.loading = true;
+        state.error = null;
+      })
+      builder
+      .addCase(getServiceByDocId.fulfilled, (state, action) => {
+        state.loading = false;
+        state.service = action.payload;
+      })
+      .addCase(getServiceByDocId.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload.error;
+      })
+      .addCase(getServiceByDocId.pending, (state, action) => {
         state.loading = true;
         state.error = null;
       });

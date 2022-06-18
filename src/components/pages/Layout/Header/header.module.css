@@ -1,26 +1,29 @@
-.header{
-    /* background-color:red; */
-    width: 99%;
-    display: flex;
-    justify-content: space-between;
-    padding: 1% 0;
-    
-    
-}
-.headBlock{
-display: flex;
+.header {
+  /* background-color:red; */
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 0;
+  align-items: center;
 }
 
-.service{
-    margin-right:35%;
-    margin-top: 1%;
-    
+.headBlock {
+  display: flex;
 }
 
-.profil{
-    margin-right: 5%;
-    color: #fc6f03;
-    text-decoration: none;
-    margin-top: 1%;
-    
+.service {
+  margin-right: 35%;
+  margin-top: 1%;
 }
+
+.profil {
+  margin-right: 5%;
+  color: #fc6f03;
+  text-decoration: none;
+  margin-top: 1%;
+}
+
+.MuiSvgIcon-root {
+  font-size: large;
+}
+ 

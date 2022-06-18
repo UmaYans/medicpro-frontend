@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { auth } from "../../../redux-toolkit/features/usersSlice";
+import style from "./Sigin.module.css"
+
 
 const SigninPage = () => {
   const dispatch = useDispatch();
@@ -113,7 +115,10 @@ const SigninPage = () => {
               Нет аккаунта? <Link to="/sign-up">Зарегистрируйтесь!</Link>
             </p>
           </div>
+
         </form>
+        <div>Войти как <Link to="/">гость</Link></div>
+
       </div>
     </>
   );

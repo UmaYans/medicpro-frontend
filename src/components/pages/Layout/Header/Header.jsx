@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-// import logo from "./image/logo.jpg";
+import logo from "./image/logo.jpg";
 import styles from "./header.module.css";
 import React from "react";
 import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
-import MonitorHeartTwoToneIcon from "@mui/icons-material/MonitorHeartTwoTone";
 import { useSelector } from "react-redux";
 
 const Header = () => {
@@ -22,7 +21,7 @@ const Header = () => {
         <Link to="/clinics"> Клиники </Link>
         <Link to="/servic"> Услуги </Link>
         {token ? (
-          <Link to="/profile"> Личный кабинет</Link>
+          <Link to="/profile"><AccountCircleTwoToneIcon style={{fontSize: "48px"}}/></Link>
         ) : (
           <Link to="/sign-in">Войти</Link>
         )}

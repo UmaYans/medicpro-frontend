@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./list.module.css";
-import { fetchClinics } from "../../../../../redux-toolkit/features/clinic";
+import { fetchClinics } from "../../../../../redux-toolkit/features/clinicSlice";
 import Card from "./Card";
 
 const List = () => {

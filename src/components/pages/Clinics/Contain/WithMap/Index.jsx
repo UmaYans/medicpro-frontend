@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { fetchClinics } from "../../../../../redux-toolkit/features/clinic";
+import { fetchClinics } from "../../../../../redux-toolkit/features/clinicSlice";
 
 import AllPlacemark from "./AllPlacemark";
 import ByIdPlacemark from "./ByIdPlacemark";

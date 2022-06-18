@@ -1,25 +1,55 @@
-.content{
-  margin: 20px;
+.body {
+  background-color: #eef2f8;
+  min-height: 83vh;
+}
+.container {
   display: flex;
   justify-content: space-between;
 }
-/* .content_carts{
-  margin-bottom: 30px;
-display: flex;
-flex-wrap: wrap;
-} */
-.content_carts{
+.left {
+  width: 84%;
+}
+.right {
+  width: 16%;
+}
+.baner {
+  background: linear-gradient(26.04deg, #6713d2, #cc208e);
+  box-shadow: 0 6px 16px rgb(26 61 107 / 16%);
+  padding: 16px 20px;
+  color: #fff;
+  height: 10vh;
+  width: 75%;
+  margin: 2vh auto 3vh auto;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 12px;
+}
+.titCat {
+  height: 5vh;
+  margin-top: 2vh;
+  box-shadow: 0 6px 16px rgb(26 61 107 / 16%);
+  background: linear-gradient(26.04deg, #cc208e, #6713d2, rgb(30, 20, 167));
+  color: #fff;
+  font-size: 19px;
+  font-weight: 600;
+text-align: center;
+
+
+}
+
+.content_carts {
   display: flex;
   flex-wrap: wrap;
 }
-.input{
+.input {
   text-align: center;
   height: 30px;
-  width: 30%;
-  margin: auto;
+  width: 60%;
+  margin: auto 8em;
   border-radius: 15px;
 }
-.divInput{
+.divInput {
   width: 80%;
   margin: auto;
   align-items: center;

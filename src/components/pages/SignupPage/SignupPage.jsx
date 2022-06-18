@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import InputMask from "react-input-mask";
 import { registerUser } from "../../../redux-toolkit/features/usersSlice";
+import style from "./Signup.module.css"
 
 const SignupPage = () => {
   const dispatch = useDispatch();
@@ -137,9 +138,9 @@ const SignupPage = () => {
   };
   const disabled = name && lastName && login && password && telephone;
   return (
-    <>
-      <div className="content">
-        <h1>Регистрация</h1>
+    <div className={style.body}>
+      <div className={style.content}>
+        <h2>Регистрация</h2>
         <div>{error}</div>
         <form onSubmit={handleSubmit}>
           <i>Имя</i>
@@ -196,20 +197,19 @@ const SignupPage = () => {
           </div>
           <br />
           <div>
-            {" "}
             <button onClick={handleReg} disabled={signUp || !disabled}>
               Зарегистрироваться
             </button>
           </div>
           <div>
-            {" "}
             <p>
               Уже есть аккаунт? <Link to="/sign-in">Войти</Link>{" "}
             </p>
           </div>
         </form>
+          <div>Войти как <Link to="/">гость</Link></div>
       </div>
-    </>
+    </div>
   );
 };
 

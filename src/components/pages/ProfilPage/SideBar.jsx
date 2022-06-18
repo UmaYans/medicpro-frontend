@@ -23,7 +23,9 @@ const SideBar = () => {
         <Link to="entry"> Мои записи</Link>{" "}
       </div>
       <hr></hr>
-      <button onClick={unSign}>xxxx</button>
+      <button onClick={unSign}>
+        <Link to="/">Выйти ←]</Link>
+      </button>
     </div>
   );
 };

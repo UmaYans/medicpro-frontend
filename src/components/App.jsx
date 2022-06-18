@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
-
 import { modules } from "./pages/Main";
 
 function App() {
@@ -17,17 +16,19 @@ function App() {
         />
         <Route
           path="/"
-          // element={<Layout />}
-          element={!token ? <Navigate to="/sign-in" /> : <modules.Layout />}
+          element={<modules.Layout />}
+          // element={!token ? <Navigate to="/sign-in" /> : <Layout />}
         >
           <Route index element={<modules.HomePage />} />
           <Route path="docs" element={<modules.DocPage />} />
+          <Route path="docs/all" element={<modules.DocPage />} />
+          <Route path="docs/spec/:id" element={<modules.DocPage />} />
           <Route path="docs/:docId" element={<modules.DocInfo />} />
           <Route path="servic" element={<modules.ServicePage />} />
           <Route path="clinics/*" element={<modules.ClinicPage />}>
             {/* <Route index element={<CardsWithMap />} /> */}
-            <Route index element={<modules.CardsWithMap />} />
-            <Route path=":id" element={<modules.CardsWithMap />} />
+            <Route index element={<modules.CardsWithMap />}/>
+            <Route path=":id" element={<modules.CardsWithMap />}/>
             <Route path="list" element={<modules.List />} />
           </Route>
           <Route path="clinics/list/:clinId" element={<modules.ClinicCard />} />

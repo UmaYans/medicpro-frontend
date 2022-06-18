@@ -138,12 +138,13 @@ const SignupPage = () => {
   };
   const disabled = name && lastName && login && password && telephone;
   return (
-    <div className={style.body}>
+    <div className={style.main}>
+    <div className={style.backGround}>
       <div className={style.content}>
-        <h2>Регистрация</h2>
+        <h2 className={style.title}>Регистрация</h2>
         <div>{error}</div>
         <form onSubmit={handleSubmit}>
-          <i>Имя</i>
+        <i className={style.userName}>Имя</i>
           <div>
             {nameDirty && nameError && <div>{nameError}</div>}
             <input
@@ -155,7 +156,7 @@ const SignupPage = () => {
               onChange={(e) => handleChangeName(e)}
             />
           </div>
-          <i>Фамилия</i>
+          <i className={style.userLast}>Фамилия</i>
           <div>
             {lastNameDirty && lastNameError && <div>{lastNameError}</div>}
             <input
@@ -167,7 +168,7 @@ const SignupPage = () => {
               onChange={(e) => handleChangeLastName(e)}
             />
           </div>
-          <i>Логин</i>
+          <i className={style.userLog}>Логин</i>
           <div>
             {loginDirty && emailError && <div>{emailError}</div>}
             <input
@@ -179,7 +180,7 @@ const SignupPage = () => {
               onChange={handleChangeLogin}
             />
           </div>
-          <i>Пароль</i>
+          <i className={style.userPassword}>Пароль</i>
           <div>
             {passwordDirty && passwordError && <div>{passwordError}</div>}
             <input
@@ -193,22 +194,23 @@ const SignupPage = () => {
           </div>
           <i>Номер телефона</i>
           <div>
-            <PhoneInput value={telephone} onChange={handleInput}></PhoneInput>
+            <PhoneInput className={style.inputs} value={telephone} onChange={handleInput}></PhoneInput>
           </div>
           <br />
           <div>
-            <button onClick={handleReg} disabled={signUp || !disabled}>
+            <button className={style.button} onClick={handleReg} disabled={signUp || !disabled}>
               Зарегистрироваться
             </button>
           </div>
           <div>
             <p>
-              Уже есть аккаунт? <Link to="/sign-in">Войти</Link>{" "}
+              Уже есть аккаунт? <Link className={style.gets1} to="/sign-in">Войти</Link>{" "}
             </p>
           </div>
         </form>
-          <div>Войти как <Link to="/">гость</Link></div>
+          <div>Войти как <Link className={style.gets2} to="/">гость</Link></div>
       </div>
+    </div>
     </div>
   );
 };

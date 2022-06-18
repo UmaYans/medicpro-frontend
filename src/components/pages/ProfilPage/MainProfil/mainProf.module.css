@@ -1,3 +1,18 @@
 .main {
-    background-color: aqua;
+  background-color: aqua;
+}
+.banner {
+  height: 8vh;
+  margin-top: 2vh;
+  box-shadow: 0 6px 16px rgb(26 61 107 / 16%);
+  background: linear-gradient(26.04deg, #cc208e, #6713d2, rgb(30, 20, 167));
+  color: #fff;
+  font-size: 19px;
+  font-weight: 600;
+  text-align: center;
+  align-items: center;
+  padding: 2vh;
+  border-radius: 15px;
+  width: 80%;
+  margin: auto;
 }

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  userComments: [],
   comments: [],
   loading: false,
   error: null,
@@ -92,7 +93,7 @@ export const commentsSlcie = createSlice({
     builder
       .addCase(getCommentsByUser.fulfilled, (state, action) => {
         state.loading = false;
-        state.comments = action.payload;
+        state.userComments = action.payload;
       })
       .addCase(getCommentsByUser.pending, (state, action) => {
         state.loading = true;
@@ -107,6 +108,9 @@ export const commentsSlcie = createSlice({
         state.comments = state.comments.filter(
           (comment) => comment._id !== action.payload
         );
+        state.userComments = state.userComments.filter(
+          (comment) => comment._id !== action.payload
+        );
       })
       .addCase(deleteComment.rejected, (state, action) => {
         state.loading = false;
@@ -119,11 +123,10 @@ export const commentsSlcie = createSlice({
       .addCase(getCommentByDoctorId.rejected, (state, action) => {
         state.error = action.payload.error;
       });
-      builder
-      .addCase(addComment.fulfilled, (state, action) => {
-        console.log(action);
-        state.comments.push(action.payload)
-      })
+    builder.addCase(addComment.fulfilled, (state, action) => {
+      console.log(action);
+      state.comments.push(action.payload);
+    });
   },
 });
 

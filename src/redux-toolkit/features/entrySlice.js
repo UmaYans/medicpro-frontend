@@ -122,6 +122,8 @@ export const entrySlice = createSlice({
       builder
       .addCase(getEntryByUser.fulfilled, (state, action) => {
         state.entries = action.payload;
+        console.log(action.payload);
+
         state.loading = false;
         state.error = true
       })

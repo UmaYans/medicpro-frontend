@@ -1,31 +1,36 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import style from "./Sidebar.module.css";
 
 import React from "react";
 
+const unSign = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("id");
+  window.location.reload();
+}
 const SideBar = () => {
-  const unSign = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("id");
-    window.location.reload();
-  };
 
   return (
-    <div>
+    <div className={style.sidebare}>
       <div>
-        <Link to="inform"> Мой профиль</Link>{" "}
+        <div className={style.handle}>
+          <NavLink to="inform"> Мой профиль</NavLink>
+        </div>
+        <hr></hr>
+        <div className={style.handle}>
+          <NavLink to="comments"> Мои отзывы</NavLink>
+        </div >
+        <hr></hr>
+        <div className={style.handle}>
+          <NavLink to="entry"> Мои записи</NavLink>
+        </div>
+        <hr></hr>
       </div>
-      <hr></hr>
       <div>
-        <Link to="comments"> Мои отзывы</Link>{" "}
+        <button onClick={unSign}>
+          <Link to="/">Выйти ←]</Link>
+        </button>
       </div>
-      <hr></hr>
-      <div>
-        <Link to="entry"> Мои записи</Link>{" "}
-      </div>
-      <hr></hr>
-      <button onClick={unSign}>
-        <Link to="/">Выйти ←]</Link>
-      </button>
     </div>
   );
 };

@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import logo from "./image/logo.jpg";
+// import logo from "./image/logo.jpg";
 import styles from "./header.module.css";
 import React from "react";
+import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
+import MonitorHeartTwoToneIcon from "@mui/icons-material/MonitorHeartTwoTone";
 import { useSelector } from "react-redux";
 
 const Header = () => {

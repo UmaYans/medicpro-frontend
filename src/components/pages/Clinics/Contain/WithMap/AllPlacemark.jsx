@@ -3,7 +3,7 @@ import React from "react";
 
 import styles from "./withMap.module.css";
 
-const AllPlacemark = ({clinics}) => {
+const AllPlacemark = ({ clinics }) => {
   return (
     <div className={styles.rym}>
       <YMaps
@@ -15,10 +15,10 @@ const AllPlacemark = ({clinics}) => {
         <div className={styles.map}>
           <Map
             width={"100%"}
-            height={"450px"}
+            height={"465px"}
             defaultState={{
               center: [43.318365, 45.692423],
-              zoom: 14,
+              zoom: 13,
               controls: ["zoomControl", "fullscreenControl"],
             }}
             modules={["control.ZoomControl", "control.FullscreenControl"]}
@@ -29,14 +29,24 @@ const AllPlacemark = ({clinics}) => {
                   key={item._id}
                   geometry={item.coordinates}
                   properties={{
-                    balloonContentBody: item.name,
+                    balloonContentHeader: item.name,
+                    balloonContentBody: `<img src=${item.photo} width="400px"/>`,
+                    balloonContentFooter: item.place,
+                    iconLayout: "default#image",
+                    iconImageHref: item.photo,
+                    iconImageSize: [120, 120],
+                    iconImageOffset: [-20, -20],
+                  }}
+                  options={{
+                    preset: "islands#circleDotIcon",
+                    iconColor: "blue",
                   }}
                 />
               );
             })}
           </Map>
         </div>
-      </YMaps>{" "}
+      </YMaps>
     </div>
   );
 };

@@ -13,6 +13,7 @@ const CardsWithMap = () => {
   const dispatch = useDispatch();
 
   const clinics = useSelector((state) => state.clinic.clinics);
+  const loading = useSelector((state) => state.clinic.loading);
 
   const [filtered, setFiltered] = useState(clinics);
 
@@ -24,43 +25,60 @@ const CardsWithMap = () => {
     setFiltered(clinics.filter((item) => item._id === id));
   };
 
+  if (loading) {
+    return (
+      <div className={styles.spinner}>
+        <span>L</span>
+        <span>O</span>
+        <span>A</span>
+        <span>D</span>
+        <span>I</span>
+        <span>N</span>
+        <span>G</span>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.cards_with_map}>
-      <div className={styles.scrollbar} id="style-15">
-        <div className={styles.force_overflow}>
-          <div className={styles.cards}>
-            {!id
-              ? clinics.map((clin) => {
-                  return (
-                    <div key={clin._id} className={styles.card}>
-                      <div
-                        onClick={() => handleGetPlace(clin._id)}
-                        className={styles.name}
-                      >
-                        <Link to={`../${clin._id}`}>{clin.name}</Link>
-                      </div>
-                      <div className={styles.place}>{clin.place}</div>
-                      <div className={styles.scled}>
-                        <div>пн-cб 08:00 - 21:00</div>
-                        <div>вс 09:00 - 18:00</div>
-                      </div>
+      {!id ? (
+        <div className={styles.scrollbar} id={styles.style_15}>
+          <div className={styles.force_overflow}>
+            <div className={styles.cards}>
+              {clinics.map((clin) => {
+                return (
+                  <div key={clin._id} className={styles.card}>
+                    <div
+                      onClick={() => handleGetPlace(clin._id)}
+                      className={styles.name}
+                    >
+                      <Link to={`../${clin._id}`}>{clin.name}</Link>
                     </div>
-                  );
-                })
-              : filtered.map((item) => {
-                  return (
-                    <div key={item._id}>
-                      <div>{item.name}</div>
-                      {/* <div><img src={item.photo} /></div> */}
-                      <div>
-                        <Link to="/clinics/">Назад</Link>
-                      </div>
+                    <div className={styles.place}>{clin.place}</div>
+                    <div className={styles.center_info}>
+                      <div className={styles.schled}>понедельник-пятница - 08:00 - 21:00</div>
+                      <div className={styles.schled}>cyббота - 09:00 - 18:00</div>
+                      <div className={styles.schled}>воскресенье - выходной</div>
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        filtered.map((item) => {
+          return (
+            <div key={item._id}>
+              <div>{item.name}</div>
+              <div>
+                <Link to="/clinics/">Назад</Link>
+              </div>
+            </div>
+          );
+        })
+      )}
+
       <div>
         {id ? (
           <ByIdPlacemark filtered={filtered} id={id} />

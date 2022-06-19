@@ -3,12 +3,14 @@ import { YMaps, Map, Placemark } from "react-yandex-maps";
 import styles from "./withMap.module.css";
 
 const ByIdPlacemark = ({ filtered }) => {
- 
+
+
   return (
     <div className={styles.rym}>
       {filtered?.map((item) => {
         return (
-          <YMaps key={item._id}
+          <YMaps
+            key={item._id}
             query={{
               ns: "use-load-option",
               load: "Map,Placemark,control.ZoomControl,control.FullscreenControl,geoObject.addon.balloon",
@@ -25,19 +27,22 @@ const ByIdPlacemark = ({ filtered }) => {
                 }}
                 modules={["control.ZoomControl", "control.FullscreenControl"]}
               >
-                <Placemark className={styles.placemark}
+                <Placemark
+                  className={styles.placemark}
                   key={item._id}
                   geometry={item.coordinates}
-                  // preset='islands#dotIcon',
-                  // iconColor='red',
                   properties={{
                     balloonContentHeader: item.name,
                     balloonContentBody: `<img src=${item.photo} width="400px"/>`,
                     balloonContentFooter: item.place,
-                    iconLayout: 'default#image',
+                    iconLayout: "default#image",
                     iconImageHref: item.photo,
                     iconImageSize: [120, 120],
                     iconImageOffset: [-20, -20],
+                  }}
+                  options={{
+                    preset: "islands#circleDotIcon",
+                    iconColor: "green",
                   }}
                 />
               </Map>

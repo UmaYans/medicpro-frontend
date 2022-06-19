@@ -11,8 +11,8 @@
 }
 
 .inner {
-  border: 1px solid #000000;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 25px;
   width: 45%;
   margin: 1%;
   box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.2);
@@ -23,22 +23,10 @@
   transform: scale(1)
 }
 
-/* .clinic {
-  flex-grow: 0;
-  flex-basis: 33.3333%;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-} */
-
-/* .name {
-  padding: 20px 0;
-} */
-
 .image {
   display: block;
-  width: 180px;
-  height: 150px;
+  width: 300px;
+  height: 250px;
   margin-right: 24px;
   margin: 20px 0;
   text-align: center;
@@ -72,25 +60,75 @@
   line-height: 40px;
 }
 
-.loader {
-  position: relative;
-  margin-top: 20px;
-  width: 300px;
-  height: 300px;
-  left: 40%;
-  border-radius: 50%;
-  border: 6px solid rgba(255, 255, 255, 0.2);
-  border-top: 8px solid rgb(56, 13, 186);
-  border-right: 8px solid rgb(30, 35, 30);
-  border-bottom: 8px solid rgb(183, 183, 183);
-  animation: preloader 26s linear infinite;
+.btn_more {
+  border: none;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
 }
 
-@keyframes preloader {
-  0%{
-    transform: rotate(34999deg);
-  }
-   100%{
-    transform: rotate(369deg);
-  }
+.btn_more:active {
+  transform: scale(1.1)
 }
+
+
+.btn_more a {
+  color: black;
+  text-decoration: none;  
+}
+
+
+ 
+/* прелоадер */
+.spinner {
+  height: 450px;
+  width: 100%;
+  font-size: 48px;
+  font-weight: 600;
+  font-family: monospace;
+  letter-spacing: 1em;
+  color:#cc208e;
+  filter: drop-shadow(0 0 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ .spinner span {
+  animation: loading6454 1.75s ease infinite;
+ }
+ 
+ .spinner span:nth-child(2) {
+  animation-delay: 0.25s;
+ }
+ 
+ .spinner span:nth-child(3) {
+  animation-delay: 0.5s;
+ }
+ 
+ .spinner span:nth-child(4) {
+  animation-delay: 0.75s;
+ }
+ 
+ .spinner span:nth-child(5) {
+  animation-delay: 1s;
+ }
+ 
+ .spinner span:nth-child(6) {
+  animation-delay: 1.25s;
+ }
+ 
+ .spinner span:nth-child(7) {
+  animation-delay: 1.5s;
+ }
+ 
+ @keyframes loading6454 {
+  0%, 100% {
+   transform: translateY(0);
+  }
+ 
+  50% {
+   transform: translateY(-10px);
+  }
+ }

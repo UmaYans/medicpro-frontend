@@ -12,13 +12,14 @@ const Card = ({ clin }) => {
             <img src={clin.photo} alt="clinic" />
           </div>
           <div className={styles.center_info}>
-            <div className={styles.schled}>пн-cб 08:00 - 21:00</div>
-            <div className={styles.schled}>вс 09:00 - 18:00</div>
+            <div className={styles.schled}>пн-пт 08:00 - 21:00</div>
+            <div className={styles.schled}>c6 09:00 - 18:00</div>
+            <div className={styles.schled}>вс выходной</div>
           </div>
         </div>
         <div className={styles.hosplace}>{clin.place}</div>
       </div>
-      <button><Link to={`${clin._id}`}>Подробнее</Link></button>
+      <button className={styles.btn_more}><Link to={`${clin._id}`}>Подробнее</Link></button>
     </div>
   );
 };

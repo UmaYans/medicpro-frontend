@@ -54,7 +54,7 @@ const clinicSlice = createSlice({
       });
     builder
       .addCase(fetchClinicById.fulfilled, (state, action) => {
-        state.loading = false;
+        state.loading = true;
         state.hospital = action.payload;
       })
       .addCase(fetchClinicById.pending, (state, action) => {

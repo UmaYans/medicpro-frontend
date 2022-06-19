@@ -1,0 +1,18 @@
+.content{
+  color: white;
+  padding: 20px;
+  background: linear-gradient(26.04deg,#6713d2,#cc208e);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.first {
+  align-items: center;
+  width: 30%;
+display: flex;
+justify-content:space-around;
+font-size: 22px;
+}
+.text{
+  margin-left: 10px;
+}

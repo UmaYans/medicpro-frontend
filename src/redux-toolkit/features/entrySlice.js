@@ -4,7 +4,7 @@ const initialState = {
   loading: false,
   error: null,
   entry: {},
-  entries: []
+  entries: [],
 };
 
 export const postEntry = createAsyncThunk(
@@ -40,7 +40,6 @@ export const getEntryDocId = createAsyncThunk(
         headers: { Authorization: `Bearer ${state.user.token}` },
       });
       const data = await res.json();
-      console.log(data);
       return thunkAPI.fulfillWithValue(data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -52,7 +51,6 @@ export const getEntryByUser = createAsyncThunk(
   "get/entryUser",
   async (_, thunkAPI) => {
     try {
-
       const state = thunkAPI.getState();
       const res = await fetch("/entry/user", {
         headers: {
@@ -119,13 +117,13 @@ export const entrySlice = createSlice({
         state.loading = true;
         state.error = false;
       });
-      builder
+    builder
       .addCase(getEntryByUser.fulfilled, (state, action) => {
         state.entries = action.payload;
         console.log(action.payload);
 
         state.loading = false;
-        state.error = true
+        state.error = true;
       })
       .addCase(getEntryByUser.rejected, (state, action) => {
         state.loading = false;
@@ -135,12 +133,12 @@ export const entrySlice = createSlice({
         state.loading = true;
         state.error = false;
       });
-      builder
+    builder
       .addCase(deleteEntry.fulfilled, (state, action) => {
         state.loading = false;
         state.entries = state.entries.filter(
           (entri) => entri._id !== action.payload
-        )
+        );
       })
       .addCase(deleteEntry.rejected, (state, action) => {
         state.error = action.payload.error;

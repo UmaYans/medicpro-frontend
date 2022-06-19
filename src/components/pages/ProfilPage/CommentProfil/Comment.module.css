@@ -1,31 +1,53 @@
+.banner {
+  height: 8vh;
+  margin-top: 2vh;
+  box-shadow: 0 6px 16px rgb(26 61 107 / 16%);
+  background: linear-gradient(26.04deg, #cc208e, #6713d2, rgb(30, 20, 167));
+  color: #fff;
+  padding: 2vh;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  align-items: center;
+  border-radius: 15px;
+  width: 80%;
+  margin: 2vh auto;
+}
 .comment_wrapper {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
+  text-align: center;
+}
+
+.com {
+  padding: 10px 0;
+  background: rgba(212, 212, 244, 0.712);
+  border-radius: 15px;
+  width: 90%;
+  margin: auto;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 .comment {
-    display: inline-block;
-    background-color: gray;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    position: relative;
 }
-.comment::before {
-    position: absolute;
-    content: '';
-    bottom: -5px;
-    right: 20px;
-    border: 12px solid gray;
-    border-right: transparent;
-    border-bottom: transparent;
-    transform: rotate(45deg);
+.text {
+  display: inline-block;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  position: relative;
 }
 .buttonDel {
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    top: 0;
-    right: 5px;
-    color: red;
+  margin-right: 1em;
+}
+.button {
+  padding: 15px;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  margin-top: 1.5vh;
+  align-items: center;
+  color: red;
+  cursor: pointer;
 }

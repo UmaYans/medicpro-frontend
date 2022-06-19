@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getService } from "../../../redux-toolkit/features/serviceSlice";
 import styles from "./service.module.css";
 const ServicePage = () => {
@@ -25,9 +26,10 @@ const ServicePage = () => {
       <div >
         {service.map((services) => {
           return (
+            
             <div className={styles.ProRodBlock} key={services._id}>
             <div className={styles.rodBlock}>
-            <div><img src={services.doc.photo} /></div>
+            <div>Услуга от доктора {services.doc?.name} {services.doc?.lastName}</div>
               <div><h2>{services.name}</h2></div>
               <div><h4>{services.text}</h4></div>
               <div className={services.oldPrice ? styles.price : ""}>
@@ -36,6 +38,7 @@ const ServicePage = () => {
               <div>
                 <s>{services.oldPrice}</s>
               </div>
+              <button><Link to={`/docs/${services.doc?._id}`}>Записаться на прием →</Link></button>
             </div>
             </div>
           );

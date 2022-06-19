@@ -1,5 +1,6 @@
 .main {
     background-color: whitesmoke;
+    min-height: 85vh;
 }
 .flex{
     display: flex;
@@ -11,6 +12,7 @@
 .sidebar{
     width: 30%;
     text-decoration: none;
+    min-height: 85vh;
 }
 .content{
     width: 70%;

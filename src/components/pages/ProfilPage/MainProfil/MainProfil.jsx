@@ -13,9 +13,15 @@ const MainProfil = () => {
 
   return (
     <div className={styles.main}>
-      <div>{users.name}</div>
-      <div>{users.lastName}</div>
-      <div>{users.telephone}</div>
+      <div className={styles.banner}>
+        Скидки 15% для всех зарегистрированных
+      </div>
+      <div>
+      <div>Информация об аккаунте</div>
+      <div>Имя: {users.name}</div>
+      <div>Фамилия: {users.lastName}</div>
+      <div>Телефон: {users.telephone}</div>
+      </div>
     </div>
   );
 };

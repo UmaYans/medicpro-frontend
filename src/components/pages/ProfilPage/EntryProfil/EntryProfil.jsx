@@ -26,7 +26,7 @@ const EntryProfil = () => {
         <span className={styles.banner_butText}>предоставление дополнительных услуг по прайсу </span>
       </div>
       <div>
-        <div>Запланированны записи</div>
+        <div className={styles.title}>Запланированны записи</div>
         {entries.map((item) => {
           return (
             <div key={item._id}>

@@ -121,7 +121,7 @@ const SigninPage = () => {
             </div>
             <div>
               <div className={style.forgotPass}>забыли пароль?</div>
-              <button className={style.button} onClick={handleAuth}>
+              <button disabled={loginDirty || passwordDirty} className={style.button} onClick={handleAuth}>
                 Войти
               </button>
             </div>

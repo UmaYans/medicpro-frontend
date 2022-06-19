@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const token = useSelector((state) => state.user.token);
+  
   return (
     <>
       <header className={styles.header}>
@@ -18,10 +19,10 @@ const Header = () => {
           />
         </Link>
         <Link to="/docs"> Врачи </Link>
-        <Link to="/clinics"> Клиники </Link>
-        <Link to="/servic"> Услуги </Link>
+        <Link to="/clinics/"> Клиники </Link>
+        <Link to="/service"> Услуги </Link>
         {token ? (
-          <Link to="/profile"><AccountCircleTwoToneIcon style={{fontSize: "48px"}}/></Link>
+          <Link className={styles.profilе} to="/profile"><AccountCircleTwoToneIcon style={{fontSize: "48px"}}/></Link>
         ) : (
           <Link to="/sign-in">Войти</Link>
         )}

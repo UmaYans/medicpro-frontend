@@ -24,11 +24,11 @@ function App() {
           <Route path="docs/all" element={<modules.DocPage />} />
           <Route path="docs/spec/:id" element={<modules.DocPage />} />
           <Route path="docs/:docId" element={<modules.DocInfo />} />
-          <Route path="servic" element={<modules.ServicePage />} />
+          <Route path="service" element={<modules.ServicePage />} />
           <Route path="clinics/*" element={<modules.ClinicPage />}>
             {/* <Route index element={<CardsWithMap />} /> */}
-            <Route index element={<modules.CardsWithMap />}/>
-            <Route path=":id" element={<modules.CardsWithMap />}/>
+            <Route index element={<modules.CardsWithMap />} />
+            <Route path=":id" element={<modules.CardsWithMap />} />
             <Route path="list" element={<modules.List />} />
           </Route>
           <Route path="clinics/list/:clinId" element={<modules.ClinicCard />} />
@@ -38,8 +38,8 @@ function App() {
             <Route path="comments" element={<modules.CommentProfil />} />
             <Route path="entry" element={<modules.EntryProfil />} />
           </Route>
-          <Route path="*" element={<modules.HomePage />} />
         </Route>
+        <Route path="*" element={<modules.NotFoundPage />} />
       </Routes>
     </>
   );

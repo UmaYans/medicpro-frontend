@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+footer {
+  width: 100%;
+  max-height: 100%;
+  background: linear-gradient(181deg,#ffffff,#ff0000);
+}
+
+footer h2 {
+  padding: 40px 0;
+  text-align: center;
+  color: blue;
+}
+
+.center_footer {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 100px;
+  justify-content: space-around;
+  line-height: 50px;
+}
+
+.about_us {
+  display: flex;
+  flex-direction: column;
+} 
+.about_us h4{
+  color: blue;
+
+}
+.about_us div{
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.for_clients {
+  display: flex;
+  flex-direction: column;
+}
+.for_clients h4 {
+  color: blue;
+}
+.for_clients a {
+  color: black;
+  text-decoration: none;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+}
+.service h4 {
+  color: blue;
+}
+.service div {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -13,8 +13,10 @@ import ClinicCard from "./Clinics/Contain/Card/Index";
 import MainProfil from "./ProfilPage/MainProfil/MainProfil";
 import CommentProfil from "./ProfilPage/CommentProfil/CommentProfil";
 import EntryProfil from "./ProfilPage/EntryProfil/EntryProfil";
+import NotFoundPage from "./NotFoundPage/NotFoundPage";
 
 export const modules = {
+  NotFoundPage,
   Layout,
   ProfilPage,
   ClinicPage,

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { auth } from "../../../redux-toolkit/features/usersSlice";
-import style from "./Sigin.module.css"
-
+import style from "./Sigin.module.css";
 
 const SigninPage = () => {
   const dispatch = useDispatch();
@@ -75,52 +74,75 @@ const SigninPage = () => {
   };
 
   return (
-    <>
-      <div className="content">
-        <form action="" onSubmit={handleSubmit}>
-          <div>
-            {" "}
-            <h1>Авторизация</h1>
-          </div>
-          <div>{error}</div>
-          Логин
-          <div>
-            {loginDirty && emailError && <div>{emailError}</div>}
-            <input
-              name="login"
-              onBlur={(e) => handleBlur(e)}
-              type="text"
-              onChange={(e) => handleChangeLogin(e)}
-              placeholder="Enter login..."
-              value={login}
-            />
-          </div>
-          Пароль
-          <div>
-            {passwordDirty && passwordError && <div>{passwordError}</div>}
-            <input
-              onBlur={(e) => handleBlur(e)}
-              name="password"
-              type="password"
-              onChange={(e) => handleChangePassword(e)}
-              placeholder="Enter password"
-              value={password}
-            />
-          </div>
-          <div>
-            <button onClick={handleAuth}>Войти</button>
-          </div>
-          <div>
-            <p>
-              Нет аккаунта? <Link to="/sign-up">Зарегистрируйтесь!</Link>
-            </p>
-          </div>
-
-        </form>
-        <div>Войти как <Link to="/">гость</Link></div>
-
+    <div className={style.main}>
+      <div className={style.backGround}>
+        <div className="container">
+          <form action="" onSubmit={handleSubmit} className={style.content}>
+            <div>
+              {" "}
+              <div className={style.title}>Авторизация</div>
+            </div>
+            <div>{error}</div>
+            <div className={style.userLog}>Логин</div>
+            <div>
+              {loginDirty && emailError && <div>{emailError}</div>}
+              <img
+                src="https://www.svgrepo.com/show/302497/profile.svg"
+                className={style.imgIcon}
+                alt="phot"
+              />
+              <input
+                name="login"
+                onBlur={(e) => handleBlur(e)}
+                type="text"
+                onChange={(e) => handleChangeLogin(e)}
+                placeholder="Enter login..."
+                value={login}
+                className={style.input1}
+              />
+            </div>
+            <div className={style.userProf}>Пароль</div>
+            <div>
+              {passwordDirty && passwordError && <div>{passwordError}</div>}
+              <img
+                src="https://www.svgrepo.com/show/380010/eye-password-show.svg"
+                alt="phot"
+                className={style.imgEye}
+              />
+              <input
+                onBlur={(e) => handleBlur(e)}
+                name="password"
+                type="password"
+                onChange={(e) => handleChangePassword(e)}
+                placeholder="Enter password"
+                value={password}
+                className={style.input1}
+              />
+            </div>
+            <div>
+              <div className={style.forgotPass}>забыли пароль?</div>
+              <button className={style.button} onClick={handleAuth}>
+                Войти
+              </button>
+            </div>
+            <div>
+              <p>
+                Нет аккаунта?{" "}
+                <Link className={style.auth} to="/sign-up">
+                  Зарегистрируйтесь!
+                </Link>
+              </p>
+            </div>
+            <div className={style.gestMain}>
+              Войти как{" "}
+              <Link className={style.gest} to="/">
+                гость
+              </Link>
+            </div>
+          </form>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

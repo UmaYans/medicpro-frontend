@@ -21,6 +21,8 @@ const CommentProfil = () => {
 
   return (
     <div className={styles.comment_wrapper}>
+      <div className={styles.banner}>Ваши отзывы делают платформу лучше </div>
+
       <div className={styles.cont}>
         {comments.map((item) => {
           return (

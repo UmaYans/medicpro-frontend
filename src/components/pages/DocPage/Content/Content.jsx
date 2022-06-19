@@ -6,7 +6,7 @@ function Content({ doctor }) {
   return (
     <>
       <div className={style.cartDoctor}>
-        <Link to={`${doctor._id}`} className={style.decoration}>
+        <Link to={`../docs/${doctor._id}`} className={style.decoration}>
           <div className={style.imgDoctor}>
             <figure>
               <img src={doctor.photo} alt={doctor.name} className={style.img} />

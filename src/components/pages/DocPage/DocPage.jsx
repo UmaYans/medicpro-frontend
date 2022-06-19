@@ -9,8 +9,8 @@ import styles from "./Sidebar/Sidebear.module.css";
 import { NavLink } from "react-router-dom";
 
 const DocPage = () => {
-  const dispatch = useDispatch(); 
-  
+  const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getDoctors());
     dispatch(getCategory());

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import InputMask from "react-input-mask";
 import { registerUser } from "../../../redux-toolkit/features/usersSlice";
-import style from "./Signup.module.css"
+import style from "./Signup.module.css";
 
 const SignupPage = () => {
   const dispatch = useDispatch();
@@ -139,78 +139,119 @@ const SignupPage = () => {
   const disabled = name && lastName && login && password && telephone;
   return (
     <div className={style.main}>
-    <div className={style.backGround}>
-      <div className={style.content}>
-        <h2 className={style.title}>Регистрация</h2>
-        <div>{error}</div>
-        <form onSubmit={handleSubmit}>
-        <i className={style.userName}>Имя</i>
-          <div>
-            {nameDirty && nameError && <div>{nameError}</div>}
-            <input
-              name="text"
-              onBlur={(e) => handleBlur(e)}
-              type="text"
-              placeholder="Введите имя"
-              value={name}
-              onChange={(e) => handleChangeName(e)}
-            />
+      <div className={style.backGround}>
+        <div className={style.content}>
+          <h2 className={style.title}>Регистрация</h2>
+          <div>{error}</div>
+          <form onSubmit={handleSubmit}>
+            <i className={style.userName}>Имя</i>
+            <div>
+              {nameDirty && nameError && <div>{nameError}</div>}
+              <img
+                src="https://www.svgrepo.com/show/368760/id.svg"
+                alt="phot"
+                className={style.nameImg}
+              />
+              <input
+                name="text"
+                onBlur={(e) => handleBlur(e)}
+                type="text"
+                placeholder="Введите имя"
+                value={name}
+                onChange={(e) => handleChangeName(e)}
+              />
+            </div>
+            <i className={style.userLast}>Фамилия</i>
+            <div>
+              {lastNameDirty && lastNameError && <div>{lastNameError}</div>}
+              <img
+                src="https://www.svgrepo.com/show/368760/id.svg"
+                alt="phot"
+                className={style.nameImg}
+              />
+              <input
+                onBlur={(e) => handleBlur(e)}
+                name="lastName"
+                type="text"
+                placeholder="Введите фамилию"
+                value={lastName}
+                onChange={(e) => handleChangeLastName(e)}
+              />
+            </div>
+            <i className={style.userLog}>Логин</i>
+            <div>
+              {loginDirty && emailError && <div>{emailError}</div>}
+              <img
+                src="https://www.svgrepo.com/show/302497/profile.svg"
+                className={style.imgIcon}
+                alt="phot"
+              />
+              <input
+                name="email"
+                onBlur={(e) => handleBlur(e)}
+                type="text"
+                placeholder="Введите логин"
+                value={login}
+                onChange={handleChangeLogin}
+              />
+            </div>
+            <i className={style.userPassword}>Пароль</i>
+            <div>
+              {passwordDirty && passwordError && <div>{passwordError}</div>}
+              <img
+                src="https://www.svgrepo.com/show/380010/eye-password-show.svg"
+                alt="phot"
+                className={style.imgEye}
+              />
+              <input
+                onBlur={(e) => handleBlur(e)}
+                name="password"
+                type="password"
+                placeholder="Пароль"
+                value={password}
+                onChange={(e) => handleChangePassword(e)}
+              />
+            </div>
+            <i className={style.userNum}>Номер телефона</i>
+            <div>
+              <img
+                src="https://www.svgrepo.com/show/420092/cell-iphone-notch.svg"
+                alt="phot"
+                className={style.imgPhone}
+              />
+              <PhoneInput
+                className={style.inputs}
+                value={telephone}
+                onChange={handleInput}
+              ></PhoneInput>
+            </div>
+            <br />
+            <div>
+              <button
+                className={`${style.button} ${(signUp || !disabled) ? style.disabled : ""}`}
+                onClick={handleReg}
+                disabled={signUp || !disabled}
+              >
+                <Link to="../sign-in" className={`${style.link} ${(signUp || !disabled) ? style.disabledlink : ""}`} >Зарегистрироваться</Link>
+              </button>
+            </div>
+            <div>
+              <p className={style.registr}>
+                Уже есть аккаунт?{" "}
+                <Link className={style.gets1} to="/sign-in">
+                  Войти
+                </Link>{" "}
+              </p>
+            </div>
+          </form>
+          <div className={style.lastBlock}>
+            Войти как{" "}
+            <Link className={style.gets2} to="/">
+              гость
+            </Link>
           </div>
-          <i className={style.userLast}>Фамилия</i>
-          <div>
-            {lastNameDirty && lastNameError && <div>{lastNameError}</div>}
-            <input
-              onBlur={(e) => handleBlur(e)}
-              name="lastName"
-              type="text"
-              placeholder="Введите фамилию"
-              value={lastName}
-              onChange={(e) => handleChangeLastName(e)}
-            />
-          </div>
-          <i className={style.userLog}>Логин</i>
-          <div>
-            {loginDirty && emailError && <div>{emailError}</div>}
-            <input
-              name="email"
-              onBlur={(e) => handleBlur(e)}
-              type="text"
-              placeholder="Введите логин"
-              value={login}
-              onChange={handleChangeLogin}
-            />
-          </div>
-          <i className={style.userPassword}>Пароль</i>
-          <div>
-            {passwordDirty && passwordError && <div>{passwordError}</div>}
-            <input
-              onBlur={(e) => handleBlur(e)}
-              name="password"
-              type="password"
-              placeholder="Пароль"
-              value={password}
-              onChange={(e) => handleChangePassword(e)}
-            />
-          </div>
-          <i>Номер телефона</i>
-          <div>
-            <PhoneInput className={style.inputs} value={telephone} onChange={handleInput}></PhoneInput>
-          </div>
-          <br />
-          <div>
-            <button className={style.button} onClick={handleReg} disabled={signUp || !disabled}>
-              Зарегистрироваться
-            </button>
-          </div>
-          <div>
-            <p>
-              Уже есть аккаунт? <Link className={style.gets1} to="/sign-in">Войти</Link>{" "}
-            </p>
-          </div>
-        </form>
-          <div>Войти как <Link className={style.gets2} to="/">гость</Link></div>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

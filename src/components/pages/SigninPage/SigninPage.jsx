@@ -104,7 +104,11 @@ const SigninPage = () => {
             <div className={style.userProf}>Пароль</div>
             <div>
               {passwordDirty && passwordError && <div>{passwordError}</div>}
-              <img src="https://www.svgrepo.com/show/380010/eye-password-show.svg" alt="phot" className={style.imgEye}/>
+              <img
+                src="https://www.svgrepo.com/show/380010/eye-password-show.svg"
+                alt="phot"
+                className={style.imgEye}
+              />
               <input
                 onBlur={(e) => handleBlur(e)}
                 name="password"

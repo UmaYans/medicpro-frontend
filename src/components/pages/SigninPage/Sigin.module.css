@@ -103,7 +103,6 @@
 .auth {
     text-decoration: none;
     color:#03a9f4;
-    padding-right: 160px;
     padding-top: 20px;
 }
 .gest {
@@ -111,9 +110,8 @@
     color: #f441a5;
 }
 .gestMain{ 
-    padding-top: 20px;
-    padding-right: 296px;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
 }
 .imgIcon {
     width: 30px;
@@ -128,4 +126,7 @@
     position: absolute;
     margin-left: 5px;
     margin-top: 15px; 
+}
+.button:disabled {
+  background: gray;
 }

@@ -1,5 +1,4 @@
 .main {
-  height: 100vh;
   margin: auto;
   text-align: center;
 }
@@ -10,7 +9,7 @@
   background-repeat: repeat;
   height: 100%;
   width: 100%;
-  padding-top: 20px;
+  padding:40px;
 }
 .content {
   border: 1px solid red;
@@ -18,6 +17,7 @@
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
+  padding: 10px;
   margin: auto;
   -webkit-box-shadow: -19px -19px 8px 4px rgba(10, 4, 10, 0.1);
   -moz-box-shadow: -19px -19px 8px 4px rgba(10, 4, 10, 0.1);
@@ -46,6 +46,11 @@
   font-size: 15px;
   color: #333;
 }
+.userNum {
+  padding-right: 278px;
+  font-size: 15px;
+  color: #333;
+}
 .title {
   color: #333;
 }
@@ -70,7 +75,6 @@
   border: none;
   font-size: 15px;
   font-family: inherit;
-  color: #fff;
   width: 26em;
   height: 3em;
   line-height: 2em;
@@ -116,3 +120,41 @@
   text-decoration: none;
   color: #f441a5;
  }
+.imgPhone {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 15px; 
+}
+.imgEye {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 15px; 
+}
+.imgIcon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+.nameImg {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 15px; 
+}
+.link {
+  text-decoration: none;
+}
+.disabledlink {
+  pointer-events: none;
+  opacity: 0.2;
+}
+.button:disabled {
+  background: gray;
+}

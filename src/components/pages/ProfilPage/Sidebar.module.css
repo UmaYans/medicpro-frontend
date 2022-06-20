@@ -30,8 +30,11 @@
 }
 .handle {
   margin-top: -90px;
+
 }
 .hri {
+  margin-top: none;
+  margin-bottom: 0;
   border-width: 1px;
   width: 220px;
 }

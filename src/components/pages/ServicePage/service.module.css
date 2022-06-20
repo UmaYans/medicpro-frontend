@@ -19,7 +19,7 @@
 
 .header{
     /* background-color: red; */
-    background: linear-gradient(26.04deg,#e34e13,#cc208e);
+    background: linear-gradient(26.04deg, #cc208e, #6713d2, rgb(30, 20, 167));
     padding: 2%;
     text-align: center;
     color:white;

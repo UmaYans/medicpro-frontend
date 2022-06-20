@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { getService } from "../../../redux-toolkit/features/serviceSlice";
 import styles from "./service.module.css";
 const ServicePage = () => {
-  const service = useSelector((state) => state.service.service);
+  const service = useSelector((state) => state.service.services);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getService());

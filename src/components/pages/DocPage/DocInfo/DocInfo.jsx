@@ -46,6 +46,7 @@ function DocInfo() {
     dispatch(postEntry({ docId, value }));
     setOpened(false);
   };
+  
 
   const [time, setTime] = useState([
     "8:00",

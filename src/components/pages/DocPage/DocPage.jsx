@@ -94,42 +94,6 @@ const DocPage = () => {
         </div>
       </div>
     </div>
-
-    // <div >
-    //   <div className={style.divInput}>
-    //     <input
-    //       value={value}
-    //       className={style.input}
-    //       type="text"
-    //       placeholder="Начните поиск врача....."
-    //       onChange={(event) => setValue(event.target.value)}
-    //     />
-    //   </div>
-    //   <div className={style.content}>
-    //       <h2>Врачи</h2>
-    //     <div className={style.content_carts}>
-    //       {value
-    //         ? docs.map((doctor, index) => {
-    //             return <Content doctor={doctor} key={index}></Content>;
-    //           })
-    //         : filtered.map((doctor, index) => {
-    //             return <Content doctor={doctor} key={index}></Content>;
-    //           })}
-    //     </div>
-    // <div>
-    //   <div onClick={(e) => setFiltered(doctors)}>Все категории</div>
-    //   {categories.map((category) => {
-    //     return (
-    //       <Sidebar
-    //         category={category}
-    //         key={category._id}
-    //         handleCategory={handleCategory}
-    //       ></Sidebar>
-    //     );
-    //   })}
-    // </div>
-    //   </div>
-    // </div>
   );
 };
 

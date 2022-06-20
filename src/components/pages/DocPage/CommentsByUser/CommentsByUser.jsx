@@ -74,7 +74,6 @@ function CommentsByUser({ comments, token }) {
         {comments.map((item) => {
           return (
             <div key={item._id} className={style.comm}>
-              {/* <div className={style.flex}> */}
               <div className={style.nameComm}>
                 <div className={style.bio}>
                   <div className={style.img}>
@@ -102,6 +101,5 @@ function CommentsByUser({ comments, token }) {
     </>
   );
 }
-// console.log(comments.userName?._id);
 
 export default CommentsByUser;

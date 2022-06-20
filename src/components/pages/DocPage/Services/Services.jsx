@@ -1,12 +1,11 @@
 import React from "react";
 import style from "./Service.module.css";
-// import img from "./al.png";
 
 function Services({ service }) {
   console.log(service.length);
   return (
     <>
-      {(service.length !== 0) && (
+      {service.length !== 0 && (
         <div className={style.container}>
           <h1>Услуги врача</h1>
           <div className={style.wrap}>
@@ -34,27 +33,3 @@ function Services({ service }) {
 }
 
 export default Services;
-
-// <div className={style.main}>
-//   <div className={style.imgServ}>
-//     <img src={img} alt="" />
-//   </div>
-//   <div></div>
-// </div>
-{
-  /* <h1>Все услуги врача</h1>{" "}
-<div className={style.service}>
-  {service.map((service) => {
-    return (
-      <div className={style.servCart} key={service._id}>
-        <div className={style.name}>{service?.name}</div>
-        <div className={style.text}>{service?.text}</div>
-        <div>Цена: {service?.price}</div>
-        <div className={style.oldPrice}>
-          Старая цена: {service?.oldPrice}
-        </div>
-      </div>
-    );
-  })}
-</div> */
-}

@@ -169,7 +169,6 @@ text-align: center;
 }
 
 .modal{
-  /* color: red; */
   width: 50%;
   right: 20em;
   min-height: 400px;
@@ -187,7 +186,6 @@ text-align: center;
   align-items: center;
   text-align: center;
   margin: 10px auto;
-  /* padding: 2vh auto; */
 }
 
 .select_css { 

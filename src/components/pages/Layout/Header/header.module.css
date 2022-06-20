@@ -3,8 +3,13 @@
   width: 99%;
   display: flex;
   justify-content: space-between;
-  padding: 1% 0;
+  padding: 2% 0 2% 0;
   align-items: center;
+}
+
+.header a {
+  color: black;
+  text-decoration: none;
 }
 
 .headBlock {
@@ -17,6 +22,7 @@
 }
 
 .profilе {
+  padding-top: 5px;
   margin-left: 15%;  
   color: #000000;
   text-decoration: none;

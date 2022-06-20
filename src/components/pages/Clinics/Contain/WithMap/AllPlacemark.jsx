@@ -39,7 +39,7 @@ const AllPlacemark = ({ clinics }) => {
                   }}
                   options={{
                     preset: "islands#circleDotIcon",
-                    iconColor: "green",
+                    iconColor: "red",
                   }}
                 />
               );

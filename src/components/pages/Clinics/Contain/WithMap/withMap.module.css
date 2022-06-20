@@ -13,6 +13,7 @@ ymaps[class$="map"]:first-child:not(:last-child) {
 .cards_with_map {
   display: flex;
   margin-top: 20px;
+
 }
 
 .cards {
@@ -34,7 +35,7 @@ ymaps[class$="map"]:first-child:not(:last-child) {
 
 .name a {
 	text-decoration: none;
-	color: rgb(60, 235, 60);
+  color: rgb(255, 0, 0);
 }
 
 .place {
@@ -95,9 +96,9 @@ ymaps[class$="map"]:first-child:not(:last-child) {
 	background-image: -webkit-gradient(linear,
 									   40% 0%,
 									   75% 84%,
-									   from(#4D9C41),
-									   to(#19911D),
-									   color-stop(.6,#54DE5D))
+									   from(#e60606),
+									   to(#f20000),
+									   color-stop(.6,#e61313))
 }
 
 

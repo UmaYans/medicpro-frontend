@@ -23,8 +23,16 @@ h1 {
 }
 
 .nav_tabs a {
+  font-weight: bold;
+  padding: 6px;
+  border: none;
   text-decoration: none;
   margin-right: 20px;
+  transition: 1s;
+}
+
+.nav_tabs a {
+  transform: scale(1.1);
 }
 
 .nav_tabs a:last-child {
@@ -47,7 +55,7 @@ h1 {
   border: 1px solid black;
   padding: 5px;
   color: whitesmoke;
-  background-color: rgb(5, 222, 5);
+  background-color: rgb(255 54 54);
   border-radius: 20px;
 }
  

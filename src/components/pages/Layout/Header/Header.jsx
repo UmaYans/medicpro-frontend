@@ -7,27 +7,27 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const token = useSelector((state) => state.user.token);
-  
+
   return (
-    <>
-      <header className={styles.header}>
-        <Link to="/">
-          <img
-            style={{ width: "15%", marginLeft: "80%" }}
-            src={logo}
-            alt="MainLogo"
-          />
+    <header className={styles.header}>
+      <Link to="/">
+        <img
+          style={{ width: "15%", marginLeft: "80%" }}
+          src={logo}
+          alt="MainLogo"
+        />
+      </Link>
+      <Link to="/docs"> Врачи </Link>
+      <Link to="/clinics/"> Клиники </Link>
+      <Link to="/service"> Услуги </Link>
+      {token ? (
+        <Link className={styles.profilе} to="/profile">
+          <AccountCircleTwoToneIcon style={{ fontSize: "48px" }} />
         </Link>
-        <Link to="/docs"> Врачи </Link>
-        <Link to="/clinics/"> Клиники </Link>
-        <Link to="/service"> Услуги </Link>
-        {token ? (
-          <Link className={styles.profilе} to="/profile"><AccountCircleTwoToneIcon style={{fontSize: "48px"}}/></Link>
-        ) : (
-          <Link to="/sign-in">Войти</Link>
-        )}
-      </header>
-    </>
+      ) : (
+        <Link to="/sign-in">Войти</Link>
+      )}
+    </header>
   );
 };
 

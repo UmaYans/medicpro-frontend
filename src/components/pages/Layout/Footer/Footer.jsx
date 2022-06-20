@@ -26,6 +26,35 @@ const Footer = () => {
           <div>Работа y нас</div>
           <div>Юр. лицам</div>
         </div>
+        <div className={styles.for_images}>
+          <h4>Наши социальные сети</h4>
+          <div className={styles.icons}>
+          <div className={styles.images}>
+            <a href="https://www.instagram.com/intocode/">
+              <img
+                src="https://www.svgrepo.com/show/13639/instagram.svg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div>
+            <a href="https://vk.com/">
+              <img
+                src="https://www.svgrepo.com/show/303449/vk-1-logo.svg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div>
+            <a href="https://web.telegram.org/z/">
+              <img
+                src="https://www.svgrepo.com/show/299466/telegram.svg"
+                alt=""
+              />
+            </a>
+          </div>
+          </div>
+        </div>
       </div>
     </footer>
   );

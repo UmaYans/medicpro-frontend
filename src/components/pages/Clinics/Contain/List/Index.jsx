@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./list.module.css";
 import { fetchClinics } from "../../../../../redux-toolkit/features/clinicSlice";
-import Card from "./Card";
+import Card, { MultiActionAreaCard } from "./Card";
 
 const List = () => {
   const clinics = useSelector((state) => state.clinic.clinics);
@@ -36,7 +36,7 @@ const List = () => {
   return (
     <div className={styles.clinics}>
       {clinics.map((clin) => {
-        return <Card key={clin._id} clin={clin} />;
+        return <MultiActionAreaCard key={clin._id} clin={clin} />;
       })}
     </div>
   );

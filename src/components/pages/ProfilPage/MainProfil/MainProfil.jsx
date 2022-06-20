@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { getUser } from "../../../../redux-toolkit/features/usersSlice";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./mainProf.module.css"
+import styles from "./mainProf.module.css";
 
 const MainProfil = () => {
   const dispatch = useDispatch();
@@ -16,11 +16,19 @@ const MainProfil = () => {
       <div className={styles.banner}>
         Скидки 15% для всех зарегистрированных
       </div>
-      <div>
-      <div>Информация об аккаунте</div>
-      <div>Имя: {users.name}</div>
-      <div>Фамилия: {users.lastName}</div>
-      <div>Телефон: {users.telephone}</div>
+      <div className={styles.container}>
+        <img
+          alt="phot"
+          className={styles.imgIcon}
+          src="https://cdn.onlinewebfonts.com/svg/download_568656.png"
+        />
+        <div className={styles.info}>
+          <div className={styles.title}>Информация об аккаунте</div>
+          <hr></hr>
+          <div className={styles.infoAll}>Имя: {users.name}</div>
+          <div className={styles.infoAll}>Фамилия: {users.lastName}</div>
+          <div className={styles.infoAll}>Телефон: {users.telephone}</div>
+        </div>
       </div>
     </div>
   );

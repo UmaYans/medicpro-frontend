@@ -1,22 +1,22 @@
 .main {
-    background-color: whitesmoke;
-    min-height: 85vh;
+  background-color: whitesmoke;
+  min-height: 85vh;
 }
-.flex{
-    display: flex;
+.flex {
+  display: flex;
 }
-.wrap{
-    display: flex;
-    justify-content: space-between;
+.wrap {
+  display: flex;
+  justify-content: space-between;
 }
-.sidebar{
-    width: 30%;
-    text-decoration: none;
-    min-height: 85vh;
+.sidebar {
+  width: 30%;
+  text-decoration: none;
+  min-height: 85vh;
 }
-.content{
-    width: 70%;
+.content {
+  width: 70%;
 }
-LINK{
-text-decoration: none;
+LINK {
+  text-decoration: none;
 }

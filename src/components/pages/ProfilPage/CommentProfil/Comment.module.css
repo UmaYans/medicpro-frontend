@@ -12,6 +12,7 @@
   border-radius: 15px;
   width: 80%;
   margin: 2vh auto;
+  margin-right: 200px;
 }
 .comment_wrapper {
   text-align: center;
@@ -19,16 +20,16 @@
 
 .com {
   padding: 10px 0;
-  background: rgba(212, 212, 244, 0.712);
+  background-color: rgba(143, 143, 243, 0.712);
   border-radius: 15px;
-  width: 90%;
+  width: 80%;
   margin: auto;
   margin-top: 2vh;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-}
-.comment {
+  padding: 15px;
+  margin-left: 12px;
+  color: white;
 }
 .text {
   display: inline-block;

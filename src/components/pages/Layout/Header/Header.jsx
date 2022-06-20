@@ -7,30 +7,27 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const token = useSelector((state) => state.user.token);
-  
-  return (
-    <>
-      <header className={styles.header}>
-        <NavLink to="/" className={({ isActive }) => isActive ? styles.active : styles.no_active}>
-        <div className={styles.log} >
+
+
+    <header className={styles.header}>
+      <Link to="/">
         <img
-            style={{ width: "15%" }}
-            src={logo}
-            alt="MainLogo"
-          />
-          <div>MedicPRO</div>
-        </div>
-        </NavLink>
-        <NavLink to="/docs"className={({ isActive }) => isActive ? styles.active : styles.no_active} > Врачи </NavLink>
-        <NavLink to="/clinics/" className={({ isActive }) => isActive ? styles.active : styles.no_active}> Клиники </NavLink>
-        <NavLink to="/service" className={({ isActive }) => isActive ? styles.active : styles.no_active}> Услуги </NavLink>
-        {token ? (
-          <NavLink className={styles.profilе} to="/profile"><AccountCircleTwoToneIcon style={{fontSize: "48px"}}/></NavLink>
-        ) : (
-          <NavLink to="/sign-in" className={({ isActive }) => isActive ? styles.active : styles.no_active}>Войти</NavLink>
-        )}
-      </header>
-    </>
+          style={{ width: "15%", marginLeft: "80%" }}
+          src={logo}
+          alt="MainLogo"
+        />
+      </Link>
+      <Link to="/docs"> Врачи </Link>
+      <Link to="/clinics/"> Клиники </Link>
+      <Link to="/service"> Услуги </Link>
+      {token ? (
+        <Link className={styles.profilе} to="/profile">
+          <AccountCircleTwoToneIcon style={{ fontSize: "48px" }} />
+        </Link>
+      ) : (
+        <Link to="/sign-in">Войти</Link>
+      )}
+    </header>
   );
 };
 

@@ -1,27 +1,38 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./list.module.css";
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Link } from 'react-router-dom';
+import styles from './list.module.css'
 
-const Card = ({ clin }) => {
+export function MultiActionAreaCard({clin}) {
   return (
-    <div className={styles.inner}>
-      <div className={styles.clinic}>
-        <div className={styles.name}>{clin.name}</div>
-        <div className={styles.center}>
-          <div className={styles.image}>
-            <img src={clin.photo} alt="clinic" />
-          </div>
-          <div className={styles.center_info}>
-            <div className={styles.schled}>пн-пт 08:00 - 21:00</div>
-            <div className={styles.schled}>c6 09:00 - 18:00</div>
-            <div className={styles.schled}>вс выходной</div>
-          </div>
-        </div>
-        <div className={styles.hosplace}>{clin.place}</div>
-      </div>
-      <button className={styles.btn_more}><Link to={`${clin._id}`}>Подробнее</Link></button>
-    </div>
+    <Card sx={{ maxWidth: 370, margin: "20px 20px"  }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image={clin.photo}
+          alt="дурка"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {clin.name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {clin.place}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button className={styles.btn_more}>
+          <Link to={`${clin._id}`}>
+          Подробнее
+          </Link>
+        </Button>
+      </CardActions>
+    </Card>
   );
-};
-
-export default Card;
+}

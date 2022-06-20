@@ -5,7 +5,6 @@
 
 
 .main {
-  /* border-bottom: 1px solid orangered; */
   width: 42%;
   margin: auto;
   margin: auto 20px;
@@ -35,7 +34,6 @@
 }
 .imgServ{
   width: 30%;
-  /* height: 100%; */
 }
 .imgServ img {
   height: 100%;

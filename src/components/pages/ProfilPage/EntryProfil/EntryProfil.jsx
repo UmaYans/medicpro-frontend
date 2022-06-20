@@ -23,20 +23,31 @@ const EntryProfil = () => {
     <div>
       <div className={styles.banner}>
         Первый прием и консультация <span>бесплатно</span> <br />{" "}
-        <span className={styles.banner_butText}>предоставление дополнительных услуг по прайсу </span>
+        <span className={styles.banner_butText}>
+          предоставление дополнительных услуг по прайсу{" "}
+        </span>
       </div>
-      <div>
-        <div className={styles.title}>Запланированны записи</div>
+      <div className={styles.title}>Запланированны записи</div>
+      <div className={styles.blocks}>
         {entries.map((item) => {
           return (
-            <div key={item._id}>
-              <div>
-                К доктору: {item.doc?.name} {item.doc?.lastName}
+            <div className={styles.blockMain}>
+              <div className={styles.container}>
+                <div key={item._id}>
+                  <div className={styles.docName}>
+                    К доктору: {item.doc?.name} {item.doc?.lastName}
+                  </div>
+                  <div className={styles.timeEntry}>
+                    Время приема: {item.time} по МСК
+                  </div>
+                  <button
+                    className={styles.deleteBtn}
+                    onClick={() => functionDel(item._id)}
+                  >
+                    Отменить запись
+                  </button>
+                </div>
               </div>
-              <div>Время приема: {item.time} по МСК</div>
-              <button onClick={() => functionDel(item._id)}>
-                Отменить запись
-              </button>
             </div>
           );
         })}

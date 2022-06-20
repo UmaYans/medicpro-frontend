@@ -4,7 +4,10 @@
   background: linear-gradient(26.04deg,#6713d2,#cc208e);
   width: 100%;
   display: flex;
+  margin: 20px 0;
   justify-content: space-between;
+  box-shadow: 3px 20px 20px rgb(26 61 107 / 16%);
+
 }
 .first {
   align-items: center;

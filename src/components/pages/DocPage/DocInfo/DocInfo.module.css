@@ -2,7 +2,9 @@
 *{
   box-sizing: border-box;
 }
-
+.bc{
+  background: rgba(220, 220, 220, 0.557);
+}
 .rodBlock{
   overflow: hidden;
   width: 80%;
@@ -15,24 +17,24 @@
 }
 .rodBlock:hover{
   box-shadow: 3px 1px 20px 7px rgba(171, 161, 178, 0.735);
-
 }
 .infoDoc{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
+  background: #fff;
 }
-.imgDoc img {
+.imgDoc img { 
   width: 100%;
   height: 100%;
-  
+  opacity: 1;
+  transition: 0.3s ease-in-out;
 }
 .info{
   width: 80%;
   margin: auto;
   text-align: center;
-  color:  red;
 }
 
 .imgDoc{
@@ -48,6 +50,7 @@
   margin-left: 40px;
   text-align: start;
   width: 70%;
+  padding: 7px;
 
 }
 .btn{
@@ -114,6 +117,7 @@ margin: auto;
 .nameEntry{
   text-align: center;
   color: black;
+  margin-top: 10px;
 }
 .time{
   margin-top: 20%;
@@ -148,6 +152,9 @@ margin-bottom: 20px;
   padding: 15px;
   width: 60%;
 }
+.inforClinic p{
+  font-size: 17px;
+}
 
 .cart_second h1{
 width: 1000px;
@@ -158,7 +165,6 @@ text-align: center;
   text-align: center;
   align-items: center;
   font-size: 33px;
-  color: red;
   margin-bottom: 20px;
 }
 
@@ -175,12 +181,13 @@ text-align: center;
   -webkit-box-shadow: 0px 0px 600px 600px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 0px 600px 600px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 600px 600px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
 }
 .img{
   align-items: center;
   text-align: center;
-  /* vertical-align: ; */
-  padding: 2vh auto;
+  margin: 10px auto;
+  /* padding: 2vh auto; */
 }
 
 .select_css { 

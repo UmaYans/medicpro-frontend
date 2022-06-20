@@ -5,7 +5,10 @@ justify-content: space-between;
 
 }
 
-
+.rods img{
+    width:350px;
+    height: 350px;
+}
 .rods{
     width: 350px;
     

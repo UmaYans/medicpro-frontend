@@ -12,12 +12,80 @@
   border-radius: 15px;
   width: 80%;
   margin: 2vh auto;
+  margin-right: 300px;
 }
-.banner_butText{
+.banner_butText {
   font-size: 14px;
   color: #fff;
-
 }
-.title{
-  
+.title {
+  font-size: 26px;
+  color: rgb(12, 10, 10);
+  margin-left: 20px;
+}
+.container {
+  flex-wrap: wrap;
+  background-color: rgba(143, 143, 243, 0.712);
+  width: 400px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 7px;
+  margin: 10px;
+  margin-left: 15px;
+}
+.deleteBtn {
+  width: 157px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+  margin-bottom: 5px;
+  margin-left: 220px;
+}
+.deleteBtn {
+  background: rgba(255, 0, 0, 0.422);
+  border: none;
+  z-index: 1;
+}
+.deleteBtn:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: red;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.deleteBtn:hover {
+  color: #fff;
+}
+.deleteBtn:hover:after {
+  left: 0;
+  width: 100%;
+}
+.deleteBtn:active {
+  top: 2px;
+}
+.blocks {
+  display: flex;
+  flex-wrap: wrap;
+}
+.docName {
+  color: #fff;
+}
+.timeEntry {
+  padding-top: 10px;
+  color: #fff;
 }

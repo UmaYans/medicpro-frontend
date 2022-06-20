@@ -8,7 +8,7 @@
     background-color: #f2f6fb;
     transition: 1s;
     animation-name: rodBlock;
-    animation-duration: 2s;
+    animation-duration: 10s;
 }
 @keyframes rodBlock {
     from {
@@ -42,11 +42,7 @@
     height:400px;
 }
 
-/* .images img{
-    width: 10%; 
-    height: 10%;
-     object-fit: cover;
-} */
+
 
 .texts{
     text-align: center;
@@ -69,11 +65,3 @@
     opacity:1;
     transition: 1s;
     }
-/* .buttonss:hover{
-    display: block;
-    z-index:31;display: block;opacity: 1
-} */
-/* a{
-    text-decoration: none;
-    color:#ff0066;
-} */

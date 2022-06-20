@@ -15,7 +15,7 @@ import Services from "../Services/Services";
 import { getServiceByDocId } from "../../../../redux-toolkit/features/serviceSlice";
 import Style from "./Style/Style";
 import Center from "./Center/Center";
-import img from './1.png'
+import img from "./1.png";
 import Page from "./Page/Page";
 
 function DocInfo() {
@@ -65,7 +65,7 @@ function DocInfo() {
   };
 
   return (
-    <>
+    <div className={style.bc}>
       <Style />
       <div className={style.info}>
         <h1>Информация о враче</h1>
@@ -95,9 +95,6 @@ function DocInfo() {
             <div>
               <p>Специальность: {docs.spec?.name}</p>
             </div>
-            {/* <div>
-              <p>Описание специальности: {docs.spec?.text}</p>
-            </div> */}
 
             <div>
               <p>Рейтинг врача : {docs.rating} ⭐</p>
@@ -119,10 +116,7 @@ function DocInfo() {
                 <div></div>
                 <div className={style.select}>
                   <div className={style.img}>
-                    <img
-                      src={img}
-                      alt=""
-                    />{" "}
+                    <img src={img} alt="" />{" "}
                   </div>
                   <div className={style.nameEntry}>
                     Записаться к врачу: {docs.name} {docs.lastName}
@@ -196,9 +190,9 @@ function DocInfo() {
         </div>
       </div>
       <Services service={service} />
-              <Page/>
+      <Page />
       <CommentsByUser comments={comments} token={token} />
-    </>
+    </div>
   );
 }
 

@@ -74,6 +74,15 @@ const CardsWithMap = () => {
               <div>
                 <Link to="/clinics/">Назад</Link>
               </div>
+
+              <div style={{ marginTop: "20px" }}>
+                <p>
+                  Так же вы можете записаться онлайн, выбрав нужную вам{" "}
+                  <span>
+                    <Link to="/service/">услугу</Link>
+                  </span>
+                </p>
+              </div>
             </div>
           );
         })

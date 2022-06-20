@@ -1,7 +1,11 @@
-* {
-  box-sizing: border-box;
+.cardById {
+  max-width: 1720px;
+  margin: auto;
   padding: 0;
- 
+  background: rgba(220, 220, 220, 0.557);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align: center;
 }
 
 .name {
@@ -10,26 +14,146 @@
   font-weight: bold;
 }
 
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inf {
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.image {
+  width: 40%;
+}
+
+.image img {
+  width: 100%;
+}
+
+.time {
+  font-weight: bold;
+  font-size: large;
+  margin: 5px 0;
+}
+
+.rignt {
+  width: 70%;
+}
+
 .info {
+  margin-top: 7px;
+  margin-left: 25px;
   margin-bottom: 25px;
+  text-align: left;
 }
 
 .schled {
   font-size: 17px;
   font-weight: 500;
+  text-align: left;
 }
 
 .desc {
-  
+  text-align: justify;
+  margin-left: 25px;
   font-size: 17px;
   font-weight: 300;
+  line-height: 30px;
 }
 
 .place {
-  margin: 25px 0;
+  margin-top: 25px;
 }
 
 .docs {
   display: flex;
   justify-content: space-between;
+}
+
+
+.spec {
+  margin-top: 10px;
+}
+
+
+.data {
+  font-weight: bold;
+}
+
+.fio {
+  font-weight: 400;
+}
+
+ 
+.desc {
+  font-weight: 400;
+}
+
+.spec_name {
+  font-weight: bold;
+}
+.desc {
+  font-weight: 400;
+}
+
+.doc {
+  display: flex;
+  background: rgba(141, 111, 165, 0.16);
+  width: 100%;
+  margin: auto;
+  text-align: start;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.full_info {
+  margin-left: 30px;
+}
+
+.btn_entry {
+  margin-top: 10px;
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #6713d2;
+  transition: 1s;
+}
+
+.btn_entry a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn_entry:active {
+  transform: scale(1.2);
+}
+
+.banner {
+  background: linear-gradient(26.04deg, #6713d2, #cc208e);
+  box-shadow: 0 6px 16px rgb(26 61 107 / 16%);
+  padding: 16px 20px;
+  color: #fff;
+  min-height: 10vh;
+  width: 75%;
+  margin: 2vh auto 3vh auto;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.pers {
+  width: 100%;
+  margin: auto;
+  min-height: 7vh;
+  border-radius: 12px;
+  background: rgba(141, 111, 165, 0.16);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  padding: 20px 0;
 }

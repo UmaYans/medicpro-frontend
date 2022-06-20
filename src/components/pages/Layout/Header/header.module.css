@@ -1,11 +1,21 @@
 .header {
-  /* background-color:red; */
-  width: 99%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1% 0;
-  align-items: center;  
-  
+  align-items: center;
+  background: linear-gradient(rgba(217, 0, 255, 0.717),rgba(254, 254, 254, 0.486) );  
+  font-size: 19px;
+  font-weight: 600;
+}
+.log{
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 20px;
+}
+.log div{
+  margin-left: 7px;
 }
 
 .headBlock {
@@ -20,5 +30,30 @@
 .profilе {
   margin-left: 15%;  
   color: #000000;
+  text-decoration: none;
+}
+.active{
+  text-decoration: none;
+  color: brown;
+}
+.no_active{
+  text-decoration: none;
+
+}
+.no_active:focus {
+  color: brown;
+  text-decoration: none;
+}
+.no_active:hover {
+  color: rgba(37, 169, 72, 0.756);
+  font-weight: 700;
+  text-decoration: none;
+}
+.active:focus{
+  color: brown;
+  text-decoration: none;
+}
+.active:hover{
+  color: rgba(165, 42, 118, 0.756);
   text-decoration: none;
 }

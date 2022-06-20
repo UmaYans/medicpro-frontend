@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import logo from "./image/logo.jpg";
 import styles from "./header.module.css";
 import React from "react";
@@ -11,20 +11,23 @@ const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <Link to="/">
-          <img
-            style={{ width: "15%", marginLeft: "80%" }}
+        <NavLink to="/" className={({ isActive }) => isActive ? styles.active : styles.no_active}>
+        <div className={styles.log} >
+        <img
+            style={{ width: "15%" }}
             src={logo}
             alt="MainLogo"
           />
-        </Link>
-        <Link to="/docs"> Врачи </Link>
-        <Link to="/clinics/"> Клиники </Link>
-        <Link to="/service"> Услуги </Link>
+          <div>MedicPRO</div>
+        </div>
+        </NavLink>
+        <NavLink to="/docs"className={({ isActive }) => isActive ? styles.active : styles.no_active} > Врачи </NavLink>
+        <NavLink to="/clinics/" className={({ isActive }) => isActive ? styles.active : styles.no_active}> Клиники </NavLink>
+        <NavLink to="/service" className={({ isActive }) => isActive ? styles.active : styles.no_active}> Услуги </NavLink>
         {token ? (
-          <Link className={styles.profilе} to="/profile"><AccountCircleTwoToneIcon style={{fontSize: "48px"}}/></Link>
+          <NavLink className={styles.profilе} to="/profile"><AccountCircleTwoToneIcon style={{fontSize: "48px"}}/></NavLink>
         ) : (
-          <Link to="/sign-in">Войти</Link>
+          <NavLink to="/sign-in" className={({ isActive }) => isActive ? styles.active : styles.no_active}>Войти</NavLink>
         )}
       </header>
     </>

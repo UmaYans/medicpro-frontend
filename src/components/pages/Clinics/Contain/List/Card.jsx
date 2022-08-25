@@ -15,7 +15,7 @@ export function MultiActionAreaCard({clin}) {
           component="img"
           height="140"
           image={clin.photo}
-          alt="дурка"
+          alt="Клиника"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

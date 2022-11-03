@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import {
   addComment,
   deleteComment,
-} from "../../../../redux-toolkit/features/commentsSlice";
-import { getUser } from "../../../../redux-toolkit/features/usersSlice";
+} from "../../../redux-toolkit/features/commentsSlice";
+import { getUser } from "../../../redux-toolkit/features/usersSlice";
 import style from "./CommentsByUser.module.css";
 import img from "./2.png";
 import "slick-carousel/slick/slick.css";

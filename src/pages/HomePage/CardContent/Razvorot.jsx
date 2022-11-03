@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import anime from "animejs";
 
-import { getDoctors } from "../../../../redux-toolkit/features/doctorSlice";
+import { getDoctors } from "../../../redux-toolkit/features/doctorSlice";
 import SliderDoc from "../Slider/SliderDoc";
 
 function Razvorot({ doctor }) {
@@ -48,9 +48,9 @@ function Razvorot({ doctor }) {
             </div>
           </div>
           <div className={styles.back}>
-            <h2>{doctor.name + ' ' + doctor.lastName} </h2>
+            <h2>{doctor.name + " " + doctor.lastName} </h2>
             <p>{doctor.desc}</p>
-            <p style={{marginLeft:'220px'}}>Рейтинг: {doctor.rating}⭐</p>
+            <p style={{ marginLeft: "220px" }}>Рейтинг: {doctor.rating}⭐</p>
           </div>
         </div>
       </div>

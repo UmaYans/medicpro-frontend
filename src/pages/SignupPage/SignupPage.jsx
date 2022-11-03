@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import InputMask from "react-input-mask";
-import { registerUser } from "../../../redux-toolkit/features/usersSlice";
+import { registerUser } from "../../redux-toolkit/features/usersSlice";
 import style from "./Signup.module.css";
 
 const SignupPage = () => {
@@ -228,11 +228,20 @@ const SignupPage = () => {
             <br />
             <div>
               <button
-                className={`${style.button} ${(signUp || !disabled) ? style.disabled : ""}`}
+                className={`${style.button} ${
+                  signUp || !disabled ? style.disabled : ""
+                }`}
                 onClick={handleReg}
                 disabled={signUp || !disabled}
               >
-                <Link to="../sign-in" className={`${style.link} ${(signUp || !disabled) ? style.disabledlink : ""}`} >Зарегистрироваться</Link>
+                <Link
+                  to="../sign-in"
+                  className={`${style.link} ${
+                    signUp || !disabled ? style.disabledlink : ""
+                  }`}
+                >
+                  Зарегистрироваться
+                </Link>
               </button>
             </div>
             <div>

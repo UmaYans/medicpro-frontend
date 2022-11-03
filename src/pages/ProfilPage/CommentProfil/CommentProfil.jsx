@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   deleteComment,
   getCommentsByUser,
-} from "../../../../redux-toolkit/features/commentsSlice";
+} from "../../../redux-toolkit/features/commentsSlice";
 import styles from "./Comment.module.css";
 
 const CommentProfil = () => {

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { fetchClinics } from "../../../../../redux-toolkit/features/clinicSlice";
+import { fetchClinics } from "../../../../redux-toolkit/features/clinicSlice";
 
 import AllPlacemark from "./AllPlacemark";
 import ByIdPlacemark from "./ByIdPlacemark";
@@ -56,9 +56,15 @@ const CardsWithMap = () => {
                     </div>
                     <div className={styles.place}>{clin.place}</div>
                     <div className={styles.center_info}>
-                      <div className={styles.schled}>понедельник-пятница - 08:00 - 21:00</div>
-                      <div className={styles.schled}>cyббота - 09:00 - 18:00</div>
-                      <div className={styles.schled}>воскресенье - выходной</div>
+                      <div className={styles.schled}>
+                        понедельник-пятница - 08:00 - 21:00
+                      </div>
+                      <div className={styles.schled}>
+                        cyббота - 09:00 - 18:00
+                      </div>
+                      <div className={styles.schled}>
+                        воскресенье - выходной
+                      </div>
                     </div>
                   </div>
                 );

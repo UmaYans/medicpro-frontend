@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getUser } from "../../../../redux-toolkit/features/usersSlice";
+import { getUser } from "../../../redux-toolkit/features/usersSlice";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./mainProf.module.css";
 

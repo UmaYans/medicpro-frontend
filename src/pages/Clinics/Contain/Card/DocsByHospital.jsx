@@ -5,7 +5,7 @@ import styles from "./card.module.css";
 
 const DocsByHospital = ({ _id, spec, photo, name, lastName }) => {
   const cats = useSelector((state) =>
-    state.categories.categories.find((item) => item._id === docs.spec)
+    state.categories.categories.find((item) => item._id === spec)
   );
 
   return (
@@ -26,7 +26,7 @@ const DocsByHospital = ({ _id, spec, photo, name, lastName }) => {
         </div>
         <div>
           <button className={styles.btn_entry}>
-            <Link to={`../docs/${docs._id}`}>Запись</Link>
+            <Link to={`../docs/${_id}`}>Запись</Link>
           </button>
         </div>
       </div>

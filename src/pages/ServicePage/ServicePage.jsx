@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getService } from "../../../redux-toolkit/features/serviceSlice";
+import { getService } from "../../redux-toolkit/features/serviceSlice";
 import styles from "./service.module.css";
 const ServicePage = () => {
   const service = useSelector((state) => state.service.services);

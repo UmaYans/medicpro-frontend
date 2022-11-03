@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { modules } from "./pages/Main";
+import { modules } from "../pages/Main";
 
 function App() {
   const token = useSelector((state) => state.user.token);
@@ -11,14 +11,9 @@ function App() {
         <Route path="/sign-up" element={<modules.SignupPage />} />
         <Route
           path="/sign-in"
-          // element={<SigninPage />}
           element={token ? <Navigate to="/" /> : <modules.SigninPage />}
         />
-        <Route
-          path="/"
-          element={<modules.Layout />}
-          // element={!token ? <Navigate to="/sign-in" /> : <Layout />}
-        >
+        <Route path="/" element={<modules.Layout />}>
           <Route index element={<modules.HomePage />} />
           <Route path="docs" element={<modules.DocPage />} />
           <Route path="docs/all" element={<modules.DocPage />} />
@@ -26,7 +21,6 @@ function App() {
           <Route path="docs/:docId" element={<modules.DocInfo />} />
           <Route path="service" element={<modules.ServicePage />} />
           <Route path="clinics/*" element={<modules.ClinicPage />}>
-            {/* <Route index element={<CardsWithMap />} /> */}
             <Route index element={<modules.CardsWithMap />} />
             <Route path=":id" element={<modules.CardsWithMap />} />
             <Route path="list" element={<modules.List />} />

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   deleteEntry,
   getEntryByUser,
-} from "../../../../redux-toolkit/features/entrySlice";
+} from "../../../redux-toolkit/features/entrySlice";
 import styles from "./Entry.module.css";
 
 const EntryProfil = () => {

@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-import { getDoctors } from "../../../../redux-toolkit/features/doctorSlice";
+import { getDoctors } from "../../../redux-toolkit/features/doctorSlice";
 
 import Razvorot from "./Razvorot";
 
@@ -43,9 +43,6 @@ function Card(props) {
           каждое обращение.
         </p>
         <div style={{ display: "flex" }}>
-          {/* <div>
-            <Link to="/docs">Наши доктора</Link>
-          </div> */}
           <div className={styles.abv}>
             <button>
               <Link to="/docs">Найти врача</Link>

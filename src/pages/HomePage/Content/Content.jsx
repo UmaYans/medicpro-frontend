@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchClinics } from "../../../../redux-toolkit/features/clinicSlice";
+import { fetchClinics } from "../../../redux-toolkit/features/clinicSlice";
 import styles from "./content.module.css";
 import { Link } from "react-router-dom";
 
@@ -35,9 +35,7 @@ function Content() {
                 <div className={styles.texts}>{clin.place}</div>
                 <div>
                   <button className={styles.buttonss}>
-                    <Link to={`/clinics/list/${clin._id}`}>
-                        Подробнее
-                    </Link>
+                    <Link to={`/clinics/list/${clin._id}`}>Подробнее</Link>
                   </button>
                 </div>
               </div>

@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { fetchClinicById } from "../../../../../redux-toolkit/features/clinicSlice";
+import { fetchClinicById } from "../../../../redux-toolkit/features/clinicSlice";
 import styles from "./card.module.css";
 import DocsByHospital from "./DocsByHospital";
-import { getDoctorsByPlace } from "../../../../../redux-toolkit/features/doctorSlice";
-import { getCategory } from "../../../../../redux-toolkit/features/categoriesSlice";
+import { getDoctorsByPlace } from "../../../../redux-toolkit/features/doctorSlice";
+import { getCategory } from "../../../../redux-toolkit/features/categoriesSlice";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -45,7 +45,6 @@ const ClinicCard = () => {
       <div></div>
       <div className={styles.center}>
         <div className={styles.name}>{hospital.name}</div>
-
         <div className={styles.wrap}>
           <div className={styles.image}>
             <img src={hospital.photo} alt="clinic" />

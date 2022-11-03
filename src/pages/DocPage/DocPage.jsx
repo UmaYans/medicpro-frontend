@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategory } from "../../../redux-toolkit/features/categoriesSlice";
-import { getDoctors } from "../../../redux-toolkit/features/doctorSlice";
+import { getCategory } from "../../redux-toolkit/features/categoriesSlice";
+import { getDoctors } from "../../redux-toolkit/features/doctorSlice";
 import Content from "./Content/Content";
 import Sidebar from "./Sidebar/Sidebar";
 import style from "./Docpage.module.css";
@@ -10,15 +10,12 @@ import { NavLink } from "react-router-dom";
 
 const DocPage = () => {
   const dispatch = useDispatch();
+  const { doctors, categories, loading } = useSelector((state) => state.doctor);
 
   useEffect(() => {
     dispatch(getDoctors());
     dispatch(getCategory());
   }, [dispatch]);
-
-  const doctors = useSelector((state) => state.doctor.doctors);
-  const categories = useSelector((state) => state.categories.categories);
-  const loading = useSelector((state) => state.doctor.loading);
 
   const [filtered, setFiltered] = useState([]);
   const [value, setValue] = useState("");

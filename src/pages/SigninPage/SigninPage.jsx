@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { auth } from "../../../redux-toolkit/features/usersSlice";
+import { auth } from "../../redux-toolkit/features/usersSlice";
 import style from "./Sigin.module.css";
 
 const SigninPage = () => {
@@ -29,11 +29,11 @@ const SigninPage = () => {
     if (!re.test(String(e.target.value).toLowerCase())) {
       setEmailError("Некорректный email");
       if (!e.target.value) {
-        setLoginDirty(true)
+        setLoginDirty(true);
         setEmailError("Поле ввода не может быть пустым");
       }
     } else {
-      setLoginDirty(false)
+      setLoginDirty(false);
 
       setEmailError("");
     }
@@ -42,7 +42,7 @@ const SigninPage = () => {
   const handleChangePassword = (e) => {
     setPassword(e.target.value);
     if (e.target.value.length < 3) {
-      setPasswordDirty(true)
+      setPasswordDirty(true);
 
       setPasswordError("Пароль должен быть длиннее 3 символов");
       if (!e.target.value) {
@@ -73,7 +73,6 @@ const SigninPage = () => {
 
   const handleBlur = (e) => {
     switch (e.target.name) {
-
       default:
         return false;
     }
@@ -127,7 +126,11 @@ const SigninPage = () => {
             </div>
             <div>
               <div className={style.forgotPass}>забыли пароль?</div>
-              <button disabled={loginDirty || passwordDirty || !login || !password} className={style.button} onClick={handleAuth}>
+              <button
+                disabled={loginDirty || passwordDirty || !login || !password}
+                className={style.button}
+                onClick={handleAuth}
+              >
                 Войти
               </button>
             </div>

@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { getDoctorsById } from "../../../../redux-toolkit/features/doctorSlice";
-import { fetchClinicById } from "../../../../redux-toolkit/features/clinicSlice";
-import { getDoctors } from "../../../../redux-toolkit/features/doctorSlice";
+import { getDoctorsById } from "../../../redux-toolkit/features/doctorSlice";
+import { fetchClinicById } from "../../../redux-toolkit/features/clinicSlice";
+import { getDoctors } from "../../../redux-toolkit/features/doctorSlice";
 import style from "./DocInfo.module.css";
 import {
   getEntryDocId,
   postEntry,
-} from "../../../../redux-toolkit/features/entrySlice";
+} from "../../../redux-toolkit/features/entrySlice";
 import CommentsByUser from "../CommentsByUser/CommentsByUser";
-import { getCommentByDoctorId } from "../../../../redux-toolkit/features/commentsSlice";
+import { getCommentByDoctorId } from "../../../redux-toolkit/features/commentsSlice";
 import Services from "../Services/Services";
-import { getServiceByDocId } from "../../../../redux-toolkit/features/serviceSlice";
+import { getServiceByDocId } from "../../../redux-toolkit/features/serviceSlice";
 import Style from "./Style/Style";
 import Center from "./Center/Center";
 import img from "./1.png";
@@ -46,7 +46,6 @@ function DocInfo() {
     dispatch(postEntry({ docId, value }));
     setOpened(false);
   };
-  
 
   const [time, setTime] = useState([
     "8:00",

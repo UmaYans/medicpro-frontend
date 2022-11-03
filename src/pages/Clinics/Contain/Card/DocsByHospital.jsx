@@ -5,7 +5,7 @@ import styles from "./card.module.css";
 
 const DocsByHospital = ({ _id, spec, photo, name, lastName }) => {
   const cats = useSelector((state) =>
-    state.categories.categories.find((item) => item._id === spec)
+    state.category.categories.find((item) => item._id === spec)
   );
 
   return (

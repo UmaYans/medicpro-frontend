@@ -10,15 +10,17 @@ import { NavLink } from "react-router-dom";
 
 const DocPage = () => {
   const dispatch = useDispatch();
-  const { doctors, categories, loading } = useSelector((state) => state.doctor);
+
+  const { doctors, loading } = useSelector((state) => state.doctor);
+  const { categories } = useSelector((state) => state.category);
+
+  const [filtered, setFiltered] = useState([]);
+  const [value, setValue] = useState("");
 
   useEffect(() => {
     dispatch(getDoctors());
     dispatch(getCategory());
   }, [dispatch]);
-
-  const [filtered, setFiltered] = useState([]);
-  const [value, setValue] = useState("");
 
   const handleName = (e) => {
     setValue(e.target.value);

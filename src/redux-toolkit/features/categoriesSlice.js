@@ -24,7 +24,7 @@ export const categoriesSlice = createSlice({
     builder
       .addCase(getCategory.fulfilled, (state, action) => {
         state.loading = false;
-        state.categories = action.payload;
+        state.category = action.payload;
       })
       .addCase(getCategory.rejected, (state, action) => {
         state.loading = false;

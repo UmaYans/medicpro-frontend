@@ -105,7 +105,7 @@ export const commentsSlcie = createSlice({
     builder
       .addCase(deleteComment.fulfilled, (state, action) => {
         state.loading = false;
-        state.comments = state.comments.filter(
+        state.comment = state.comment.filter(
           (comment) => comment._id !== action.payload
         );
         state.userComments = state.userComments.filter(
@@ -118,14 +118,14 @@ export const commentsSlcie = createSlice({
       });
     builder
       .addCase(getCommentByDoctorId.fulfilled, (state, action) => {
-        state.comments = action.payload;
+        state.comment = action.payload;
       })
       .addCase(getCommentByDoctorId.rejected, (state, action) => {
         state.error = action.payload.error;
       });
     builder.addCase(addComment.fulfilled, (state, action) => {
       console.log(action);
-      state.comments.push(action.payload);
+      state.comment.push(action.payload);
     });
   },
 });
@@ -134,7 +134,7 @@ export default commentsSlcie.reducer;
 
 // .addCase(deleteComment.pending, (state, action) => {
 //   state.loading = true
-//   state.comments = state.comments.map(comment => {
+//    state.comment =  state.comment.map(comment => {
 //     if(comment._id === action.meta.arg){
 //       comment.disabled = true
 //     }

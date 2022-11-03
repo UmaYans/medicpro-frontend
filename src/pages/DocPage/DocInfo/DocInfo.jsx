@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getDoctorsById } from "../../../redux-toolkit/features/doctorSlice";
-import { fetchClinicById } from "../../../redux-toolkit/features/clinicSlice";
-import { getDoctors } from "../../../redux-toolkit/features/doctorSlice";
 import style from "./DocInfo.module.css";
 import {
   getEntryDocId,
@@ -19,26 +17,25 @@ import img from "./1.png";
 import Page from "./Page/Page";
 
 function DocInfo() {
-  const [opened, setOpened] = useState(false);
-  const [value, setValue] = useState("");
-
   let { docId } = useParams();
   const dispatch = useDispatch();
 
+  const [value, setValue] = useState("");
+  const [opened, setOpened] = useState(false);
+
   useEffect(() => {
     dispatch(getServiceByDocId(docId));
-    dispatch(getDoctors(docId));
     dispatch(getDoctorsById(docId));
     dispatch(getEntryDocId(docId));
     dispatch(getCommentByDoctorId(docId));
   }, [dispatch, docId]);
 
-  const docs = useSelector((state) => state.doctor.doc);
-  const entry = useSelector((state) => state.entry.entry);
-  const service = useSelector((state) => state.service.service);
-  const comments = useSelector((state) => state.comments.comments);
-  const token = useSelector((state) => state.user.token);
-  const loading = useSelector((state) => state.doctor.loading);
+  const { doc } = useSelector((state) => state.doctor);
+  const { entry } = useSelector((state) => state.entry);
+  const { service } = useSelector((state) => state.service);
+  const { comments } = useSelector((state) => state.comment);
+  const { token } = useSelector((state) => state.user);
+
   const handleCartOpen = () => setOpened(true);
   const handleCartClose = () => setOpened(false);
 
@@ -73,37 +70,37 @@ function DocInfo() {
       <div className={style.rodBlock}>
         <div className={style.infoDoc}>
           <div className={style.imgDoc}>
-            <img src={docs.photo} alt="" />
+            <img src={doc.photo} alt="" />
           </div>
           <div className={style.textDoc}>
             <h1>
               <i>
-                {docs.name} {docs.lastName}
+                {doc.name} {doc.lastName}
               </i>
             </h1>
             <div>
               <hr />
-              <p>Возраст: {docs.age} лет</p>
+              <p>Возраст: {doc.age} лет</p>
             </div>
             <div>
-              <p>Стаж работы: {docs.skill} лет</p>
+              <p>Стаж работы: {doc.skill} лет</p>
             </div>
             <div>
-              <p>Описание врача: {docs.desc}</p>
-            </div>
-
-            <div>
-              <p>Специальность: {docs.spec?.name}</p>
+              <p>Описание врача: {doc.desc}</p>
             </div>
 
             <div>
-              <p>Рейтинг врача : {docs.rating} ⭐</p>
+              <p>Специальность: {doc.spec?.name}</p>
+            </div>
+
+            <div>
+              <p>Рейтинг врача : {doc.rating} ⭐</p>
             </div>
             <div>
-              <p>Номер телефона: {docs.telephone}</p>
+              <p>Номер телефона: {doc.telephone}</p>
             </div>
             <div>
-              <p>Почта для связи: {docs.eMail}</p>
+              <p>Почта для связи: {doc.eMail}</p>
             </div>
             {!token ? (
               <div>
@@ -119,7 +116,7 @@ function DocInfo() {
                     <img src={img} alt="" />{" "}
                   </div>
                   <div className={style.nameEntry}>
-                    Записаться к врачу: {docs.name} {docs.lastName}
+                    Записаться к врачу: {doc.name} {doc.lastName}
                   </div>
                   <div className={style.time}>Выберите время:</div>
                   <select
@@ -174,18 +171,18 @@ function DocInfo() {
         <h2 className={style.text}>Место работы</h2>
         <div className={style.secondCart}>
           <div className={style.photoClinic}>
-            <img src={docs.place?.photo} alt="" />
+            <img src={doc.place?.photo} alt="" />
           </div>
           <div className={style.inforClinic}>
             <h1>
               <p>
                 {" "}
-                <Link to={`/clinics/list/${docs.place?._id}`}>
-                  {docs.place?.name}
+                <Link to={`/clinics/list/${doc.place?._id}`}>
+                  {doc.place?.name}
                 </Link>
               </p>
             </h1>
-            <p>{docs.place?.desc}</p>
+            <p>{doc.place?.desc}</p>
           </div>
         </div>
       </div>

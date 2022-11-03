@@ -31,7 +31,7 @@ const Header = () => {
           Врачи{" "}
         </NavLink>
         <NavLink
-          to="/clinics/"
+          to="/clinics"
           className={({ isActive }) =>
             isActive ? styles.active : styles.no_active
           }

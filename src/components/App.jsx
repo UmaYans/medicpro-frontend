@@ -15,12 +15,12 @@ function App() {
         />
         <Route path="/" element={<modules.Layout />}>
           <Route index element={<modules.HomePage />} />
-          <Route path="docs" element={<modules.DocPage />} />
-          <Route path="docs/all" element={<modules.DocPage />} />
-          <Route path="docs/spec/:id" element={<modules.DocPage />} />
-          <Route path="docs/:docId" element={<modules.DocInfo />} />
-          <Route path="service" element={<modules.ServicePage />} />
-          <Route path="clinics/*" element={<modules.ClinicPage />}>
+          <Route path="/docs" element={<modules.DocPage />} />
+          {/* <Route path="docs/all" element={<modules.DocPage />} /> */}
+          {/* <Route path="docs/spec/:id" element={<modules.DocPage />} /> */}
+          <Route path="/docs/:docId" element={<modules.DocInfo />} />
+          <Route path="/service" element={<modules.ServicePage />} />
+          <Route path="/clinics/*" element={<modules.ClinicPage />}>
             <Route index element={<modules.CardsWithMap />} />
             <Route path=":id" element={<modules.CardsWithMap />} />
             <Route path="list" element={<modules.List />} />

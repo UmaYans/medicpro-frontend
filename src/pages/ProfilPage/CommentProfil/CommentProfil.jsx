@@ -9,7 +9,7 @@ import styles from "./Comment.module.css";
 const CommentProfil = () => {
   const dispatch = useDispatch();
 
-  const comments = useSelector((state) => state.comments.userComments);
+  const comments = useSelector((state) => state.comment.userComments);
 
   useEffect(() => {
     dispatch(getCommentsByUser());

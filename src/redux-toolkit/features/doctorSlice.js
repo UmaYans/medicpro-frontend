@@ -13,8 +13,7 @@ export const getDoctors = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await fetch("/docs");
-      const data = await res.json();
-      return thunkAPI.fulfillWithValue(data);
+      return await res.json();
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
@@ -13,8 +13,8 @@ import { getDoctors } from "../../../redux-toolkit/features/doctorSlice";
 import Razvorot from "./Razvorot";
 
 function Card(props) {
-  const doctors = useSelector((state) => state.doctor.doctors);
   const dispatch = useDispatch();
+  const { doctors } = useSelector((state) => state.doctor);
 
   const settings = {
     dots: true,
@@ -30,7 +30,7 @@ function Card(props) {
 
   useEffect(() => {
     dispatch(getDoctors());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -57,11 +57,9 @@ function Card(props) {
             <Slider {...settings}>
               {doctors.map((doctor) => {
                 return (
-                  <>
-                    <div>
-                      <Razvorot doctor={doctor} />
-                    </div>
-                  </>
+                  <div key={doctor._id}>
+                    <Razvorot doctor={doctor} />
+                  </div>
                 );
               })}
             </Slider>

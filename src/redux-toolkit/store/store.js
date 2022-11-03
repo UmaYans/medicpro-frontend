@@ -11,9 +11,9 @@ export const store = configureStore({
   reducer: {
     user: usersSlice,
     doctor: doctorsSlcie,
-    categories: categoriesSlice,
+    category: categoriesSlice,
     clinic: clinicSlice,
-    comments: commentsSlcie,
+    comment: commentsSlcie,
     entry: entrySlice,
     service: servicesSlice,
   },

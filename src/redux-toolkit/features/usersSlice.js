@@ -49,7 +49,6 @@ export const auth = createAsyncThunk(
         });
       } else {
         localStorage.setItem("token", data.token);
-        console.log(data.token);
         return thunkAPI.fulfillWithValue(data.token);
       }
     } catch (error) {

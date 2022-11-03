@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+.comments {
+  width: 100%;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.form {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+.input {
+  min-height: 30px;
+  text-align: center;
+  width: 60%;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.button {
+  min-height: 30px;
+  min-width: 50px;
+  background-color: rgb(72, 72, 146);
+  color: white;
+  margin-left: 15px;
+  width: 30%;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.comm {
+  padding: 20px;
+  word-break: break-all;
+  border-bottom: 1px solid black;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.img {
+}
+.img img {
+  height: 50px;
+}
+.infoUser {
+  width: 70%;
+  margin-left: 20px;
+}
+.bio {
+  font-style: italic;
+
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  font-size: 25px;
+}
+.nameComm {
+  width: 80%;
+}
+.btn {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+}
+.fal {
+  display: none;
+}
+.commentText {
+  text-align: center;
+  font-size: 20px;
+}
+.review {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid black;
+}
+.review :first-child {
+}
+.warning {
+  text-align: center;
+  font-size: 22px;
+}

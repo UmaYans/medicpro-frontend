@@ -23,9 +23,7 @@ export const fetchClinicById = createAsyncThunk(
   "clinic/getById",
   async (clinId, thunkAPI) => {
     try {
-      const clinics = await fetch(
-        `/polyclinics/${clinId}`
-      );
+      const clinics = await fetch(`/polyclinics/${clinId}`);
       return await clinics.json();
     } catch (err) {
       return thunkAPI.rejectWithValue(err);

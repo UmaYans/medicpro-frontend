@@ -1,0 +1,76 @@
+footer {
+  width: 100%;
+  max-height: 100%;
+  background: linear-gradient(26.04deg, #6713d2, #cc208e);
+}
+
+footer h2 {
+  padding: 40px 0;
+  text-align: center;
+  color: white;
+}
+
+.center_footer {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 100px;
+  justify-content: space-around;
+  line-height: 50px;
+}
+
+.about_us {
+  display: flex;
+  flex-direction: column;
+}
+.about_us h4 {
+  color: white;
+}
+.about_us div {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.for_clients {
+  display: flex;
+  flex-direction: column;
+}
+.for_clients h4 {
+  color: white;
+}
+.for_clients a {
+  color: white;
+  text-decoration: none;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+}
+.service h4 {
+  color: white;
+}
+.service div {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.icons {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.for_images {
+  text-align: center;
+  align-items: center;
+  height: 100%;
+}
+.for_images h4 {
+  color: white;
+}
+.for_images img {
+  height: 40px;
+}
+.images {
+  height: 100%;
+}

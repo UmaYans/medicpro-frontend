@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./card.module.css";
 
-const DocsByHospital = ({ docs }) => {
+const DocsByHospital = ({ _id, spec, photo, name, lastName }) => {
   const cats = useSelector((state) =>
     state.categories.categories.find((item) => item._id === docs.spec)
   );
@@ -11,13 +11,13 @@ const DocsByHospital = ({ docs }) => {
   return (
     <div className={styles.doc}>
       <div className={styles.image}>
-        <img src={docs.photo} alt={docs.name} />
+        <img src={photo} alt={name} />
       </div>
       <div className={styles.full_info}>
         <div className={styles.info}>
           <div className={styles.data}>Доктор</div>
           <div className={styles.fio}>
-            {docs.name} {docs.lastName}
+            {name} {lastName}
           </div>
         </div>
         <div className={styles.spec}>

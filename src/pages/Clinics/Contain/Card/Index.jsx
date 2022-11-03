@@ -70,7 +70,7 @@ const ClinicCard = () => {
       <div className={styles.pers}>Персонал больницы</div>
       <Slider {...settings}>
         {doctors.map((docs) => {
-          return <DocsByHospital key={docs._id} docs={docs} />;
+          return <DocsByHospital key={docs._id} {...docs} />;
         })}
       </Slider>
     </div>

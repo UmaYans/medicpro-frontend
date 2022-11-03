@@ -21,12 +21,11 @@ footer h2 {
 .about_us {
   display: flex;
   flex-direction: column;
-} 
-.about_us h4{
-  color: white;
-
 }
-.about_us div{
+.about_us h4 {
+  color: white;
+}
+.about_us div {
   color: white;
   text-decoration: none;
   cursor: pointer;
@@ -56,12 +55,12 @@ footer h2 {
   text-decoration: none;
   cursor: pointer;
 }
-.icons{
+.icons {
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
-.for_images{
+.for_images {
   text-align: center;
   align-items: center;
   height: 100%;
@@ -70,8 +69,8 @@ footer h2 {
   color: white;
 }
 .for_images img {
-height: 40px;
+  height: 40px;
 }
-.images{
+.images {
   height: 100%;
 }

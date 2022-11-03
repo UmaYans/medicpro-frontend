@@ -1,67 +1,62 @@
-.rodBlock{
-    margin-top: 2%;
-    width: 22.5%;
-    height: 100%;
-    margin-left: 8%;
-    /* background-color: red; */
-    flex-wrap: wrap;
-    background-color: #f2f6fb;
-    transition: 1s;
-    animation-name: rodBlock;
-    animation-duration: 10s;
+.rodBlock {
+  margin-top: 2%;
+  width: 22.5%;
+  height: 100%;
+  margin-left: 8%;
+  /* background-color: red; */
+  flex-wrap: wrap;
+  background-color: #f2f6fb;
+  transition: 1s;
+  animation-name: rodBlock;
+  animation-duration: 10s;
 }
 @keyframes rodBlock {
-    from {
-     opacity: 0;
-     transform: translateX(-2000px);
-    }
-    to {
-     opacity: 1;
-     transform: none;
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .rodBlock:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
-.card{
-    width: 350px;
-    
+.card {
+  width: 350px;
 }
-.title{
-    text-align: center;
+.title {
+  text-align: center;
 }
-.images{
-    float:left;
-    overflow:hidden;
-    position:relative;
-    width:338px;
-    margin-bottom: 15px;
-    float:left;
-    height:400px;
+.images {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  width: 338px;
+  margin-bottom: 15px;
+  float: left;
+  height: 400px;
 }
 
-
-
-.texts{
-    text-align: center;
+.texts {
+  text-align: center;
 }
-.buttonss{
-    margin-top:5%;
-    border: 1px solid #ff0066;
-    background-color: #fdeef6;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-left: 70%;
-    
-    
-    opacity:0; /*Элемент полностью прозрачный (невидимый)*/
-    transition: 1s; /*Скорость перехода состояния элемента*/
-    
+.buttonss {
+  margin-top: 5%;
+  border: 1px solid #ff0066;
+  background-color: #fdeef6;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 70%;
+
+  opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
+  transition: 1s; /*Скорость перехода состояния элемента*/
 }
-.card:hover  .buttonss{
-    opacity:1;
-    transition: 1s;
-    }
+.card:hover .buttonss {
+  opacity: 1;
+  transition: 1s;
+}

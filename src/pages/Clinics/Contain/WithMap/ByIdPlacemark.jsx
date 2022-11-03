@@ -3,8 +3,6 @@ import { YMaps, Map, Placemark } from "react-yandex-maps";
 import styles from "./withMap.module.css";
 
 const ByIdPlacemark = ({ filtered }) => {
-
-
   return (
     <div className={styles.rym}>
       {filtered?.map((item) => {

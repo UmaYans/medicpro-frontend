@@ -4,16 +4,14 @@ import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 
 const ProfilPage = () => {
-
-
   return (
     <div className={styles.main}>
-      <div className={styles.wrap} >
+      <div className={styles.wrap}>
         <div className={styles.sidebar}>
           {" "}
           <SideBar />
         </div>
-        <div className={styles.content} >
+        <div className={styles.content}>
           <Outlet />
         </div>
       </div>

@@ -1,7 +1,7 @@
-.main_sect  {
+.main_sect {
   box-sizing: border-box;
-  font-family: 'Press Start 2P';
-  color: #FFFFFF;
+  font-family: "Press Start 2P";
+  color: #ffffff;
   text-align: center;
 }
 
@@ -43,26 +43,26 @@
 
 .text a:hover {
   color: red;
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 768px) {
   .notFound {
-      flex-direction: column;
-      justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-around;
   }
   .notFound .img img {
-      width: 70vw;
-      height: auto;
+    width: 70vw;
+    height: auto;
   }
   .notFound h1 {
-      font-size: 50px;
+    font-size: 50px;
   }
   .notFound h2 {
-      font-size: 25px;
+    font-size: 25px;
   }
   .text a:active {
-  color: red;
-  text-decoration: underline; 
-}
+    color: red;
+    text-decoration: underline;
+  }
 }

@@ -8,63 +8,63 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const token = useSelector((state) => state.user.token);
 
-  return(
+  return (
     <>
-    <header className={styles.header}>
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          isActive ? styles.active : styles.no_active
-        }
-      >
-        <div className={styles.log}>
-          <div>MedicPRO</div>
-        </div>
-      </NavLink>
-      <NavLink
-        to="/docs"
-        className={({ isActive }) =>
-          isActive ? styles.active : styles.no_active
-        }
-      >
-        {" "}
-        Врачи{" "}
-      </NavLink>
-      <NavLink
-        to="/clinics/"
-        className={({ isActive }) =>
-          isActive ? styles.active : styles.no_active
-        }
-      >
-        {" "}
-        Клиники{" "}
-      </NavLink>
-      <NavLink
-        to="/service"
-        className={({ isActive }) =>
-          isActive ? styles.active : styles.no_active
-        }
-      >
-        {" "}
-        Услуги{" "}
-      </NavLink>
-      {token ? (
-        <NavLink className={styles.profilе} to="/profile">
-          <AccountCircleTwoToneIcon style={{ fontSize: "48px" }} />
-        </NavLink>
-      ) : (
+      <header className={styles.header}>
         <NavLink
-          to="/sign-in"
+          to="/"
           className={({ isActive }) =>
             isActive ? styles.active : styles.no_active
           }
         >
-          Войти
+          <div className={styles.log}>
+            <div>MedicPRO</div>
+          </div>
         </NavLink>
-      )}
-    </header>
-  </>
-  )
+        <NavLink
+          to="/docs"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.no_active
+          }
+        >
+          {" "}
+          Врачи{" "}
+        </NavLink>
+        <NavLink
+          to="/clinics/"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.no_active
+          }
+        >
+          {" "}
+          Клиники{" "}
+        </NavLink>
+        <NavLink
+          to="/service"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.no_active
+          }
+        >
+          {" "}
+          Услуги{" "}
+        </NavLink>
+        {token ? (
+          <NavLink className={styles.profilе} to="/profile">
+            <AccountCircleTwoToneIcon style={{ fontSize: "48px" }} />
+          </NavLink>
+        ) : (
+          <NavLink
+            to="/sign-in"
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.no_active
+            }
+          >
+            Войти
+          </NavLink>
+        )}
+      </header>
+    </>
+  );
 };
 
 export default Header;

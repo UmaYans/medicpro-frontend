@@ -1,23 +1,22 @@
-.body{
-  background: linear-gradient(26.04deg,#6713d2,#cc208e);
-
+.body {
+  background: linear-gradient(26.04deg, #6713d2, #cc208e);
 }
-.icons{
+.icons {
   padding: 0 20px;
   color: white;
   width: 90%;
   margin: auto;
   height: 90px;
   border-top: 1px solid gray;
-  border-bottom:1px solid gray ;
+  border-bottom: 1px solid gray;
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
-.img{
+.img {
   display: flex;
   justify-content: space-between;
 }
-.desc{
+.desc {
   margin-left: 15px;
 }

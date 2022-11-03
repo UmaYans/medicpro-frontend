@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "./slider.module.css";
 
-
 function SliderDoc({ doctor }) {
   console.log(doctor);
- 
+
   return (
     <>
       <div className={styles.rod}>

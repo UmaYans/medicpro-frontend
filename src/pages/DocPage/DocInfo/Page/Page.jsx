@@ -15,14 +15,18 @@ function Page() {
         <div>
           <img src="http://mcnikmed.ru/d/svg_image_3.svg" alt="" />
         </div>
-        <div><p>Доступные цены</p></div>
+        <div>
+          <p>Доступные цены</p>
+        </div>
       </div>
       <div className={style.first}>
         <div>
           {" "}
           <img src="http://mcnikmed.ru/d/svg_image_4.svg" alt="" />
         </div>
-        <div><p>Индивидуальный и комплексный подход</p></div>
+        <div>
+          <p>Индивидуальный и комплексный подход</p>
+        </div>
       </div>
     </div>
   );

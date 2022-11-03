@@ -1,28 +1,27 @@
-*{
+* {
   box-sizing: border-box;
 }
-.comments{
+.comments {
   width: 100%;
   margin: auto;
   margin-top: 100px;
   margin-bottom: 50px;
 }
 
-.form{
+.form {
   width: 70%;
   margin: auto;
   margin-bottom: 10px;
   margin-top: 30px;
 }
-.input{
+.input {
   min-height: 30px;
   text-align: center;
   width: 60%;
   font-size: 20px;
   border-radius: 10px;
-
 }
-.button{
+.button {
   min-height: 30px;
   min-width: 50px;
   background-color: rgb(72, 72, 146);
@@ -42,16 +41,16 @@
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.img{
+.img {
 }
 .img img {
   height: 50px;
 }
-.infoUser{
+.infoUser {
   width: 70%;
   margin-left: 20px;
 }
-.bio{
+.bio {
   font-style: italic;
 
   align-items: center;
@@ -59,31 +58,30 @@
   justify-content: left;
   font-size: 25px;
 }
-.nameComm{
+.nameComm {
   width: 80%;
 }
- .btn{
+.btn {
   cursor: pointer;
   border: none;
   background-color: inherit;
-} 
-.fal{
-display: none;
 }
-.commentText{
+.fal {
+  display: none;
+}
+.commentText {
   text-align: center;
   font-size: 20px;
 }
-.review{
+.review {
   text-align: center;
   font-size: 30px;
   margin-bottom: 40px;
   border-bottom: 1px solid black;
 }
-.review :first-child{
-
+.review :first-child {
 }
-.warning{
+.warning {
   text-align: center;
   font-size: 22px;
 }

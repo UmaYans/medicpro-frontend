@@ -1,22 +1,21 @@
-
-*{
+* {
   box-sizing: border-box;
 }
 
-.center{
+.center {
   margin-top: 30px;
   text-align: center;
   color: white;
   width: 100%;
-  background: linear-gradient(26.04deg,#6713d2,#cc208e);
+  background: linear-gradient(26.04deg, #6713d2, #cc208e);
   margin-bottom: 50px;
   padding: 20px 0;
   box-shadow: 3px 20px 20px rgb(26 61 107 / 16%);
 }
-.center h2{
+.center h2 {
   padding-bottom: 10px;
 }
-.center h2, p{
+.center h2,
+p {
   margin: 0;
 }
-

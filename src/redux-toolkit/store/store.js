@@ -3,10 +3,9 @@ import clinicSlice from "../features/clinicSlice";
 import categoriesSlice from "../features/categoriesSlice";
 import doctorsSlcie from "../features/doctorSlice";
 import usersSlice from "../features/usersSlice";
-import  entrySlice  from "../features/entrySlice";
+import entrySlice from "../features/entrySlice";
 import commentsSlcie from "../features/commentsSlice";
 import servicesSlice from "../features/serviceSlice";
-
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +15,6 @@ export const store = configureStore({
     clinic: clinicSlice,
     comments: commentsSlcie,
     entry: entrySlice,
-    service: servicesSlice
+    service: servicesSlice,
   },
 });

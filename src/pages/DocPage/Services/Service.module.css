@@ -1,8 +1,6 @@
-
-*{
+* {
   box-sizing: border-box;
 }
-
 
 .main {
   width: 42%;
@@ -13,52 +11,49 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.wrap{
+.wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-
-.infoServ{
-  padding:10px;
+.infoServ {
+  padding: 10px;
   background-color: #d1dbe3e8;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.infoServ:hover{
+.infoServ:hover {
   transform: scale(1.05, 1.05);
   transition: 0.3s;
-  
 }
-.imgServ{
+.imgServ {
   width: 30%;
 }
 .imgServ img {
   height: 100%;
   width: 100%;
 }
-.container{
+.container {
   margin-bottom: 100px;
   padding: 20px 0;
   margin-top: 50px;
   background-color: rgb(252, 246, 252);
-
 }
 .container h1 {
   text-align: center;
 }
-.name{
+.name {
   font-style: italic;
   font-size: 22px;
   margin-bottom: 10px;
 }
-.text{
+.text {
   font-size: 19px;
   margin-bottom: 30px;
 }
-.price{
+.price {
   font-size: 20px;
   margin-bottom: 10px;
 }

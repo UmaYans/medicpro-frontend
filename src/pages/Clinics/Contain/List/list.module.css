@@ -15,7 +15,7 @@
 }
 
 .inner:hover {
-  transform: scale(1)
+  transform: scale(1);
 }
 
 .image {
@@ -33,7 +33,6 @@
   height: 100%;
   object-fit: cover;
   padding: 0;
-
 }
 
 .number {
@@ -42,7 +41,7 @@
 
 .center {
   display: flex;
-  align-items: center;  
+  align-items: center;
   padding: 0;
 }
 
@@ -64,17 +63,14 @@
 }
 
 .btn_more:active {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
-
 
 .btn_more a {
   color: black;
-  text-decoration: none;  
+  text-decoration: none;
 }
 
-
- 
 /* прелоадер */
 .spinner {
   height: 450px;
@@ -83,47 +79,48 @@
   font-weight: 600;
   font-family: monospace;
   letter-spacing: 1em;
-  color:#cc208e;
+  color: #cc208e;
   filter: drop-shadow(0 0 10px);
   display: flex;
   justify-content: center;
   align-items: center;
- }
- 
- .spinner span {
+}
+
+.spinner span {
   animation: loading6454 1.75s ease infinite;
- }
- 
- .spinner span:nth-child(2) {
+}
+
+.spinner span:nth-child(2) {
   animation-delay: 0.25s;
- }
- 
- .spinner span:nth-child(3) {
+}
+
+.spinner span:nth-child(3) {
   animation-delay: 0.5s;
- }
- 
- .spinner span:nth-child(4) {
+}
+
+.spinner span:nth-child(4) {
   animation-delay: 0.75s;
- }
- 
- .spinner span:nth-child(5) {
+}
+
+.spinner span:nth-child(5) {
   animation-delay: 1s;
- }
- 
- .spinner span:nth-child(6) {
+}
+
+.spinner span:nth-child(6) {
   animation-delay: 1.25s;
- }
- 
- .spinner span:nth-child(7) {
+}
+
+.spinner span:nth-child(7) {
   animation-delay: 1.5s;
- }
- 
- @keyframes loading6454 {
-  0%, 100% {
-   transform: translateY(0);
+}
+
+@keyframes loading6454 {
+  0%,
+  100% {
+    transform: translateY(0);
   }
- 
+
   50% {
-   transform: translateY(-10px);
+    transform: translateY(-10px);
   }
- }
+}

@@ -1,25 +1,23 @@
-.cat{
+.cat {
   font-size: 18px;
   color: blueviolet;
   background: rgba(113, 113, 113, 0.594);
   border-radius: 12px;
   text-align: center;
-  margin: 1.5vh auto 0 auto;   ;
+  margin: 1.5vh auto 0 auto;
   height: 4vh;
   align-items: center;
 }
-.cat:active{
+.cat:active {
   background: rgba(23, 101, 29, 0.594);
   color: rgba(247, 246, 246, 0.947);
-
 }
-.none{
+.none {
   text-decoration: none;
 }
 .active {
   text-decoration: none;
 
-  
   color: rgba(255, 0, 0, 0.947);
   font-weight: 600;
 }

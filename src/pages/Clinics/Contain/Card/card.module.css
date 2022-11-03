@@ -73,11 +73,9 @@
   justify-content: space-between;
 }
 
-
 .spec {
   margin-top: 10px;
 }
-
 
 .data {
   font-weight: bold;
@@ -87,7 +85,6 @@
   font-weight: 400;
 }
 
- 
 .desc {
   font-weight: 400;
 }
